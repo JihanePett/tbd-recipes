@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My recipes</title>
+  </head>
+
+  <body>
+    {% extends 'base.html' %} {% block content%}
+    <div class="row center-cols center-align">
+      <div class="col m6">
+        {% for recipe in recipes %}
+        <div class="card">
+          <div class="card-content">
+            <div class="card-image">
+              <img
+                src="{{url_for('static', filename = 'images/stuffedtomatoes.jpeg')}}"
+              />
+              <span class="card-title"
+                ><h3>{{recipe.recipe_name}}</h3>
+                <h6>For {{recipe.number_people}} person</h6>
+                <h6>Preparation time: {{recipe.preparation_time}}</h6>
+              </span>
+            </div>
+            <ul class="collapsible">
+              <div class="col s3">
+                <a
+                  href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
+                  class="waves-effect waves-light btn btn-small blue"
+                  >Edit</a
+                >
+                <a
+                  href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+                  class="waves-effect waves-light btn btn-small"
+                  >Done</a
+                >
+              </div>
+              <li class="active">
+                <div class="collapsible-header">
+                  <i class="material-icons">info</i>What is it?
+                </div>
+                <div class="collapsible-body">
+                  <span>{{recipe.recipe_description}}</span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">description</i>Method
+                </div>
+                <div class="collapsible-body">
+                  <span>{{recipe.recipe_method}}</span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">list</i>Ingredients
+                </div>
+                <div class="collapsible-body">
+                  <span>{{recipe.recipe_ingredients}}.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

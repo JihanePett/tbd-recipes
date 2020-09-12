@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Edit recipe</title>
+  </head>
+
+  <body>
+    {% extends 'base.html' %} {% block content%}
+    <h3>Edit Recipe</h3>
+    <div class="row">
+      <form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
+      <div class="row">
+      <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">poll</i>
+            <select id="category" name="category">
+            <option value="" disabled selected>Choose a Category</option>
+            {% for cat in categories %}
+{% if cat.category_name == recipe.category_name %}
+                      <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+                      {% else %}
+                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                    {% endif %}
+            {% endfor %}
+            </select>
+          </div>
+        </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}" />
+            <label for="icon_prefix">Recipe Name</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">subject</i>
+            <input
+              id="recipe_desciption"
+              name="recipe_description"
+              type="text"
+              class="validate"
+              value="{{recipe.recipe_description}}"
+            />
+            <label for="icon_prefix">Recipe Description</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">today</i>
+            <input id="recipe_method" name="recipe_method" type="text" class="validate" value="{{recipe.recipe_method}}" />
+            <label for="icon_prefix">Recipe Method</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input
+              id="recipe_ingredients"
+              name="recipe_ingredients"
+              type="text"
+              class="validate"
+              value="{{recipe.recipe_ingredients}}"
+            />
+            <label for="icon_prefix">Recipe Ingredients</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input
+              id="recipe_number_people"
+              name="recipe_number_people"
+              type="text"
+              class="validate"
+              value="{{recipe.recipe_number_people}}"
+            />
+            <label for="icon_prefix">Number of people</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input
+              id="recipe_preparation_time"
+              name="recipe_preparation_time"
+              type="text"
+              class="validate"
+              value="{{recipe.recipe_preparation_time}}"
+            />
+            <label for="icon_prefix">Preparation Time</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="switch">
+          <label>
+          {% if recipe.is_difficult %}
+            <input id="is_difficult" name="is_difficult" type="checkbox" checked />
+          {% else %}
+          <input id="is__difficult" name="is_difficult" type="checkbox"/>
+          {% endif %}  
+            <span class="lever"></span>Is difficult
+          </label>
+          </div>
+        </div>
+        <div class="row">
+        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Add recipe</button>
+        </div>
+      </form>
+    </div>
+    {% endblock %}
+  </body>
+</html>
