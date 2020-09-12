@@ -16,11 +16,11 @@
             <select id="category" name="category">
             <option value="" disabled selected>Choose a Category</option>
             {% for cat in categories %}
-{% if cat.category_name == recipe.category_name %}
-                      <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
-                      {% else %}
-                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                    {% endif %}
+            {% if cat.category_name == recipe.category_name %}
+            <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+            {% else %}
+            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+            {% endif %}
             {% endfor %}
             </select>
           </div>
@@ -73,8 +73,8 @@
           <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
             <input
-              id="recipe_number_people"
-              name="recipe_number_people"
+              id="recipe.number_people"
+              name="recipe.number_people"
               type="text"
               class="validate"
               value="{{recipe.number_people}}"
@@ -87,8 +87,8 @@
           <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
             <input
-              id="recipe_preparation_time"
-              name="recipe_preparation_time"
+              id="recipe.preparation_time"
+              name="recipe.preparation_time"
               type="text"
               class="validate"
               value="{{recipe.preparation_time}}"
@@ -103,7 +103,7 @@
           {% if recipe.is_difficult %}
             <input id="is_difficult" name="is_difficult" type="checkbox" checked />
           {% else %}
-          <input id="is__difficult" name="is_difficult" type="checkbox"/>
+          <input id="is__difficult" name="is__difficult" type="checkbox"/>
           {% endif %}  
             <span class="lever"></span>Is difficult
           </label>
