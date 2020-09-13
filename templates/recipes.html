@@ -6,24 +6,25 @@
 
   <body>
     {% extends 'base.html' %} {% block content%}
-    <div class="row center-cols center-align">
+    <div class="row center-cols center-align"> 
+    {% for recipe in recipes %}
       <div class="col m6">
-        {% for recipe in recipes %}
         <div class="card">
           <div class="card-content">
             <div class="card-image">
               <img
                 src="{{url_for('static', filename = 'images/stuffedtomatoes.jpeg')}}"
               />
-              <span class="card-title"><h3>{{recipe.recipe_name}}</h3>
-              <h4>{{recipe.category_name}}</h4>
-               </span>
+              <span class="card-title"
+                ><h3>{{recipe.recipe_name}}</h3>
+                <h4>{{recipe.category_name}}</h4>
+              </span>
             </div>
             <ul class="collapsible">
               <li class="active">
                 <div class="collapsible-header">
-                  <i class="material-icons">info</i>For {{recipe.number_people}} person - Preparation time:
-                  {{recipe.preparation_time}}
+                  <i class="material-icons">info</i>For {{recipe.number_people}}
+                  person - Preparation time: {{recipe.preparation_time}}
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_description}}</span>
@@ -46,7 +47,6 @@
                 </div>
               </li>
             </ul>
-          </div>
           <div class="row">
             <div class="col s6">
               <a
@@ -61,9 +61,11 @@
               >
             </div>
           </div>
+          </div>        
         </div>
-        {% endfor %}
+        
       </div>
+      {% endfor%}
     </div>
 
     {% endblock %}
