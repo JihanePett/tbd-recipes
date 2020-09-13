@@ -14,14 +14,15 @@
           <div class="input-field col s12">
             <i class="material-icons prefix">poll</i>
             <input id="category_name" name="category_name" type="text" class="validate" value="{{category.category_name}}" />
-            <label for="icon_prefix">Category Name</label>
+            <label for="category_name">Category Name</label>
           </div>
         </div>
 
         <div class="row">
-        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Save changes</button>
-        <a href="{{url_for('get_categories')}}" class="waves-effect waves-light btn grey">
-        <i class="material-icons right">cancel</i>Cancel</a>
+        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Save changes<i class="material-icons right">cancel</i>Cancel
+        </button>
+        <a href="{{url_for('get_categories')}}" class="waves-effect waves-light btn grey"><i class="material-icons right">cancel</i>Cancel
+        </a>
         </div>
       </div>
       </form>
