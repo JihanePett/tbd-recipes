@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Edit category</title>
+  </head>
+
+  <body>
+    {% extends 'base.html' %} {% block content%}
+    <h3>Edit Category</h3>
+    <div class="row">
+      <form action="{{url_for('update_category', category_id=category._id)}}" method="POST" class="col s12">
+      <div class="row">
+      <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">poll</i>
+            <input id="category_name" name="category_name" type="text" class="validate" value="{{category.category_name}}" />
+            <label for="icon_prefix">Category Name</label>
+          </div>
+        </div>
+
+        <div class="row">
+        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Save changes</button>
+        <a href="{{url_for('get_categories')}}" class="waves-effect waves-light btn grey">
+        <i class="material-icons right">cancel</i>Cancel</a>
+        </div>
+      </div>
+      </form>
+    </div>
+    {% endblock %}
+  </body>
+</html>
