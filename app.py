@@ -81,7 +81,7 @@ def login():
 @app.route('/get_categories')
 def get_categories():
     return render_template('categories.html',
-                           categories=mongo.db.recipes.find())
+                           categories=mongo.db.categories.find())
 
 
 @app.route('/edit_category/<category_id>')
@@ -93,9 +93,9 @@ def edit_category(category_id):
 
 @app.route('/update_category/<category_id>', methods=['GET', 'POST'])
 def update_category(category_id):
-    mongo.db.categories.update({'_id': ObjectId(category_id)},
-                               {'category_name': request.form.get
-                               ('category_name')})
+    mongo.db.categories.update(
+        {'_id': ObjectId(category_id)},
+        {'category_name': request.form.get('category_name')})
     return redirect(url_for('get_categories'))
 
 
