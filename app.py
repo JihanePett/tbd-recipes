@@ -117,6 +117,12 @@ def add_category():
     return render_template('addcategory.html')
 
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html',
+                           recipes=mongo.db.recipes.find())
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
             port=(int(os.environ.get('PORT'))),
