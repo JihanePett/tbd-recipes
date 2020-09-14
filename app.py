@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for, redirect, request
+from flask import Flask, render_template, url_for, redirect, request, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -117,9 +117,13 @@ def add_category():
     return render_template('addcategory.html')
 
 
-@app.route('/contact')
+@app.route('/contact', methods=["GET", "POST"])
 def contact():
-    return render_template('contact.html')
+    if request.method == "POST":
+        flash("Thanks {}, we have received your message".format(
+            request.form["name"]
+        ))
+    return render_template("contact.html", page_title="Contact")
 
 
 if __name__ == "__main__":
