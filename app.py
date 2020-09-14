@@ -75,7 +75,7 @@ def login():
                 request.form['password'] != 'admin':
             error = 'Please try again'
         else:
-            return redirect(url_for('editrecipe'))
+            return redirect(url_for('get_recipes'))
     return render_template('login.html', error=error)
 
 
