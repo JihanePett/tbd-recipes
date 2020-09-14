@@ -73,8 +73,8 @@
           <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
             <input
-              id="recipe.number_people"
-              name="recipe.number_people"
+              id="number_people"
+              name="number_people"
               type="text"
               class="validate"
               value="{{recipe.number_people}}"
@@ -87,8 +87,8 @@
           <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
             <input
-              id="recipe.preparation_time"
-              name="recipe.preparation_time"
+              id="preparation_time"
+              name="preparation_time"
               type="text"
               class="validate"
               value="{{recipe.preparation_time}}"
@@ -103,7 +103,7 @@
           {% if recipe.is_difficult %}
             <input id="is_difficult" name="is_difficult" type="checkbox" checked />
           {% else %}
-          <input id="is__difficult" name="is__difficult" type="checkbox"/>
+          <input id="is__difficult" name="is_difficult" type="checkbox"/>
           {% endif %}  
             <span class="lever"></span>Is difficult
           </label>
@@ -114,6 +114,7 @@
         </div>
       </form>
     </div>
+    
     {% endblock %}
   </body>
 </html>
