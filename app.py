@@ -119,8 +119,7 @@ def add_category():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html',
-                           recipes=mongo.db.recipes.find())
+    return render_template('contact.html')
 
 
 if __name__ == "__main__":
