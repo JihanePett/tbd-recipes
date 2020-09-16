@@ -44,7 +44,7 @@ p.lead {
     font-size: 25px;
 }
 
-    /* cards */
+    /* recipe cards */
 .row.cards {
     margin-bottom: 50px;
     margin-top: 50px;
@@ -65,9 +65,16 @@ div#contact-form {
     margin-top: 50px;
 }
 
-.btn, .btn-large{
+.btn, .btn-large, input.btn.btn-default{
     background-color: pink;
     display: inherit;
     margin: 0 auto;
+}
+
+    /* login page */
+.h3{
+    text-align: center;
+    color: cadetblue;
+    margin-top: 50px;
 }
 
