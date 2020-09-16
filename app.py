@@ -23,6 +23,12 @@ def get_recipes():
                            recipes=mongo.db.recipes.find())
 
 
+@app.route('/my_recipes')
+def my_recipes():
+    return render_template('myrecipes.html',
+                           recipes=mongo.db.recipes.find())
+
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
@@ -48,14 +54,18 @@ def edit_recipe(recipe_id):
 def update_recipe(recipe_id):
     mongo.db.recipes.update({'_id': ObjectId(recipe_id)},
                             {'recipe_name': request.form.get('recipe_name'),
-                             'category_name': request.form.get('category_name'),
+                             'category_name':
+                             request.form.get('category_name'),
                              'recipe_description':
                              request.form.get('recipe_description'),
                              'recipe_ingredients':
                              request.form.get('recipe_ingredients'),
-                             'recipe_method': request.form.get('recipe_method'),
-                             'preparation_time': request.form.get('preparation_time'),
-                             'number_people': request.form.get('number_people'),
+                             'recipe_method':
+                             request.form.get('recipe_method'),
+                             'preparation_time':
+                             request.form.get('preparation_time'),
+                             'number_people':
+                             request.form.get('number_people'),
                              'is_difficult': request.form.get('is_difficult')})
     return redirect(url_for('get_recipes'))
 
