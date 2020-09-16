@@ -7,132 +7,177 @@
   <body>
     {% extends 'base.html' %} {% block content%}
     <div class="row">
-    <div class="col s8">
-    <h3 id="all-h3">Your {{recipe.recipe_name}} recipe is ready for editing</h3>
-    <div class="row">
-      <form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
+      <h3 id="all-h3">
+        Your {{recipe.recipe_name}} recipe is ready for editing
+      </h3>
       <div class="row">
-      <div class="row">
-          <div class="input-field col s12">
-          <h4>Category section</h4>
-            <i class="material-icons prefix">poll</i>
-            <select id="category" name="category">
-            <option value="" disabled selected>Choose a Category</option>
-            {% for cat in categories %}
-            {% if cat.category_name == recipe.category_name %}
-            <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
-            {% else %}
-            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-            {% endif %}
-            {% endfor %}
-            </select>
-          </div>
-         
-          <div class="input-field col s12">
-          <h4>Recipe section</h4>
-            <i class="material-icons prefix">assignment</i>
-            <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}" />
-            <label for="icon_prefix">Recipe Name</label>
-          </div>
-        </div>
+        <form
+          action="{{url_for('update_recipe', recipe_id=recipe._id)}}"
+          method="POST"
+          class="col s12"
+        >
+          <div class="row">
+            <div class="row">
+              <div class="input-field col s4">
+                <h4>Category section</h4>
+                <i class="material-icons prefix">poll</i>
+                <select id="category" name="category">
+                  <option value="" disabled selected>Choose a Category</option>
+                  {% for cat in categories %} {% if cat.category_name ==
+                  recipe.category_name %}
+                  <option value="{{cat.category_name}}" selected
+                    >{{cat.category_name}}</option
+                  >
+                  {% else %}
+                  <option value="{{cat.category_name}}"
+                    >{{cat.category_name}}</option
+                  >
+                  {% endif %} {% endfor %}
+                </select>
+              </div>
+              <div class="col s8">
+                <h4>To create a new category</h4>
+                <a
+                  href="{{url_for('add_category')}}"
+                  class="waves-effect waves-light btn btn-small"
+                  id="new-cat"
+                  >New category</a
+                >
+                <br />
+                <br />
+              </div>
+            </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">subject</i>
-            <input
-              id="recipe_desciption"
-              name="recipe_description"
-              type="text"
-              class="validate"
-              value="{{recipe.recipe_description}}"
-            />
-            <label for="icon_prefix">Recipe Description</label>
-          </div>
-        </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <h4>Recipe section</h4>
+                <i class="material-icons prefix">assignment</i>
+                <input
+                  id="recipe_name"
+                  name="recipe_name"
+                  type="text"
+                  class="validate"
+                  value="{{recipe.recipe_name}}"
+                />
+                <label for="icon_prefix">Recipe Name</label>
 
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">today</i>
-            <input id="recipe_method" name="recipe_method" type="text" class="validate" value="{{recipe.recipe_method}}" />
-            <label for="icon_prefix">Recipe Method</label>
-          </div>
-        </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">subject</i>
+                    <input
+                      id="recipe_desciption"
+                      name="recipe_description"
+                      type="text"
+                      class="validate"
+                      value="{{recipe.recipe_description}}"
+                    />
+                    <label for="icon_prefix">Recipe Description</label>
+                  </div>
+                </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">assignment</i>
-            <input
-              id="recipe_ingredients"
-              name="recipe_ingredients"
-              type="text"
-              class="validate"
-              value="{{recipe.recipe_ingredients}}"
-            />
-            <label for="icon_prefix">Recipe Ingredients</label>
-          </div>
-        </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">today</i>
+                    <input
+                      id="recipe_method"
+                      name="recipe_method"
+                      type="text"
+                      class="validate"
+                      value="{{recipe.recipe_method}}"
+                    />
+                    <label for="icon_prefix">Recipe Method</label>
+                  </div>
+                </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">assignment</i>
-            <input
-              id="number_people"
-              name="number_people"
-              type="text"
-              class="validate"
-              value="{{recipe.number_people}}"
-            />
-            <label for="icon_prefix">Number of people</label>
-          </div>
-        </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+                    <input
+                      id="recipe_ingredients"
+                      name="recipe_ingredients"
+                      type="text"
+                      class="validate"
+                      value="{{recipe.recipe_ingredients}}"
+                    />
+                    <label for="icon_prefix">Recipe Ingredients</label>
+                  </div>
+                </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">assignment</i>
-            <input
-              id="preparation_time"
-              name="preparation_time"
-              type="text"
-              class="validate"
-              value="{{recipe.preparation_time}}"
-            />
-            <label for="icon_prefix">Preparation Time</label>
-          </div>
-        </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+                    <input
+                      id="number_people"
+                      name="number_people"
+                      type="text"
+                      class="validate"
+                      value="{{recipe.number_people}}"
+                    />
+                    <label for="icon_prefix">Number of people</label>
+                  </div>
+                </div>
 
-        <div class="row">
-          <div class="switch">
-          <label>
-          {% if recipe.is_difficult %}
-            <input id="is_difficult" name="is_difficult" type="checkbox" checked />
-          {% else %}
-          <input id="is__difficult" name="is_difficult" type="checkbox"/>
-          {% endif %}  
-            <span class="lever"></span>Is difficult
-          </label>
-          </div>
-        </div>
-        <div class="row">
-        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Update recipe</button>
-        </div>
-        </div>
-      </form>
-    </div>
-    </div>
-    <div class="col s4">
-    <h4>To create a new category</h4>
-    <a
-                href="{{url_for('add_category')}}"
-                class="waves-effect waves-light btn btn-small"
-                id="new-button"
-                >New category</a
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+                    <input
+                      id="preparation_time"
+                      name="preparation_time"
+                      type="text"
+                      class="validate"
+                      value="{{recipe.preparation_time}}"
+                    />
+                    <label for="icon_prefix">Preparation Time</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="switch">
+                    <label>
+                      {% if recipe.is_difficult %}
+                      <input
+                        id="is_difficult"
+                        name="is_difficult"
+                        type="checkbox"
+                        checked
+                      />
+                      {% else %}
+                      <input
+                        id="is__difficult"
+                        name="is_difficult"
+                        type="checkbox"
+                      />
+                      {% endif %}
+                      <span class="lever"></span>Is difficult
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <button
+                class="btn waves-effect waves-light btn-large"
+                type="submit"
+                name="action"
               >
-          <br>
-          <br>
-        
+                Update recipe
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+
+    <div class="col-s4">
+      <h4>To create a new recipe</h4>
+      <a
+        href="{{url_for('add_recipe')}}"
+        class="waves-effect waves-light btn btn-small"
+        id="new-recipe"
+        >New recipe</a
+      >
     </div>
-    
     {% endblock %}
   </body>
 </html>
