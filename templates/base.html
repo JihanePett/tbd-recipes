@@ -15,13 +15,16 @@
 <header>
 <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="{{url_for('my_recipes')}}" class="brand-logo">TBD</a>
+      <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="{{url_for('my_recipes')}}">Home</a></li>
         <li><a href="{{url_for('my_recipes')}}">About</a></li>
         <li><a href="{{url_for('contact')}}">Contact</a></li>
         <li><a href="{{url_for('login')}}">Login</a></li>
       </ul>
+      
       <ul id="mobile-demo" class="side-nav">
         <li><a href="{{url_for('my_recipes')}}">Home</a></li>
         <li><a href="{{url_for('my_recipes')}}">About</a></li>
