@@ -13,7 +13,17 @@ ul:not(.browser-default) {
     padding-right: 5px;
 }
 
+.background-image {
+    height: 20vw;
+    background-image: url('https://olgalipkovics.com/wp-content/uploads/2019/05/TMMothersDaySpecial.jpeg');
+    width: 100%;
+    position: absolute;
+    top:0;
+    z-index: -100;
+}
+
 .jumbotron .jumbotron-fluid{
     height: 10vw;
 }
+
 
