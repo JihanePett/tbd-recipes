@@ -72,9 +72,17 @@ div#contact-form {
 }
 
     /* login page */
-.h3{
+#all-h3{
     text-align: center;
     color: cadetblue;
     margin-top: 50px;
 }
 
+    /* Material icons and switch lever */
+i.material-icons {
+    color: pink;
+}
+
+.switch label input[type=checkbox]:checked+.lever .switch label input[type=checkbox]:checked+.lever:after {
+    background-color: pink;
+}
