@@ -74,7 +74,7 @@ div#contact-form {
     /* login page */
 #all-h3{
     text-align: center;
-    color: cadetblue;
+    color: pink;
     margin-top: 50px;
 }
 
@@ -85,4 +85,10 @@ i.material-icons {
 
 .switch label input[type=checkbox]:checked+.lever .switch label input[type=checkbox]:checked+.lever:after {
     background-color: pink;
+}
+
+/* Editrecipe */
+.row.editrecipe {
+    margin-right: 150px;
+    padding-right: 20px;
 }

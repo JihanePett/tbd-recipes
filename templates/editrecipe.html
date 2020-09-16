@@ -6,13 +6,15 @@
 
   <body>
     {% extends 'base.html' %} {% block content%}
+    <div class="row">
+    <div class="col s8">
     <h3 id="all-h3">Your {{recipe.recipe_name}} recipe is ready for editing</h3>
     <div class="row">
       <form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
       <div class="row">
       <div class="row">
           <div class="input-field col s12">
-          <h4>category section</h4>
+          <h4>Category section</h4>
             <i class="material-icons prefix">poll</i>
             <select id="category" name="category">
             <option value="" disabled selected>Choose a Category</option>
@@ -25,9 +27,9 @@
             {% endfor %}
             </select>
           </div>
-        
-        <h4>Recipe section</h4>
+         
           <div class="input-field col s12">
+          <h4>Recipe section</h4>
             <i class="material-icons prefix">assignment</i>
             <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}" />
             <label for="icon_prefix">Recipe Name</label>
@@ -115,6 +117,20 @@
         </div>
         </div>
       </form>
+    </div>
+    </div>
+    <div class="col s4">
+    <h4>To create a new category</h4>
+    <a
+                href="{{url_for('add_category')}}"
+                class="waves-effect waves-light btn btn-small"
+                id="new-button"
+                >New category</a
+              >
+          <br>
+          <br>
+        
+    </div>
     </div>
     
     {% endblock %}
