@@ -1,49 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename = 'css/style.css')}}"
-    />
-    <title>Recipe Site</title>
-  </head>
+<html>
 
-  <body>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    <title>Recipes</title>
+</head>
+
+<body>
     <header>
-      <nav>
-        <div class="nav-wrapper">
-          <a href="{{url_for('my_recipes')}}" class="brand-logo">TBD</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"
-            ><i class="material-icons">menu</i></a
-          >
-          <ul id="mobile-demo" class="side-nav">
-            <li><a href="{{url_for('my_recipes')}}">Home</a></li>
-            <li><a href="{{url_for('my_recipes')}}">About</a></li>
-            <li><a href="{{url_for('contact')}}">Contact</a></li>
-            <li><a href="{{url_for('login')}}">Login</a></li>
-          </ul>
-        </div>
-      </nav>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{{url_for('my_recipes')}}" class="brand-logo">TBD</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('my_recipes')}}">Home</a></li>
+                    <li><a href="{{url_for('my_recipes')}}">About</a></li>
+                    <li><a href="{{url_for('contact')}}">Contact</a></li>
+                    <li><a href="{{url_for('login')}}">Login</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{{url_for('my_recipes')}}">Home</a></li>
+                    <li><a href="{{url_for('my_recipes')}}">About</a></li>
+                    <li><a href="{{url_for('contact')}}">Contact</a></li>
+                    <li><a href="{{url_for('login')}}">Login</a></li>
+         
+                </ul>
+            </div>
+        </nav>
     </header>
     <div class="container">
-      {% block content %} {% endblock %}
+        {% block content %} {% endblock %}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function () {
-        $(".collapsible").collapsible();
-        $("select").formSelect();
-        $(".button-collapse").sideNav();
-      });
+        $(document).ready(function() {
+            $('.collapsible').collapsible();
+            $('select').material_select();
+            $(".button-collapse").sideNav();
+        });
+
     </script>
-  </body>
+</body>
+
 </html>
