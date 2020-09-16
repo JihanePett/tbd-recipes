@@ -5,7 +5,8 @@
   </head>
 
   <body>
-      <div class="jumbotron jumbotron-fluid" style="background-image: url(https://shop.thermomix.com/assets/uploads/2019/09/TM6-Lifestyle.jpg) no-repeat center center">
+    {% extends 'base.html' %} {% block content%}
+          <div class="jumbotron jumbotron-fluid" style="background-image: url(https://shop.thermomix.com/assets/uploads/2019/09/TM6-Lifestyle.jpg) no-repeat center center">
         <div class="container">
           <h1 class="display-4">Welcome to my Kitchen</h1>
           <p class="lead">
@@ -13,8 +14,6 @@
           </p>
         </div>
       </div>
-
-    {% extends 'base.html' %} {% block content%}
     <div class="row">
       {% for recipe in recipes %}
       <div class="col m6">
