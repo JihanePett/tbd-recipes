@@ -22,8 +22,3 @@ ul:not(.browser-default) {
     z-index: -100;
 }
 
-.jumbotron .jumbotron-fluid{
-    height: 10vw;
-}
-
-
