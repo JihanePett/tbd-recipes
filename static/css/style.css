@@ -60,3 +60,14 @@ p.lead {
     background-color: orangered;
 }
 
+    /* contact form */
+div#contact-form {
+    margin-top: 50px;
+}
+
+.btn, .btn-large{
+    background-color: pink;
+    display: inherit;
+    margin: 0 auto;
+}
+
