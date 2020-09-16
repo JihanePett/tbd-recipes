@@ -48,15 +48,17 @@
               </li>
             </ul>
           <div class="row">
-            <div class="col s6">
+            <div class="col s8">
               <a
                 href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
-                class="waves-effect waves-light btn btn-small blue"
+                class="waves-effect waves-light btn btn-small"
+                id="edit-button"
                 >Edit</a
               >
               <a
                 href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
                 class="waves-effect waves-light btn btn-small"
+                id="del-button"
                 >Delete</a
               >
             </div>

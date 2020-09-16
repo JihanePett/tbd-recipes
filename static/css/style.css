@@ -15,21 +15,26 @@ ul:not(.browser-default) {
 }
 
 /* background image and jumbotron */
-#myrecipes_img {
-    height: 30vw;
-    background-image: url('https://3u8dbs16f2emlqxkbc8tbvgf-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/thermomix_drop_screen.jpg');
-    width: 100%;
-    position: relative;
-    top:0;
-    z-index: -100;
-    background-size: 100%;
-    background-repeat: no-repeat;
+.jumbotron {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: inset 0 0px 0 rgba(0, 0, 0, 0);
+  min-height: 350px;
+}
+
+.jumbo-img {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
 }
 
 h1.display-4 {
     margin-left: 50px;
     color: pink;
-    margin-top: 240px;
 }
 
 p.lead {
@@ -41,6 +46,17 @@ p.lead {
 
     /* cards */
 .row.cards {
-    margin-bottom: 150px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#edit-button{
+    background-color: pink;
+    letter-spacing: 2px;
+    margin-right: 20px;
+}
+
+#del-button{
+    background-color: orangered;
 }
 
