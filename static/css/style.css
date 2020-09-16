@@ -1,3 +1,4 @@
+/* Navigation */
 nav .nav-wrapper {
     background-color: #fbc3c3;
 }
@@ -13,12 +14,33 @@ ul:not(.browser-default) {
     padding-right: 5px;
 }
 
-.background-image {
-    height: 20vw;
-    background-image: url('https://olgalipkovics.com/wp-content/uploads/2019/05/TMMothersDaySpecial.jpeg');
+/* background image and jumbotron */
+#myrecipes_img {
+    height: 30vw;
+    background-image: url('https://3u8dbs16f2emlqxkbc8tbvgf-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/thermomix_drop_screen.jpg');
     width: 100%;
-    position: absolute;
+    position: relative;
     top:0;
     z-index: -100;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+h1.display-4 {
+    margin-left: 50px;
+    color: pink;
+    margin-top: 240px;
+}
+
+p.lead {
+    margin-top: 62px;
+    margin-left: 75px;
+    color: #fafafa;
+    font-size: 25px;
+}
+
+    /* cards */
+.row.cards {
+    margin-bottom: 150px;
 }
 

@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+      type="text/css"
+    />
     <title>My recipes</title>
   </head>
 
   <body>
     {% extends 'base.html' %} {% block content%}
-    <div class="background-image"></div>
-        <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Welcome to my Kitchen</h1>
-          <p class="lead">
-          Thermomix blablbal
-          </p>
-        </div>
+    <div>
+      <div class="background-image" id="myrecipes_img"></div>
+      <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">Welcome to my Kitchen</h1>
+        <p class="lead">
+          Feel free to browse my thermomix recipes below
+        </p>
       </div>
-    <div class="row">
+    </div>
+
+    <div class="row cards">
       {% for recipe in recipes %}
       <div class="col m6">
         <div class="card">
