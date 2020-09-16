@@ -4,15 +4,16 @@ nav .nav-wrapper {
 
 nav .brand-logo {
     letter-spacing: 4px;
+    margin-left: 10px;
 }
 
-nav .brand-logo {
+ul:not(.browser-default) {
     font-weight: 500;
     letter-spacing: 2px;
     padding-right: 5px;
 }
 
-header.masthead {
-    width: 100%;
-    height: 40vw;
+.jumbotron .jumbotron-fluid{
+    height: 10vw;
 }
+
