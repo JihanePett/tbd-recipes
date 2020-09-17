@@ -1,86 +1,108 @@
 /* Navigation */
 nav .nav-wrapper {
-    background-color: #fbc3c3;
+  background-color: #fbc3c3;
 }
 
 nav .brand-logo {
-    letter-spacing: 4px;
-    margin-left: 10px;
+  letter-spacing: 4px;
+  margin-left: 10px;
 }
 
 ul:not(.browser-default) {
-    font-weight: 500;
-    letter-spacing: 2px;
-    padding-right: 5px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding-right: 5px;
 }
 
 /* background image and jumbotron */
-.jumbo-img {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 100%;
+.jumbotron {
+  position:relative;
+  overflow:hidden;
+}
+
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+  background:transparent;
+}
+
+.jumbotron-background {
+  object-fit:cover;
+  font-family: 'object-fit: cover;';
+  position:absolute;
+  top:0;
+  z-index:1;
+  width:100%;
+  height:100%;
+  opacity:0.5;
 }
 
 h1.display-4 {
-    margin-left: 50px;
-    color: pink;
+  margin-left: 50px;
+  color: pink;
 }
 
 p.lead {
-    margin-top: 62px;
-    margin-left: 75px;
-    color: #fafafa;
-    font-size: 25px;
+  margin-top: 62px;
+  margin-left: 75px;
+  color: #fafafa;
+  font-size: 25px;
 }
 
-    /* recipe cards */
+/* recipe cards */
 .row.cards {
-    margin-bottom: 50px;
-    margin-top: 50px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
-#edit-button{
-    background-color: pink;
-    letter-spacing: 2px;
-    margin-right: 20px;
+#edit-button {
+  background-color: pink;
+  letter-spacing: 2px;
+  margin-right: 20px;
 }
 
-#del-button{
-    background-color: orangered;
+#del-button {
+  background-color: orangered;
 }
 
-    /* contact form */
+/* contact form */
 div#contact-form {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
-.btn, .btn-large, input.btn.btn-default{
-    background-color: pink;
-    display: inherit;
-    margin: 0 auto;
+.btn,
+.btn-large,
+input.btn.btn-default {
+  background-color: pink;
+  display: inherit;
+  margin: 0 auto;
 }
 
-    /* login page */
-#all-h3{
-    text-align: center;
-    color: pink;
-    margin-top: 50px;
+/* login page */
+#all-h3 {
+  text-align: center;
+  color: pink;
+  margin-top: 50px;
 }
 
-    /* Material icons and switch lever */
+/* Material icons and switch lever */
 i.material-icons {
-    color: pink;
+  color: pink;
 }
 
-.switch label input[type=checkbox]:checked+.lever .switch label input[type=checkbox]:checked+.lever:after {
-    background-color: pink;
+.switch
+  label
+  input[type="checkbox"]:checked
+  + .lever
+  .switch
+  label
+  input[type="checkbox"]:checked
+  + .lever:after {
+  background-color: pink;
 }
 
 /* Editrecipe */
 .row.editrecipe {
-    margin-right: 150px;
-    padding-right: 20px;
+  margin-right: 150px;
+  padding-right: 20px;
 }

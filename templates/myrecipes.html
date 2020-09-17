@@ -12,16 +12,18 @@
   <body>
     {% extends 'base.html' %} {% block content%}
     <!--Jumbotron-->
-    <div
-      class="jumbotron jumbo-img"
-      id="myrecipes_img"
-      style="background-image: url('https://3u8dbs16f2emlqxkbc8tbvgf-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/thermomix_drop_screen.jpg');"
-    >
-      <h1 class="display-4 h1-white">
+    <div  class="jumbotron jumbotron-fluid bg-light">
+    <div class="jumbotron-background">
+    <img src="https://3u8dbs16f2emlqxkbc8tbvgf-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/thermomix_drop_screen.jpg">
+  </div>
+  <div class="container">
+      <h1 class="display-4">
         Welcome to my kitchen
       </h1>
     </div>
+    </div>
 
+    <!--Recipe cards-->
     <div class="row cards">
       {% for recipe in recipes %}
       <div class="col m6">
