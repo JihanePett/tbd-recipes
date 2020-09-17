@@ -12,17 +12,12 @@
   <body>
     {% extends 'base.html' %} {% block content%}
     <!--Jumbotron-->
-    <div  class="jumbotron jumbotron-fluid bg-light">
-    <div class="jumbotron-background">
-    <img src="https://3u8dbs16f2emlqxkbc8tbvgf-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/thermomix_drop_screen.jpg">
-  </div>
-  <div class="container">
+    <div class="jumbotron jumbo-img" style="background-image: url('https://3u8dbs16f2emlqxkbc8tbvgf-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Screen-Shot-2019-03-08-at-8.40.32-AM.png');">
       <h1 class="display-4">
         Welcome to my kitchen
       </h1>
     </div>
-    </div>
-
+    
     <!--Recipe cards-->
     <div class="row cards">
       {% for recipe in recipes %}
@@ -38,6 +33,7 @@
                 <h4>{{recipe.category_name}}</h4>
               </span>
             </div>
+    <!--Collapsible-->        
             <ul class="collapsible">
               <li class="active">
                 <div class="collapsible-header">
@@ -72,5 +68,6 @@
     </div>
 
     {% endblock %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </body>
 </html>
