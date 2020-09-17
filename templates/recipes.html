@@ -17,13 +17,12 @@
               />
               <span class="card-title"
                 ><h3>{{recipe.recipe_name}}</h3>
-                <h4>{{recipe.category_name}}</h4>
               </span>
             </div>
             <ul class="collapsible">
               <li class="active">
                 <div class="collapsible-header">
-                  <i class="material-icons">info</i>For {{recipe.number_people}}
+                  <i class="material-icons">info</i>{{recipe.category_name}} recipe <br> For {{recipe.number_people}}
                   person - Preparation time: {{recipe.preparation_time}}
                 </div>
                 <div class="collapsible-body">
