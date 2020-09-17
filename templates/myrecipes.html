@@ -11,13 +11,12 @@
 
   <body>
     {% extends 'base.html' %} {% block content%}
-    <!--Jumbotron-->
-    <div class="jumbotron jumbo-img" style="background-image: url('https://3u8dbs16f2emlqxkbc8tbvgf-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Screen-Shot-2019-03-08-at-8.40.32-AM.png');">
+    <!--Main Title-->
+    
       <h1 class="display-4">
         Welcome to my kitchen
       </h1>
-    </div>
-    
+      
     <!--Recipe cards-->
     <div class="row cards">
       {% for recipe in recipes %}

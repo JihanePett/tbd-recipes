@@ -14,39 +14,23 @@ ul:not(.browser-default) {
   padding-right: 5px;
 }
 
-/* background image and jumbotron */
-.jumbotron {
-  margin-right: 20px;
-  margin-left: 20px;
-  background-color: transparent;
-  border: none;
-  -webkit-box-shadow: inset 0 0px 0 rgba(0, 0, 0, 0);
-  min-height: 350px;
-}
-
-.display-4 {
-  color: rgb(53, 51, 53);
-  text-transform: uppercase;
-  text-align: center;
-  background-color: transparent;
-}
-
-.jumbo-img {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-h1.display-4 {
-  margin-left: 50px;
-  color: pink;
+/* Main title */
+.display-4{
+    color: pink;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 /* recipe cards */
 .row.cards {
   margin-bottom: 50px;
   margin-top: 50px;
+}
+
+.btn, .btn-large, input.btn.btn-default {
+  display: inline-block;
 }
 
 #edit-button {
