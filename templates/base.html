@@ -29,14 +29,16 @@
               ><i class="material-icons">menu</i></a
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="{{url_for('my_recipes')}}">Home</a></li>
-              <li><a href="{{url_for('my_recipes')}}">About</a></li>
+              <li><a href="{{url_for('homepage')}}">Home</a></li>
+              <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
+              <li><a href="{{url_for('contact')}}">About me</a></li>
               <li><a href="{{url_for('contact')}}">Contact</a></li>
               <li><a href="{{url_for('login')}}">Login</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-              <li><a href="{{url_for('my_recipes')}}">Home</a></li>
-              <li><a href="{{url_for('my_recipes')}}">About</a></li>
+              <li><a href="{{url_for('homepage')}}">Home</a></li>
+              <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
+              <li><a href="{{url_for('contact')}}">About me</a></li>
               <li><a href="{{url_for('contact')}}">Contact</a></li>
               <li><a href="{{url_for('login')}}">Login</a></li>
             </ul>
@@ -55,6 +57,7 @@
         $(".collapsible").collapsible();
         $("select").material_select();
         $(".button-collapse").sideNav();
+        $('.slider').slider();
       });
     </script>
   </body>

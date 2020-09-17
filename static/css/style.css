@@ -57,11 +57,12 @@ input.btn.btn-default {
 }
 
 /* login page */
-#all-h3 {
+#all-h3{
   text-align: center;
   color: pink;
   margin-top: 50px;
 }
+
 
 /* Material icons and switch lever */
 i.material-icons {
