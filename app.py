@@ -1,4 +1,5 @@
 import os
+import re
 from flask import Flask, render_template, url_for, redirect, request, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -32,6 +33,26 @@ def get_recipes():
 def my_recipes():
     return render_template('myrecipes.html',
                            recipes=mongo.db.recipes.find())
+
+
+@app.route('/search_recipes')
+def search_recipes():
+    if (request.args.get('recipe_name') is not None
+        or request.args.get('preparation_time') is not None
+            or request.args.get('category_name') is not None):
+        recipename = None
+        preparationtime = None
+        categoryname = None
+
+        if request.args.get('recipe_name') is not None and request.args.get('recipe_name') != '':
+            recipenameregex = "\W*" + request.args.get("recipe_name") + "\W*"
+            recipename = re.compile(recipenameregex, re.IGNORECASE)
+        if request.args.get('category_name') is not None and request.args.get('category_name') != '':
+            categoryregex = "\W*"+request.args.get("category_name") + "\W*"
+            categoryname = re.compile(categoryregex, re.IGNORECASE)
+        recipes=mongo.db.recipes.find({"$or": [{"recipe_name": recipename}, {"category_name": categoryname}]})
+        return render_template("myrecipes.html", recipes=recipes, categories=mongo.db.categories.find())
+    return render_template("myrecipes.html", recipes=mongo.db.recipes.find(), categories=mongo.db.categories.find())
 
 
 @app.route('/add_recipe')

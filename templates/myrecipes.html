@@ -1,89 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/style.css')}}"
-      type="text/css"
-    />
-    <title>My recipes</title>
-  </head>
 
-  <body>
-    <!--Parallax-->
-    <div class="parallax-container">
-      <div class="parallax parallax img">
-        <img
+<head>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+	<title>My recipes</title>
+</head>
+
+<body>
+	{% extends 'base.html' %} {% block content%}
+	<!--Parallax-->
+	<div class="parallax-container">
+		<div class="parallax parallax img">
+			<img
           src="https://thermomix.vorwerk.com/fileadmin/data/com-en/img/rebrush-2018/homepage/tm_100_img_teaserfunctions_tm6_en_01.jpg"
         />
       </div>
-    </div>
-    <div class="section white">
-      <div class="row container">
-        <h2 class="header">Welcome to my kitchen</h2>
-        <p class="grey-text text-darken-3 lighten-3">
-          Feel free to test those amazing Thermomix executed recipes of my own,
-          if you have any questions, hit the chat box or simply send me a
-          message and I will make sure to come back to you asap
-        </p>
-        <p>
-          Thermomix has changed my life and the way that I cook and I would love
-          to share this amazing experience with YOU: you can BOOK a Demo anytime
-          using my calendar, just follow the link below
-        </p>
-      </div>
-    </div>
-    {% extends 'base.html' %} {% block content%}
-    <!--Recipe cards-->
-    <div class="row cards">
-      {% for recipe in recipes %}
-      <div class="col m6">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-image">
-              <img
+		</div>
+		<div class="section white">
+			<div class="row container">
+				<h2 class="header">Welcome to my kitchen</h2>
+				<p class="grey-text text-darken-3 lighten-3">
+					Feel free to test those amazing Thermomix executed recipes of my own,
+					if you have any questions, hit the chat box or simply send me a
+					message and I will make sure to come back to you asap
+				</p>
+				<p>
+					Thermomix has changed my life and the way that I cook and I would love
+					to share this amazing experience with YOU: you can BOOK a Demo anytime
+					using my calendar, just follow the link below
+				</p>
+			</div>
+		</div>
+		<!--Search Box-->
+		<div class="container search-form">
+			<div class="row input-field search-div">
+				<h6>Select one of the options to search for your favourite recipes</h6>
+				<form class="search-form-form" action="/search_recipes">
+					<div class="row">
+						<div class="form-field-div col s6 m4">
+							<input type="text" name="recipe_name" value="" placeholder="Search by ingredients or recipe name">
+                    </div>
+							<div class="form-field-div col s12 m4">
+								<select name="category_name">
+                    <option class="disable" value="Choose a category" disabled selected >Choose a category</option>
+                    {% for category in categories %}
+                      <option value="{{category.category_name}}">{{category.category_name}}</option>
+                    {% endfor %}
+                  </select>
+							</div>
+							<div class="row">
+								<div class="col s6 l4">
+									<input class="btn btn-search" type="submit" value="Search">
+              </div>
+								</div>
+							</div>
+
+				</form>
+			</div>
+		</div>
+
+		<!--Recipe cards-->
+		<div class="row cards">
+			{% for recipe in recipes %}
+			<div class="col m6">
+				<div class="card">
+					<div class="card-content">
+						<div class="card-image">
+							<img
                 src="{{url_for('static', filename = 'images/stuffedtomatoes.jpeg')}}"
               />
-              <span class="card-title"
+							<span class="card-title"
                 ><h3>{{recipe.recipe_name}}</h3>
                 <h4>{{recipe.category_name}}</h4>
               </span>
-            </div>
-            <!--Collapsible-->
-            <ul class="collapsible">
-              <li class="active">
-                <div class="collapsible-header">
-                  <i class="material-icons">info</i>For {{recipe.number_people}}
-                  person - Preparation time: {{recipe.preparation_time}}
-                </div>
-                <div class="collapsible-body">
-                  <span>{{recipe.recipe_description}}</span>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header">
-                  <i class="material-icons">description</i>Method
-                </div>
-                <div class="collapsible-body">
-                  <span>{{recipe.recipe_method}}</span>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header">
-                  <i class="material-icons">list</i>Ingredients
-                </div>
-                <div class="collapsible-body">
-                  <span>{{recipe.recipe_ingredients}}.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      {% endfor%}
-    </div>
+						</div>
+						<!--Collapsible-->
+						<ul class="collapsible">
+							<li class="active">
+								<div class="collapsible-header">
+									<i class="material-icons">info</i>For {{recipe.number_people}}
+									person - Preparation time: {{recipe.preparation_time}}
+								</div>
+								<div class="collapsible-body">
+									<span>{{recipe.recipe_description}}</span>
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header">
+									<i class="material-icons">description</i>Method
+								</div>
+								<div class="collapsible-body">
+									<span>{{recipe.recipe_method}}</span>
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header">
+									<i class="material-icons">list</i>Ingredients
+								</div>
+								<div class="collapsible-body">
+									<span>{{recipe.recipe_ingredients}}.</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			{% endfor%}
+		</div>
 
-    {% endblock %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  </body>
+		{% endblock %}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
 </html>
