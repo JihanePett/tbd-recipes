@@ -60,5 +60,27 @@
         $('.slider').slider();
       });
     </script>
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+      let textbox = document.getElementById("message");
+
+      let timer = setTimeout(function () {
+        location.reload();
+      }, 5000);
+
+      textbox.onkeydown = function (e) {
+        clearTimeout(timer);
+
+        timer = setTimeout(function () {
+          location.reload();
+        }, 5000);
+      };
+    </script>
   </body>
 </html>
