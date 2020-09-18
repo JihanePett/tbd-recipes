@@ -11,12 +11,31 @@
 
   <body>
     {% extends 'base.html' %} {% block content%}
-    <!--Main Title-->
-    <section class="banner"></section>
-      <h1 class="display-4">
-        Welcome to my kitchen
-      </h1>
-      
+
+    <!--Parallax-->
+    <div class="parallax-container">
+      <div class="parallax">
+        <img
+          src="https://getdrop.com/wp-content/uploads/2019/10/thermomix_featured_image.jpg"
+        />
+      </div>
+    </div>
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header">Welcome to my kitchen</h2>
+        <p class="grey-text text-darken-3 lighten-3">
+          Feel free to test those amazing Thermomix executed recipes of my own,
+          if you have any questions, hit the chat box or simply send me a
+          message and I will make sure to come back to you asap
+        </p>
+        <p>
+          Thermomix has changed my life and the way that I cook and I would love
+          to share this amazing experience with YOU: you can BOOK a Demo anytime
+          using my calendar, just follow the link below
+        </p>
+      </div>
+    </div>
+
     <!--Recipe cards-->
     <div class="row cards">
       {% for recipe in recipes %}
@@ -32,7 +51,7 @@
                 <h4>{{recipe.category_name}}</h4>
               </span>
             </div>
-    <!--Collapsible-->        
+            <!--Collapsible-->
             <ul class="collapsible">
               <li class="active">
                 <div class="collapsible-header">
@@ -67,6 +86,6 @@
     </div>
 
     {% endblock %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </body>
 </html>

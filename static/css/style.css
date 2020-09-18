@@ -80,17 +80,6 @@ i.material-icons {
   background-color: pink;
 }
 
-/*Banner */
-.banner {
-    width: 100%;
-    height: 9em;
-    background-image: url("https://getdrop.com/wp-content/uploads/2019/10/thermomix_featured_image.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: opacity(60%);
-    position: relative;
-}
-
 /* Editrecipe */
 .row.editrecipe {
   margin-right: 150px;
