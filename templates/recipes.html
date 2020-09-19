@@ -16,24 +16,24 @@
 		</div>
 		<div class="section white">
 			<div class="row container">
-				<h2 class="header">Shhh....I am working on some delightful recipes...</h2>
+				<h3 id="all-h3" class="header">Shhh....I am working on some delightful recipes...</h3>
 				<p class="grey-text text-darken-3 lighten-3">
 					This page is dedicated to recipe creativity. You can delete, edit, update or add any new creation here.
 				</p>
 				<p>
                 To delete or edit a recipe, simply follow the corresponding links in each recipe cards.
-                To add a new recipe or category follow the below links.
+                To add a new recipe or category follow the below links.<br>
     <!--Add recipe and category buttons-->
     <div class="row">
-      <div class="col s8">
-        <h4>To create a new category</h4>
+      <div class="col s4">
         <a
           href="{{url_for('add_category')}}"
           class="waves-effect waves-light btn btn-small"
           id="new-cat"
           >New category</a
         >
-        <h4>To create a new recipe</h4>
+        </div>
+        <div class="col s4">
         <a
           href="{{url_for('add_recipe')}}"
           class="waves-effect waves-light btn btn-small"
@@ -91,13 +91,15 @@
 
     <!--Edit and Delete Recipes Buttons-->            
             <div class="row">
-              <div class="col s4">
+              <div class="col s3">
                 <a
                   href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
                   class="waves-effect waves-light btn btn-small"
                   id="edit-button"
                   >Edit</a
                 >
+                </div>
+                <div class="col s4">
                 <a
                   href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
                   class="waves-effect waves-light btn btn-small"
