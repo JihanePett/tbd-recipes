@@ -7,23 +7,26 @@
   <body>
     {% extends 'base.html' %} {% block content%}
     <div class="row">
-    {% for recipe in recipes %}
+      {% for recipe in recipes %}
       <div class="col m6">
+    <!--Recipes cards-->
         <div class="card">
           <div class="card-content">
             <div class="card-image">
               <img
                 src="{{url_for('static', filename = 'images/stuffedtomatoes.jpeg')}}"
               />
-              <span class="card-title"
-                ><h3>{{recipe.recipe_name}}</h3>
-              </span>
+              <span class="card-title"><h3>{{recipe.recipe_name}}</h3> </span>
             </div>
+
+    <!--Collapsible-->            
             <ul class="collapsible">
               <li class="active">
                 <div class="collapsible-header">
-                  <i class="material-icons">info</i>{{recipe.category_name}} recipe <br> For {{recipe.number_people}}
-                  person - Preparation time: {{recipe.preparation_time}}
+                  <i class="material-icons">info</i>{{recipe.category_name}}
+                  recipe <br />
+                  For {{recipe.number_people}} person - Preparation time:
+                  {{recipe.preparation_time}}
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_description}}</span>
@@ -46,26 +49,48 @@
                 </div>
               </li>
             </ul>
-          <div class="row">
-            <div class="col s4">
-              <a
-                href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
-                class="waves-effect waves-light btn btn-small"
-                id="edit-button"
-                >Edit</a
-              >
-              <a
-                href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
-                class="waves-effect waves-light btn btn-small"
-                id="del-button"
-                >Delete</a
-              >
+
+    <!--Edit and Delete Recipes Buttons-->            
+            <div class="row">
+              <div class="col s4">
+                <a
+                  href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
+                  class="waves-effect waves-light btn btn-small"
+                  id="edit-button"
+                  >Edit</a
+                >
+                <a
+                  href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+                  class="waves-effect waves-light btn btn-small"
+                  id="del-button"
+                  >Delete</a
+                >
+              </div>
             </div>
           </div>
-          </div>        
         </div>
-    </div>
+      </div>
       {% endfor%}
+    </div>
+
+    <!--Add recipe and category buttons-->
+    <div class="row">
+      <div class="col s8">
+        <h4>To create a new category</h4>
+        <a
+          href="{{url_for('add_category')}}"
+          class="waves-effect waves-light btn btn-small"
+          id="new-cat"
+          >New category</a
+        >
+        <h4>To create a new recipe</h4>
+        <a
+          href="{{url_for('add_recipe')}}"
+          class="waves-effect waves-light btn btn-small"
+          id="new-recipe"
+          >New recipe</a
+        >
+      </div>
     </div>
 
     {% endblock %}
