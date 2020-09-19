@@ -6,22 +6,57 @@
 
   <body>
     {% extends 'base.html' %} {% block content%}
+	<!--Parallax-->
+	<div class="parallax-container">
+		<div class="parallax parallax img">
+			<img
+          src="https://wallpaperaccess.com/full/372975.jpg"
+        />
+      </div>
+		</div>
+		<div class="section white">
+			<div class="row container">
+				<h3 id="all-h3" class="header">Shhh....I am working on some delightful recipes...</h3>
+				<p class="grey-text text-darken-3 lighten-3">
+					This page is dedicated to recipe creativity. You can delete, edit, update or add any new creation here.
+				</p>
+				<p>
+                To delete or edit a category, simply follow the corresponding links in each category cards.
+                To add a new category follow the below link.<br>
+    <!--Add category button-->
+    <div class="row">
+      <div class="col s4">
+        <a
+          href="{{url_for('add_category')}}"
+          class="waves-effect waves-light btn btn-small"
+          id="new-cat"
+          >New category</a
+        >
+        </div>
+    </div>                
+				</p>
+			</div>
+		</div>       
+
     <div class="row">
       {% for category in categories %}
-      <div class="col m6">
+      <div class="col m4">
         <div class="card">
           <div class="card-content">
             <h3>{{category.category_name}}</h3>
             <div class="row">
-              <div class="col s6">
+              <div class="col s4">
                 <a
                   href="{{url_for('edit_category', category_id=category._id)}}"
-                  class="waves-effect waves-light btn btn-small blue"
+                  class="waves-effect waves-light btn btn-small"
                   >Edit</a
                 >
+                </div>
+                <div class="col s4">
                 <a
                   href="{{url_for('delete_category', category_id=category._id)}}"
                   class="waves-effect waves-light btn btn-small"
+                  id="del-button"
                   >Delete</a
                 >
               </div>
@@ -30,9 +65,14 @@
         </div>
       </div>
       {% endfor%}
-    </div>
-    <div class="row">
-    <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn"><i class="material-icons right">playlist_add</i>Add Category</a>
+              <div class="col s4">
+        <a
+          href="{{url_for('get_recipes')}}"
+          class="waves-effect waves-light btn btn-small"
+          id="new-recipe"
+          >Back to editing a recipe</a
+        >
+      </div>
     </div>
     {% endblock %}
   </body>
