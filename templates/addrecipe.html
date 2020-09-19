@@ -8,9 +8,9 @@
     {% extends 'base.html' %} {% block content%}
     <h3 id="all-h3">Fill the form to add a new recipe card</h3>
     <div class="row">
-      <form action="{{url_for('insert_recipe')}}" method="POST" class="col s12">
+      <form action="{{url_for('insert_recipe')}}" method="POST" class="col s8 offset-m2">
       <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s4">
             <i class="material-icons prefix">poll</i>
             <select id="category" name="category">
             <option value="" disabled selected>Choose a Category</option>

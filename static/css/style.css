@@ -44,6 +44,15 @@ ul:not(.browser-default) {
   background-color: orangered;
 }
 
+.row.back-btn {
+    margin-top: 50px;
+    float: right;
+}
+
+a#back-btn {
+    background-color: lightblue;
+}
+
 /* contact form */
 div#contact-form {
   margin-top: 50px;

@@ -19,7 +19,7 @@
         </div>
 
         <div class="row">
-        <div class="col">
+        <div class="col s4 offsset-m4">
         <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Add category
         <i class="material-icons right">playlist_add</i></button>
         </div>
@@ -27,13 +27,15 @@
       </div>
       </form>
     </div>
-    <div class="col s4">
+    <div class="row">
+    <div class="col">
         <a
           href="{{url_for('get_recipes')}}"
           class="waves-effect waves-light btn btn-small"
-          id="new-cat"
+          id="back-btn"
           >Go Back to the editing page</a
         >
+        </div>
         </div>
     {% endblock %}
   </body>
