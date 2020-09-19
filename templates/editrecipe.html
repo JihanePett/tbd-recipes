@@ -15,12 +15,12 @@
       <form
         action="{{url_for('update_recipe', recipe_id=recipe._id)}}"
         method="POST"
-        class="col s12"
+        class="col s12 offset-m3"
       >
         <!--Category input-->
         <div class="row">
         <div class="input-field col s4">
-          <h4>Category section</h4>
+          <h4>Category section</h4><br>
           <i class="material-icons prefix">poll</i>
           <select id="category" name="category">
             <option value="" disabled selected>Choose a Category</option>
@@ -38,8 +38,8 @@
 
         <!--Recipe input-->
         <div class="row">
+            <h4>Recipe section</h4><br>        
           <div class="input-field col s6">
-            <h4>Recipe section</h4>
             <i class="material-icons prefix">assignment</i>
             <input
               id="recipe_name"
@@ -142,6 +142,7 @@
 
         <!--Update button-->
         <div class="row">
+        <div class="col offset m6">
           <button
             class="btn waves-effect waves-light btn-large"
             type="submit"
@@ -149,6 +150,7 @@
           >
             Update recipe
           </button>
+        </div>
         </div>
       </form>
     </div>

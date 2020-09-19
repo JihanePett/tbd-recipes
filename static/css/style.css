@@ -33,10 +33,11 @@ ul:not(.browser-default) {
   display: inline-block;
 }
 
-#edit-button {
+#edit-button, #del-button {
   background-color: pink;
   letter-spacing: 2px;
   margin-right: 20px;
+  display: inline-block;
 }
 
 #del-button {
@@ -69,14 +70,7 @@ i.material-icons {
   color: pink;
 }
 
-.switch
-  label
-  input[type="checkbox"]:checked
-  + .lever
-  .switch
-  label
-  input[type="checkbox"]:checked
-  + .lever:after {
+.switch label .lever{
   background-color: pink;
 }
 
