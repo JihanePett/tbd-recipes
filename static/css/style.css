@@ -49,7 +49,7 @@ ul:not(.browser-default) {
     float: right;
 }
 
-a#back-btn {
+a.back-btn {
     background-color: lightblue;
 }
 
@@ -67,10 +67,11 @@ input.btn.btn-default {
 }
 
 /* login page */
-#all-h3{
+.all-h3{
   text-align: center;
   color: pink;
   margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 
