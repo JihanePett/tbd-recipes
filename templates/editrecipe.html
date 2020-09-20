@@ -19,10 +19,24 @@
       >
         <!--Category input-->
         <div class="row">
+                <div class="input-field col s4">
+          <h4>Type section</h4><br>
+          <i class="material-icons prefix">poll</i>
+          <select id="type" name="type_select">
+            <option value="" disabled selected>Select a type</option>
+            {% for type in types %} {% if type.type_select == recipe.type_select %}
+            <option value="{{type.type_select}}" selected
+              >{{type.type_select}}</option
+            >
+            {% else %}
+            <option value="{{type.type_select}}">{{type.type_select}}</option>
+            {% endif %} {% endfor %}
+          </select>
+        </div>
         <div class="input-field col s4">
           <h4>Category section</h4><br>
           <i class="material-icons prefix">poll</i>
-          <select id="category" name="category">
+          <select id="category" name="category_name">
             <option value="" disabled selected>Choose a Category</option>
             {% for cat in categories %} {% if cat.category_name ==
             recipe.category_name %}

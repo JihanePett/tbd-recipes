@@ -9,11 +9,22 @@
     <h3 class="all-h3">Fill the form to add a new recipe card</h3>
     <div class="row">
       <form action="{{url_for('insert_recipe')}}" method="POST" class="col s8 offset-m2">
+            <div class="row">
+          <div class="input-field col s4">
+            <i class="material-icons prefix">poll</i>
+            <select id="type" name="type_select">
+            <option value="" disabled selected>Select a type</option>
+            {% for type in types %}
+            <option value="{{type.type_select}}">{{type.type_select}}</option>
+            {% endfor %}
+            </select>
+          </div>
+        </div>
       <div class="row">
           <div class="input-field col s4">
             <i class="material-icons prefix">poll</i>
-            <select id="category" name="category">
-            <option value="" disabled selected>Choose a Category</option>
+            <select id="category" name="category_name">
+            <option value="" disabled selected >Choose a Category</option>
             {% for cat in categories %}
             <option value="{{cat.category_name}}">{{cat.category_name}}</option>
             {% endfor %}
