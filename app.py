@@ -38,10 +38,8 @@ def my_recipes():
 @app.route('/search_recipes')
 def search_recipes():
     if (request.args.get('recipe_name') is not None
-        or request.args.get('preparation_time') is not None
             or request.args.get('category_name') is not None):
         recipename = None
-        preparationtime = None
         categoryname = None
 
         if request.args.get('recipe_name') is not None and request.args.get('recipe_name') != '':
@@ -58,7 +56,8 @@ def search_recipes():
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
-                           categories=mongo.db.categories.find())
+                           categories=mongo.db.categories.find(),
+                           types=mongo.db.types.find())
 
 
 @app.route('/insert_recipe', methods=['POST'])
@@ -72,8 +71,10 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
+    all_types = mongo.db.types.find()
     return render_template('editrecipe.html',
-                           recipe=the_recipe, categories=all_categories)
+                           recipe=the_recipe, categories=all_categories,
+                           types=all_types)
 
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST", "GET"])
@@ -82,6 +83,8 @@ def update_recipe(recipe_id):
                             {'recipe_name': request.form.get('recipe_name'),
                              'category_name':
                              request.form.get('category_name'),
+                             'type_select':
+                             request.form.get('type_name'),
                              'recipe_description':
                              request.form.get('recipe_description'),
                              'recipe_ingredients':
@@ -130,7 +133,7 @@ def delete_category(category_id):
 def edit_category(category_id):
     return render_template('editcategory.html',
                            category=mongo.db.categories.find_one(
-                               {'_id': ObjectId(category_id)}))
+                                    {'_id': ObjectId(category_id)}))
 
 
 @app.route('/update_category/<category_id>', methods=['GET', 'POST'])
