@@ -3,6 +3,7 @@ import re
 from flask import Flask, render_template, url_for, redirect, request, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import cloudinary as Cloud
 if os.path.exists("env.py"):
     import env
 
@@ -13,6 +14,11 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = "myTestDB"
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+Cloud.config.update = ({
+    'cloud_name': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'api_key': os.environ.get('CLOUDINARY_API_KEY'),
+    'api_secret': os.environ.get('CLOUDINARY_API_SECRET')
+})
 
 mongo = PyMongo(app)
 
@@ -46,7 +52,7 @@ def search_recipes():
             recipenameregex = "\W*" + request.args.get("recipe_name") + "\W*"
             recipename = re.compile(recipenameregex, re.IGNORECASE)
         if request.args.get('category_name') is not None and request.args.get('category_name') != '':
-            categoryregex = "\W*" +request.args.get("category_name") + "\W*"
+            categoryregex = "\W*" + request.args.get("category_name") + "\W*"
             categoryname = re.compile(categoryregex, re.IGNORECASE)
         recipes = mongo.db.recipes.find({"$or": [{"recipe_name": recipename},
                                                  {"category_name": categoryname}]})

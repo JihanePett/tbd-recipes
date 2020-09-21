@@ -52,9 +52,7 @@
         <div class="card">
           <div class="card-content">
             <div class="card-image">
-              <img
-                src="{{url_for('static', filename = 'images/stuffedtomatoes.jpeg')}}"
-              />
+              <a href="{{url_for('recipe', recipe_id=recipe._id)}}"><img class="card-image-img" src="{{recipe.image_url}}"></a>
               <span class="card-title"><h3>{{recipe.recipe_name}}</h3> </span>
             </div>
 

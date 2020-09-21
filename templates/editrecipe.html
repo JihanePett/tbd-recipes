@@ -143,24 +143,13 @@
             <label for="icon_prefix">Preparation Time</label>
           </div>
         </div>
-
-        <div class="row">
-          <div class="switch">
-            <label>
-              {% if recipe.is_difficult %}
-              <input
-                id="is_difficult"
-                name="is_difficult"
-                type="checkbox"
-                checked
-              />
-              {% else %}
-              <input id="is__difficult" name="is_difficult" type="checkbox" />
-              {% endif %}
-              <span class="lever"></span>Is difficult
-            </label>
-          </div>
-        </div>
+        
+        <!--Add image url-->
+        <div class="input-field col s12">
+          <i class="material-icons prefix">local_see</i>
+          <input id="photo_url" name="photo_url" type="text" class="validate">
+          <label for="icon_prefix"> Enter the image url </label>
+        </div>   
 
         <!--Update button-->
         <div class="row">
