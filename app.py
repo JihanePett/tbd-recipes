@@ -46,9 +46,10 @@ def search_recipes():
             recipenameregex = "\W*" + request.args.get("recipe_name") + "\W*"
             recipename = re.compile(recipenameregex, re.IGNORECASE)
         if request.args.get('category_name') is not None and request.args.get('category_name') != '':
-            categoryregex = "\W*"+request.args.get("category_name") + "\W*"
+            categoryregex = "\W*" +request.args.get("category_name") + "\W*"
             categoryname = re.compile(categoryregex, re.IGNORECASE)
-        recipes=mongo.db.recipes.find({"$or": [{"recipe_name": recipename}, {"category_name": categoryname}]})
+        recipes = mongo.db.recipes.find({"$or": [{"recipe_name": recipename},
+                                                 {"category_name": categoryname}]})
         return render_template("myrecipes.html", recipes=recipes, categories=mongo.db.categories.find())
     return render_template("myrecipes.html", recipes=mongo.db.recipes.find(), categories=mongo.db.categories.find())
 
@@ -84,7 +85,7 @@ def update_recipe(recipe_id):
                              'category_name':
                              request.form.get('category_name'),
                              'type_select':
-                             request.form.get('type_name'),
+                             request.form.get('type_select'),
                              'recipe_description':
                              request.form.get('recipe_description'),
                              'recipe_ingredients':

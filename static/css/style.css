@@ -90,3 +90,16 @@ i.material-icons {
   padding-right: 20px;
 }
 
+/* Contact */
+.col.s6.contact-form {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+li.flashes-msg {
+    color: pink;
+    /* font-size: 20px; */
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+

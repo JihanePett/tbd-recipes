@@ -6,7 +6,7 @@
   <body>
     {% extends 'base.html' %} {% block content%}
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col s6">
         {% with messages = get_flashed_messages() %} {% if messages %}
         <ul class="flashes">
           {% for message in messages %}
@@ -90,6 +90,10 @@
             </button>
           </div>
         </form>
+      </div>
+
+      <div class="col s6">
+      <h3 class="all-h3">Google calendar placeholder</h3>
       </div>
     </div>
     {% endblock %}
