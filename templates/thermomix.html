@@ -6,7 +6,7 @@
       href="{{url_for('static', filename='css/style.css')}}"
       type="text/css"
     />
-    <title>My recipes</title>
+    <title>Thermomix recipes</title>
   </head>
 
   <body>
@@ -34,45 +34,6 @@
         </p>
       </div>
     </div>
-    <!--Search Box-->
-    <div class="container search-form">
-      <div class="row input-field search-div">
-        <h6>Select one of the options to search for your favourite recipes</h6>
-        <form class="search-form-form" action="/search_recipes">
-          <div class="row">
-            <div class="form-field-div col s6 m4">
-              <input
-                type="text"
-                name="recipe_name"
-                value=""
-                placeholder="Search by ingredients or recipe name"
-              />
-            </div>
-            <div class="form-field-div col s12 m4">
-                <select name="category_name">
-                <option
-                  class="disable"
-                  value="Choose a category"
-                  disabled
-                  selected
-                  >Choose a category</option
-                >
-{% for cat in categories %}
-                <option value="{{cat.category_name}}"
-                  >{{cat.category_name}}</option
-                >
-                {% endfor %}
-              </select>
-            </div>
-            <div class="row">
-              <div class="col s6 l4">
-                <input class="btn btn-search" type="submit" value="Search" />
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
 
     <!--Recipe cards-->
     <div class="row cards">
@@ -85,6 +46,7 @@
               <span class="card-title"
                 ><h3>{{recipe.recipe_name}}</h3>
                 <h4>{{recipe.category_name}}</h4>
+                <h6>{{recipe.type_select}}</h6>
               </span>
             </div>
             <!--Collapsible-->
@@ -122,6 +84,5 @@
     </div>
 
     {% endblock %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -29,6 +29,14 @@ def homepage():
     return render_template('homepage.html')
 
 
+@app.route('/thermomix')
+def thermomix():
+    return render_template('thermomix.html',
+                           recipes=mongo.db.recipes.find(),
+                           categories=mongo.db.categories.find(),
+                           types=mongo.db.types.find())
+
+
 @app.route('/get_recipes')
 def get_recipes():
     return render_template('recipes.html',
