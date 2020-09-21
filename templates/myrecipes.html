@@ -74,6 +74,7 @@
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_description}}</span>
+                  <a href="{{url_for('my_recipes', recipe_id=recipe._id)}}" class="btn-floating btn-large waves-effect waves-light red"> <img src="{{recipe.pdf}}"> <i class="material-icons">Download me</i></a>
                 </div>
               </li>
               <li>
