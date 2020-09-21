@@ -102,7 +102,7 @@ def update_recipe(recipe_id):
                              request.form.get('preparation_time'),
                              'number_people':
                              request.form.get('number_people'),
-                             'is_difficult': request.form.get('is_difficult')})
+                             'image_url': request.form.get('image_url')})
     return redirect(url_for('get_recipes'))
 
 
