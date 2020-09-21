@@ -75,7 +75,7 @@ input.btn.btn-default {
 }
 
 
-/* Material icons and switch lever */
+/* Material icons */
 i.material-icons {
   color: pink;
 }
@@ -103,3 +103,7 @@ li.flashes-msg {
     letter-spacing: 2px;
 }
 
+/* Parallax */
+.parallax-container .parallax img {
+    display: inline-block;
+}
