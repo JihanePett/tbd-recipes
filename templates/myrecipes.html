@@ -33,47 +33,23 @@
           using my calendar, just follow the link below
         </p>
       </div>
-    </div>
-    <!--Search Box-->
-    <div class="container search-form">
-      <div class="row input-field search-div">
-        <h6>Select one of the options to search for your favourite recipes</h6>
-        <form class="search-form-form" action="/search_recipes">
-          <div class="row">
-            <div class="form-field-div col s6 m4">
-              <input
-                type="text"
-                name="recipe_name"
-                value=""
-                placeholder="Search by ingredients or recipe name"
-              />
-            </div>
-            <div class="form-field-div col s12 m4">
-                <select name="category_name">
-                <option
-                  class="disable"
-                  value="Choose a category"
-                  disabled
-                  selected
-                  >Choose a category</option
-                >
-{% for cat in categories %}
-                <option value="{{cat.category_name}}"
-                  >{{cat.category_name}}</option
-                >
-                {% endfor %}
-              </select>
-            </div>
-            <div class="row">
-              <div class="col s6 l4">
-                <input class="btn btn-search" type="submit" value="Search" />
-              </div>
-            </div>
-          </div>
-        </form>
+
+      <div class="row">
+        <div class="input-field col s4 offset-m4">
+          <i class="material-icons prefix">poll</i>
+          <select id="type" name="type_select">
+            <option value="" disabled selected
+              >Choose between Thermomix or non-Thermomix Recipe</option
+            >
+            {% for type in types %}
+            <option value="{{type.type_select}}" selected
+              >{{type.type_select}}</option
+            >
+            {% endfor %}
+          </select>
+        </div>
       </div>
     </div>
-
     <!--Recipe cards-->
     <div class="row cards">
       {% for recipe in recipes %}
@@ -81,7 +57,9 @@
         <div class="card">
           <div class="card-content">
             <div class="card-image">
-              <a href="{{url_for('my_recipes', recipe_id=recipe._id)}}"><img class="card-image-img" src="{{recipe.image_url}}"></a>
+              <a href="{{url_for('my_recipes', recipe_id=recipe._id)}}"
+                ><img class="card-image-img" src="{{recipe.image_url}}"
+              /></a>
               <span class="card-title"
                 ><h3>{{recipe.recipe_name}}</h3>
                 <h4>{{recipe.category_name}}</h4>
