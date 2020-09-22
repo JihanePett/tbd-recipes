@@ -76,13 +76,16 @@ input.btn.btn-default {
 
 
 /* Material icons */
+
+a.i.material-icons .menu {
+    color: #fafafa;
+}
+
 i.material-icons {
   color: pink;
 }
 
-.switch label .lever{
-  background-color: pink;
-}
+
 
 /* Editrecipe */
 .row.editrecipe {

@@ -5,10 +5,8 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
-    />
+ <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link
       rel="stylesheet"
       href="{{url_for('static', filename='css/style.css')}}"
@@ -25,9 +23,6 @@
             <a href="{{url_for('homepage')}}" class="brand-logo"
               >TasteBudsDream</a
             >
-            <a href="#" data-activates="mobile-demo" class="button-collapse"
-              ><i class="material-icons">menu</i></a
-            >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="{{url_for('homepage')}}">Home</a></li>
               <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
@@ -35,32 +30,37 @@
               <li><a href="{{url_for('contact')}}">Contact</a></li>
               <li><a href="{{url_for('login')}}">Login</a></li>
             </ul>
-            <ul class="side-nav" id="mobile-demo">
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons menu">menu</i></a>
+          </div>
+          
+        </nav>
+      </div>
+            <ul id="slide-out" class="sidenav">
               <li><a href="{{url_for('homepage')}}">Home</a></li>
               <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
               <li><a href="{{url_for('about')}}">About me</a></li>
               <li><a href="{{url_for('contact')}}">Contact</a></li>
               <li><a href="{{url_for('login')}}">Login</a></li>
             </ul>
-          </div>
-        </nav>
-      </div>
+
+
     </header>
     
     
       {% block content %} {% endblock %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
+        $('.sidenav').sidenav();  
         $(".collapsible").collapsible();
-        $(".button-collapse").sideNav();
-        $('.slider').slider();
         $('.parallax').parallax();
-        $('select').material_select();
+        $('select').formSelect();
+        $('.slider').slider();
       });
     </script>
     
