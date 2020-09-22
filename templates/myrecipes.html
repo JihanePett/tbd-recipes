@@ -39,10 +39,10 @@
           <div class="input-field col s4">
             <i class="material-icons prefix">poll</i>
             <select id="type" name="type_select">
-              <option value="" disabled>Select a type</option>
+              <option value="" disabled selected>Select a type</option>
               {% for type in types %} {% if type.type_select ==
               recipe.type_select %}
-              <option value="{{type.type_select}}"
+              <option value="{{type.type_select}}" selected
                 >{{type.type_select}}</option
               >
               {% else %}
@@ -50,7 +50,7 @@
               {% endif %} {% endfor %}
             </select>
           </div>
-          </div>
+                  </div>
     </div>
     <!--Recipe cards-->
     <div class="row cards">

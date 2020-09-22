@@ -18,23 +18,29 @@
             <!--Search Box-->
             <div class="container search-form">
               <div class="row input-field search-div">
-                <form class="search-form-form" action="/my_recipes">
+                <form class="search-form-form" action="/search_recipes">
                   <div class="row">
                     <div class="form-field-div col s6 m4">
                       <input
                         type="text"
                         name="recipe_name"
                         value=""
-                        placeholder="Search by ingredients or recipe name"
+                        placeholder="Search by ingredients"
                       />
                     </div>
                     <div class="form-field-div col s4">
                       <select name="category_name">
-                    <option class="disable" value="Choose your option" disabled selected >Choose your option</option>
-                    {% for cat in categories %}
-                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                    {% endfor %}
-                  </select>
+                        <option
+                          class="disable"
+                          value="Choose a category"
+                          disabled
+                          selected
+                          >Choose a category</option
+                        >
+                        {% for cat in categories %}
+                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                  {% endfor %}
+                      </select>
                     </div>
                   </div>
                     <div class="row">
