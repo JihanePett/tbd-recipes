@@ -14,6 +14,8 @@ ul:not(.browser-default) {
   padding-right: 5px;
 }
 
+/* Homepage*/
+
 /* Main title */
 .display-4{
     color: pink;
@@ -22,6 +24,7 @@ ul:not(.browser-default) {
     margin-bottom: 10px;
     text-align: center;
 }
+
 
 /* recipe cards */
 .row.cards {
