@@ -63,6 +63,7 @@
               <span class="card-title"
                 ><h3>{{recipe.recipe_name}}</h3>
                 <h4>{{recipe.category_name}}</h4>
+                <a href="{{recipe.pdf}}" target="_blank" class="btn-floating btn-large waves-effect waves-light red"> <i class="material-icons"></i></a>
               </span>
             </div>
             <!--Collapsible-->
@@ -74,7 +75,6 @@
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_description}}</span>
-                  <a href="{{url_for('my_recipes', recipe_id=recipe._id)}}" class="btn-floating btn-large waves-effect waves-light red"> <img src="{{recipe.pdf}}"> <i class="material-icons">Download me</i></a>
                 </div>
               </li>
               <li>
@@ -101,6 +101,6 @@
     </div>
 
     {% endblock %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
   </body>
 </html>
