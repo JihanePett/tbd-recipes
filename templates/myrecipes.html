@@ -34,20 +34,23 @@
         </p>
       </div>
 
-      <div class="row">
-        <div class="input-field col s4 offset-m4">
-          <i class="material-icons prefix">poll</i>
-          <select id="type" name="type_select">
-            <option>Choose between Thermomix or non-Thermomix Recipe</option
-            >
-            {% for type in types %}
-            <option value="{{type.type_select}}" selected
-              >{{type.type_select}}</option
-            >
-            {% endfor %}
-          </select>
-        </div>
-      </div>
+        <!--Type input-->
+        <div class="row">
+          <div class="input-field col s4">
+            <i class="material-icons prefix">poll</i>
+            <select id="type" name="type_select">
+              <option value="" disabled>Select a type</option>
+              {% for type in types %} {% if type.type_select ==
+              recipe.type_select %}
+              <option value="{{type.type_select}}"
+                >{{type.type_select}}</option
+              >
+              {% else %}
+              <option value="{{type.type_select}}">{{type.type_select}}</option>
+              {% endif %} {% endfor %}
+            </select>
+          </div>
+          </div>
     </div>
     <!--Recipe cards-->
     <div class="row cards">
