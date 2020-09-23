@@ -14,6 +14,16 @@ ul:not(.browser-default) {
   padding-right: 5px;
 }
 
+/* Material icons */
+
+a.i.material-icons .menu {
+    color: #fafafa;
+}
+
+i.material-icons {
+  color: pink;
+}
+
 /* Homepage*/
 
 /* Main title */
@@ -77,19 +87,6 @@ input.btn.btn-default {
   margin-bottom: 10px;
 }
 
-
-/* Material icons */
-
-a.i.material-icons .menu {
-    color: #fafafa;
-}
-
-i.material-icons {
-  color: pink;
-}
-
-
-
 /* Editrecipe */
 .row.editrecipe {
   margin-right: 150px;
@@ -114,3 +111,7 @@ li.flashes-msg {
     display: inline-block;
 }
 
+/* Login */
+.card-panel.login {
+    margin-top: 50px;
+}
