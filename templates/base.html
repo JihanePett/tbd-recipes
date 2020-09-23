@@ -12,6 +12,11 @@
       href="{{url_for('static', filename='css/style.css')}}"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='js/script.js')}}"
+      type="text/javascript"
+    />
     <title>Recipes</title>
   </head>
 
@@ -54,15 +59,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('.sidenav').sidenav();  
-        $(".collapsible").collapsible();
-        $('.parallax').parallax();
-        $('select').formSelect();
-        $('.slider').slider();
-      });
-    </script>
     
   </body>
 </html>
