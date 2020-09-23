@@ -49,6 +49,14 @@ def search_recipes():
                                                          {"$search": query}}))
 
 
+@app.route('/search_type', methods=["GET", "POST"])
+def search_type():
+    queries = request.form.get("queries")
+    return render_template('myrecipes.html',
+                           types=mongo.db.types.find({"$text":
+                                                     {"$search": queries}}))
+
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',

@@ -34,23 +34,33 @@
         </p>
       </div>
 
-        <!--Type input-->
-        <div class="row">
-          <div class="input-field col s4">
-            <i class="material-icons prefix">poll</i>
-            <select id="type" name="type_select">
-              <option value="" disabled selected>Select a type</option>
-              {% for type in types %} {% if type.type_select ==
-              recipe.type_select %}
-              <option value="{{type.type_select}}" selected
-                >{{type.type_select}}</option
+        <!--Search select-->
+                    <div class="row">
+              <form
+                action="{{url_for('search_type')}}"
+                method="POST"
+                class="col s12"
               >
-              {% else %}
-              <option value="{{type.type_select}}">{{type.type_select}}</option>
-              {% endif %} {% endfor %}
-            </select>
-          </div>
+                <div class="row valign-wrapper center-align">
+                  <div class="input-field col s6 m8">
+                    <input
+                      type="text"
+                      name="queries"
+                      id="queries"
+                      minlength="6"
+                      class="validate"
+                      required
+                    />
+                    <label for="queries">Select Thermomix or Non-Thermomix recipes</label>
                   </div>
+                  <div class="input-field col s6 m4">
+                    <button type="submit" class="waves-effect waves-light large btn">
+                      <i class="large material-icons">search</i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
     </div>
     <!--Recipe cards-->
     <div class="row cards">
@@ -65,6 +75,7 @@
               <span class="card-title"
                 ><h3>{{recipe.recipe_name}}</h3>
                 <h4>{{recipe.category_name}}</h4>
+                <h6>{{recipe.type_select}}</h6>
                 <a href="{{recipe.pdf}}" target="_blank" class="btn-floating btn-large waves-effect waves-light red"> <i class="material-icons"></i></a>
               </span>
             </div>
