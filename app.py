@@ -3,6 +3,7 @@ from flask import Flask, render_template, url_for, redirect, request, flash, ses
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import cloudinary as Cloud
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
