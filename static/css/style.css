@@ -115,3 +115,9 @@ li.flashes-msg {
 .card-panel.login {
     margin-top: 50px;
 }
+
+/* Logout */
+.input-field.col.s2.logout-btn {
+    float: right;
+    margin-top: 20px;
+}

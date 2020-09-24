@@ -12,41 +12,8 @@
           <img
             src="https://previews.123rf.com/images/monticello/monticello1906/monticello190600276/124959668-fresh-vegetables-and-cooking-pot-on-kitchen-table-.jpg"
           />
-          <div class="caption right-align">
+          <div class="caption left-align">
             <h3 class="all-h3">Welcome to my Kitchen</h3>
-
-            <!--Search Box-->
-            <div class="row">
-              <form
-                action="{{url_for('search_recipes')}}"
-                method="POST"
-                class="col s12"
-              >
-                <div class="row valign-wrapper center-align">
-                  <div class="input-field col s12 m8">
-                    <input
-                      type="text"
-                      name="query"
-                      id="query"
-                      minlength="3"
-                      class="validate"
-                      required
-                    />
-                    <label for="query">Search recipes</label>
-                  </div>
-                  <div class="input-field col s12 m4">
-                    <a
-                      href="{{url_for('homepage')}}"
-                      class="waves-effect waves-light btn"
-                      >reset</a
-                    >
-                    <button type="submit" class="waves-effect waves-light btn">
-                      <i class="large material-icons">search</i>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
           </div>
         </li>
       </ul>
