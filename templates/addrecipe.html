@@ -11,7 +11,7 @@
       <form action="{{url_for('insert_recipe')}}" method="POST" class="col s8 offset-m2">
         <div class="row">
           <div class="input-field col s4">
-            <i class="material-icons prefix">poll</i>
+            <i class="material-icons prefix">filter_list</i>
             <select id="type" name="type_select">
             <option value="" disabled selected>Select a type</option>
             {% for type in types %}
@@ -34,7 +34,7 @@
 
           <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
-            <input id="recipe_name" name="recipe_name" type="text" />
+            <input id="recipe_name" name="recipe_name" type="text" required/>
             <label for="icon_prefix">Recipe Name</label>
           </div>
  
@@ -45,6 +45,7 @@
               id="recipe_desciption"
               name="recipe_description"
               type="text"
+              required
             />
             <label for="icon_prefix">Recipe Description</label>
           </div>
@@ -52,19 +53,20 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <i class="material-icons prefix">today</i>
-            <input id="recipe_method" name="recipe_method" type="text" />
+            <i class="material-icons prefix">restaurant_menu</i>
+            <input id="recipe_method" name="recipe_method" type="text" required/>
             <label for="icon_prefix">Recipe Method</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field col s12">
-            <i class="material-icons prefix">assignment</i>
+            <i class="material-icons prefix">format_list_bulleted</i>
             <input
               id="recipe_ingredients"
               name="recipe_ingredients"
               type="text"
+              required
             />
             <label for="icon_prefix">Recipe Ingredients</label>
           </div>
@@ -72,11 +74,12 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <i class="material-icons prefix">assignment</i>
+            <i class="material-icons prefix">people</i>
             <input
               id="number_people"
               name="number_people"
               type="text"
+              required
             />
             <label for="icon_prefix">Number of people</label>
           </div>
@@ -84,11 +87,12 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <i class="material-icons prefix">assignment</i>
+            <i class="material-icons prefix">access_time</i>
             <input
               id="preparation_time"
               name="preparation_time"
               type="text"
+              required
             />
             <label for="icon_prefix">Preparation Time</label>
           </div>
@@ -97,14 +101,14 @@
         <!--Add image url-->
         <div class="input-field col s12">
           <i class="material-icons prefix">local_see</i>
-          <input id="image_url" name="image_url" type="text" class="validate">
+          <input id="image_url" name="image_url" type="text" class="validate" required>
           <label for="icon_prefix"> Enter the image url </label>
         </div>      
 
         <!--Add pdf-->
         <div class="input-field col s12">
-          <i class="material-icons prefix">local_see</i>
-          <input id="pdf" name="pdf" type="text" class="validate">
+          <i class="material-icons prefix">attach_file</i>
+          <input id="pdf" name="pdf" type="text" class="validate" required>
           <label for="icon_prefix"> Enter the pdf url </label>
         </div>  
         

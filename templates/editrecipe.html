@@ -34,9 +34,9 @@
             </select>
           </div>
           
-        <!--Category input-->          
+        <!--Category select-->          
           <div class="input-field col s4">
-            <i class="material-icons prefix">poll</i>
+            <i class="material-icons prefix">filter_list</i>
             <select id="category" name="category_name">
               <option value="" disabled selected>Choose a Category</option>
               {% for cat in categories %} {% if cat.category_name ==
@@ -84,7 +84,7 @@
 
         <div class="row">
           <div class="input-field col s6">
-            <i class="material-icons prefix">today</i>
+            <i class="material-icons prefix">restaurant_menu</i>
             <input
               id="recipe_method"
               name="recipe_method"
@@ -98,7 +98,7 @@
 
         <div class="row">
           <div class="input-field col s6">
-            <i class="material-icons prefix">assignment</i>
+            <i class="material-icons prefix">format_list_bulleted</i>
             <input
               id="recipe_ingredients"
               name="recipe_ingredients"
@@ -112,7 +112,7 @@
 
         <div class="row">
           <div class="input-field col s6">
-            <i class="material-icons prefix">assignment</i>
+            <i class="material-icons prefix">people</i>
             <input
               id="number_people"
               name="number_people"
@@ -126,7 +126,7 @@
 
         <div class="row">
           <div class="input-field col s2">
-            <i class="material-icons prefix">assignment</i>
+            <i class="material-icons prefix">access_time</i>
             <input
               id="preparation_time"
               name="preparation_time"
@@ -142,14 +142,14 @@
         <div class="input-field col s12">
           <i class="material-icons prefix">local_see</i>
           <input id="image_url" name="image_url" type="text" class="validate">
-          <label for="icon_prefix"> Enter the image url </label>
+          <label for="icon_prefix"> paste the image url </label>
         </div>   
 
         <!--Add pdf-->
         <div class="input-field col s12">
-          <i class="material-icons prefix">local_see</i>
+          <i class="material-icons prefix">attach_file</i>
           <input id="pdf" name="pdf" type="text" class="validate">
-          <label for="icon_prefix"> Enter the pdf url </label>
+          <label for="icon_prefix"> Paste the pdf url </label>
         </div>  
 
         <!--Update button-->

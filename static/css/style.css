@@ -36,7 +36,7 @@ h3.caption1 {
 
 /* My recipes */
 form.col.s8.search-box {
-    margin-left: 20px;
+    margin-left: 200px;
 }
 
 a.btn-floating.btn-small.waves-effect.waves-light.pink {
@@ -72,6 +72,11 @@ a.btn-floating.btn-small.waves-effect.waves-light.pink {
 
 a.back-btn {
     background-color: lightblue;
+}
+
+/* Add category */
+.col.m6.offset-m2.addcat-btn {
+    margin-top: 10px;
 }
 
 /* contact form */
