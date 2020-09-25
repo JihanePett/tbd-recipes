@@ -25,6 +25,14 @@ i.material-icons {
 }
 
 /* Homepage*/
+.slider .indicators .indicator-item {
+    color: pink;
+}
+
+h3.caption1 {
+    margin-top: 160px;
+    margin-right: 110px;
+}
 
 /* Main title */
 .display-4{
