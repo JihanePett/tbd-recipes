@@ -39,6 +39,10 @@ form.col.s8.search-box {
     margin-left: 20px;
 }
 
+a.btn-floating.btn-small.waves-effect.waves-light.pink {
+    float: right;
+}
+
 
 /* recipe cards */
 .row.cards {

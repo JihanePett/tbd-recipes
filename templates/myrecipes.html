@@ -26,8 +26,9 @@
           Browse through the large range of recipe I have came up with over time
         </p>
         <p class="grey-text text-darken-3 lighten-3 center-align">
-          If you already have the it, you can search by inputing thermomix in
-          your search
+          If you already have it, you can search by including thermomix in
+          your search. 
+          Looking over all the recipes will give you ideas of what to cook 
         </p>
       </div>
     </div>
@@ -37,7 +38,7 @@
       <form
         action="{{url_for('search_recipes')}}"
         method="POST"
-        class="col s12 search-box"
+        class="col s8 search-box"
       >
         <div class="row valign-wrapper center-align">
           <div class="input-field col s4 m8">
@@ -70,7 +71,7 @@
     <!--Recipe cards-->
     <div class="row cards">
       {% for recipe in recipes %}
-      <div class="col m6">
+      <div class="col m4">
         <div class="card">
           <div class="card-content">
             <div class="card-image">
@@ -81,15 +82,9 @@
                 ><h3>{{recipe.recipe_name}}</h3>
                 <h4>{{recipe.category_name}}</h4>
                 <h6>{{recipe.type_select}}</h6>
-                <a
-                  href="{{recipe.pdf}}"
-                  target="_blank"
-                  class="btn-floating btn-large waves-effect waves-light red"
-                >
-                  <i class="material-icons"></i
-                ></a>
               </span>
             </div>
+
             <!--Collapsible-->
             <ul class="collapsible">
               <li class="active">
@@ -99,6 +94,14 @@
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_description}}</span>
+            <!--Download button-->
+                  <a
+                    href="{{recipe.pdf}}"
+                    target="_blank"
+                    class="btn-floating btn-small waves-effect waves-light pink"
+                  >
+                    <i class="material-icons">cloud_download</i
+                  ></a>
                 </div>
               </li>
               <li>
