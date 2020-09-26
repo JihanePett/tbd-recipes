@@ -94,9 +94,9 @@
 
         <!--Number of people-->
         <div class="row">
-          <div class="input-field col s4" required >
+          <div class="input-field col s4" >
             <i class="material-icons prefix">people</i>
-            <select id="number_people" name="number_people">
+            <select id="number" name="number_people">
               <option value="" disabled selected>Choose an option</option>
               {% for peop in people %}
               <option value="{{peop.number_people}}"
@@ -104,21 +104,19 @@
               >
               {% endfor %}
             </select>
-            <label>Number of people</label>
           </div>
         </div>
 
         <!--Prep time-->
         <div class="row">
-          <div class="input-field col s4" required>
+          <div class="input-field col s4">
             <i class="material-icons prefix">access_time</i>  
-            <select id="preparation_time" name="preparation_time">
+            <select id="preptime" name="preparation_time">
               <option value="" disabled selected>Select a time</option>
               {% for preptime in preptimes %}
               <option value="{{preptime.preparation_time}}">{{preptime.preparation_time}}</option>
               {% endfor %}
-            </select>                
-            <label for="icon_prefix">Preparation Time</label>
+            </select>
           </div>
           </div> 
 
