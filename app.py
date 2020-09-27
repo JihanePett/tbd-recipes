@@ -61,7 +61,9 @@ def search_type():
 def add_recipe():
     return render_template('addrecipe.html',
                            categories=mongo.db.categories.find(),
-                           types=mongo.db.types.find())
+                           types=mongo.db.types.find(),
+                           people=mongo.db.people.find(),
+                           preptimes=mongo.db.preptimes.find())
 
 
 @app.route('/insert_recipe', methods=['POST'])
@@ -76,9 +78,12 @@ def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
     all_types = mongo.db.types.find()
+    all_people = mongo.db.people.find()
+    all_preptimes = mongo.db.preptimes.find()
     return render_template('editrecipe.html',
                            recipe=the_recipe, categories=all_categories,
-                           types=all_types)
+                           types=all_types, people=all_people,
+                           preptimes=all_preptimes)
 
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST", "GET"])
@@ -99,7 +104,8 @@ def update_recipe(recipe_id):
                              request.form.get('preparation_time'),
                              'number_people':
                              request.form.get('number_people'),
-                             'image_url': request.form.get('image_url')})
+                             'image_url': request.form.get('image_url'),
+                             'pdf': request.form.get('pdf')})
     return redirect(url_for('get_recipes'))
 
 

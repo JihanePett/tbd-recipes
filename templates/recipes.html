@@ -46,19 +46,21 @@
           >New recipe</a
         >
       </div>
-    </div>                
-				</p>
-			</div>
-		</div>    
+    </div></p></div></div> 
+
+    <!--Recipes cards-->
     <div class="row">
       {% for recipe in recipes %}
       <div class="col m4 s2">
-    <!--Recipes cards-->
         <div class="card">
           <div class="card-content">
             <div class="card-image">
               <a href="{{url_for('my_recipes', recipe_id=recipe._id)}}"><img class="card-image-img" src="{{recipe.image_url}}"></a>
-              <span class="card-title"><h3>{{recipe.recipe_name}}</h3> </span>
+              <span class="card-title">
+              <h3>{{recipe.recipe_name}}</h3>
+              <h4>{{recipe.category_name}}</h4>
+              <h6>{{recipe.type_select}}</h6>
+              </span>
             </div>
 
     <!--Collapsible-->            
@@ -72,17 +74,28 @@
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_description}}</span>
+                <!--Download button-->
+                  <a
+                    href="{{recipe.pdf}}"
+                    target="_blank"
+                    class="btn-floating btn-small waves-effect waves-light pink"
+                  >
+                    <i class="material-icons">cloud_download</i
+                  ></a>
                 </div>
               </li>
+                <!--Description-->              
               <li>
                 <div class="collapsible-header">
                   <i class="material-icons">description</i>Method
                 </div>
+                <!--Method-->                
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_method}}</span>
                 </div>
               </li>
               <li>
+                <!--Ingredients-->              
                 <div class="collapsible-header">
                   <i class="material-icons">format_list_bulleted</i>Ingredients
                 </div>
