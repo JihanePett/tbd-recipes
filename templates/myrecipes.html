@@ -26,14 +26,16 @@
           Browse through the large range of recipe I have came up with over time
         </p>
         <p class="grey-text text-darken-3 lighten-3 center-align">
-          If you already have it, you can search by including thermomix in
-          your search. 
-          Looking over all the recipes will give you ideas of what to cook 
+          If you already have it, you can search by including thermomix in your
+          search. Looking over all the recipes will give you ideas of what to
+          cook
         </p>
       </div>
     </div>
 
-    <!--Search Box-->
+   <!--Search Type Box-->
+
+    <!--Search recipe Box-->
     <div class="row">
       <form
         action="{{url_for('search_recipes')}}"
@@ -52,17 +54,19 @@
             />
             <label for="query">Search recipes</label>
           </div>
-          <div class="col s2 m4">
-            <a type="submit" class="waves-effect waves-light btn">
-              Search
-            </a>
-          </div>
-          <div class="input-field col s2 m4">
-            <a
-              href="{{url_for('my_recipes')}}"
-              class="waves-effect waves-light btn"
-              >reset</a
-            >
+          <div class="col s12 m4">
+            <div class="col s6 m4">
+              <a
+                href="{{ url_for('my_recipes') }}"
+                class="waves-effect waves-light btn"
+                >Go back</a
+              >
+            </div>
+            <div class="col s6 m4">
+              <button type="submit" class="waves-effect waves-light btn">
+                <i class="fas fa-search left"></i> Search
+              </button>
+            </div>
           </div>
         </div>
       </form>
@@ -94,14 +98,14 @@
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_description}}</span>
-            <!--Download button-->
+                  <!--Download button-->
                   <a
                     href="{{recipe.pdf}}"
                     target="_blank"
                     class="btn-floating btn-small waves-effect waves-light pink"
                   >
-                    <i class="material-icons">cloud_download</i
-                  ></a>
+                    <i class="material-icons">cloud_download</i></a
+                  >
                 </div>
               </li>
               <li>
