@@ -40,8 +40,8 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="{{url_for('homepage')}}">Home</a></li>
               <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
-              <li><a href="{{url_for('about')}}">About me</a></li>
-              <li><a href="{{url_for('contact')}}">Contact</a></li>
+              <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
+              <li><a href="{{url_for('about')}}">About me</a></li> 
               <li>
                 <a class="dropdown-trigger" href="#!" data-target="login_out"
                   >Login/Logout<i class="material-icons right"
@@ -62,8 +62,8 @@
       <ul id="slide-out" class="sidenav">
         <li><a href="{{url_for('homepage')}}">Home</a></li>
         <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
+        <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>        
         <li><a href="{{url_for('about')}}">About me</a></li>
-        <li><a href="{{url_for('contact')}}">Contact</a></li>
         <li>
           <a class="dropdown-trigger" href="#!" data-target="loginnout"
             >Login/Logout<i class="material-icons right">arrow_drop_down</i></a
@@ -99,12 +99,9 @@
         $("select").formSelect();
         $(".slider").slider();
         $(".dropdown-trigger").dropdown();
+        $('.carousel').carousel();
       });
 
-      var dropdowns = document.querySelectorAll('.dropdown-trigger')
-for (var i = 0; i < dropdowns.length; i++){
-    M.Dropdown.init(dropdowns[i]);
-}
     </script>
 
   </body>

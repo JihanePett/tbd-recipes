@@ -110,10 +110,13 @@ input.btn.btn-default {
   padding-right: 20px;
 }
 
-/* Contact */
+/* About */
+.lighten-3 {
+    background-color: #ead15542;
+}
+
 .col.s6.contact-form {
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 40px;
 }
 
 li.flashes-msg {

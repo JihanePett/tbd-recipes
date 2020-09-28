@@ -231,6 +231,11 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/thermomix')
+def thermomix():
+    return render_template('thermomix.html')
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
             port=(int(os.environ.get('PORT'))),
