@@ -175,7 +175,7 @@ def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("myrecipes"))
+    return redirect(url_for("my_recipes"))
 
 
 @app.route('/get_categories')

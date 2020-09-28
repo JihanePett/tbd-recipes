@@ -24,13 +24,18 @@
       <!-- Navigation -->
       <div class="navbar-fixed">
         <!-- Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
+        <ul id="login_out" class="dropdown-content">
+          <li><a href="{{url_for('login')}}">Login</a></li>
           <li><a href="{{url_for('logout')}}">Logout</a></li>
         </ul>
+        
         <nav>
           <div class="nav-wrapper">
             <a href="{{url_for('homepage')}}" class="brand-logo"
               >TasteBudsDream</a
+            >
+            <a href="#" data-target="slide-out" class="sidenav-trigger"
+              ><i class="material-icons menu">menu</i></a
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="{{url_for('homepage')}}">Home</a></li>
@@ -38,46 +43,41 @@
               <li><a href="{{url_for('about')}}">About me</a></li>
               <li><a href="{{url_for('contact')}}">Contact</a></li>
               <li>
-                <a
-                  class="dropdown-trigger"
-                  href="{{url_for('login')}}"
-                  data-target="dropdown1"
+                <a class="dropdown-trigger" href="#!" data-target="login_out"
                   >Login/Logout<i class="material-icons right"
                     >arrow_drop_down</i
                   ></a
                 >
               </li>
             </ul>
-            <a href="#" data-target="slide-out" class="sidenav-trigger"
-              ><i class="material-icons menu">menu</i></a
-            >
           </div>
         </nav>
       </div>
 
       <!-- Navigation on mobile view -->
+        <ul id="loginnout" class="dropdown-content">
+          <li><a href="{{url_for('login')}}">Login</a></li>
+          <li><a href="{{url_for('logout')}}">Logout</a></li>
+        </ul>      
       <ul id="slide-out" class="sidenav">
         <li><a href="{{url_for('homepage')}}">Home</a></li>
         <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
         <li><a href="{{url_for('about')}}">About me</a></li>
         <li><a href="{{url_for('contact')}}">Contact</a></li>
         <li>
-          <a
-            class="dropdown-trigger"
-            href="{{url_for('login')}}"
-            data-target="dropdown1"
+          <a class="dropdown-trigger" href="#!" data-target="loginnout"
             >Login/Logout<i class="material-icons right">arrow_drop_down</i></a
           >
         </li>
       </ul>
     </header>
 
-    <!-- flash messages for registering -->
+    <!-- flash messages for login out -->
     <section>
       {% with messages = get_flashed_messages() %} {% if messages %} {% for
       message in messages %}
       <div class="row flashes">
-        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+        <h3  class="all-h3">{{ message }}</h3>
       </div>
       {% endfor %} {% endif %} {% endwith %}
     </section>
@@ -86,9 +86,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
 
     <!-- Javascript for materialize -->
     <script type="text/javascript">
@@ -100,6 +100,12 @@
         $(".slider").slider();
         $(".dropdown-trigger").dropdown();
       });
+
+      var dropdowns = document.querySelectorAll('.dropdown-trigger')
+for (var i = 0; i < dropdowns.length; i++){
+    M.Dropdown.init(dropdowns[i]);
+}
     </script>
+
   </body>
 </html>
