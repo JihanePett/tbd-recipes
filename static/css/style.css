@@ -43,6 +43,10 @@ a.btn-floating.btn-small.waves-effect.waves-light.pink {
     float: right;
 }
 
+a.waves-effect.waves-light.btn.reset-btn {
+    background-color: lightblue;
+    margin-left: 10px;
+}
 
 /* recipe cards */
 .row.cards {
@@ -113,8 +117,6 @@ input.btn.btn-default {
 }
 
 li.flashes-msg {
-    color: pink;
-    /* font-size: 20px; */
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -127,10 +129,4 @@ li.flashes-msg {
 /* Login */
 .card-panel.login {
     margin-top: 50px;
-}
-
-/* Logout */
-.input-field.col.s2.logout-btn {
-    float: right;
-    margin-top: 20px;
 }
