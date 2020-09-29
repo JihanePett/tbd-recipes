@@ -1,0 +1,21 @@
+.placeholders {
+  padding-bottom: 3rem;
+}
+
+.placeholder img {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+tr .sender {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+tr .sender span {
+  color: #676767;
+}
+
+.response {
+  display: none;
+}

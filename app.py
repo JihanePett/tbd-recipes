@@ -1,5 +1,8 @@
 import os
-from flask import Flask, render_template, url_for, redirect, request, flash, session
+from flask import Flask, render_template, url_for, redirect, request, flash, session, jsonify, make_response, json
+from flask_cors import CORS
+from pusher import pusher
+import simplejson
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import cloudinary as Cloud
@@ -13,20 +16,49 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = "myTestDB"
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config['CORS_HEADERS'] = 'Content-Type'
 app.secret_key = os.environ.get("SECRET_KEY")
 Cloud.config.update = ({
     'cloud_name': os.environ.get('CLOUDINARY_CLOUD_NAME'),
     'api_key': os.environ.get('CLOUDINARY_API_KEY'),
     'api_secret': os.environ.get('CLOUDINARY_API_SECRET')
 })
+pusher.Pusher = ({
+    'app_id': os.environ.get('APP_ID'),
+    'key': os.environ.get('KEY'),
+    'secret': os.environ.get('SECRET'),
+    'cluster': os.environ.get('CLUSTER')})
 
 mongo = PyMongo(app)
+cors = CORS(app)
 
 
 @app.route('/')
 @app.route('/homepage')
 def homepage():
     return render_template('homepage.html')
+
+
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+
+
+@app.route('/new/guest', methods=['POST'])
+def guestUser():
+    data = request.json
+    pusher.trigger(u'general-channel', u'new-guest-details', {
+            'name': data['name'],
+            'email': data['email']
+        })
+    return json.dumps(data)
+
+
+@app.route("/pusher/auth", methods=['POST'])
+def pusher_authentication():
+    auth = pusher.authenticate(channel=request.form['channel_name'],
+                               socket_id=request.form['socket_id'])
+    return json.dumps(auth)
 
 
 @app.route('/get_recipes')
