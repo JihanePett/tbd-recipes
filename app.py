@@ -23,20 +23,27 @@ Cloud.config.update = ({
     'api_key': os.environ.get('CLOUDINARY_API_KEY'),
     'api_secret': os.environ.get('CLOUDINARY_API_SECRET')
 })
-pusher.Pusher = ({
-    'app_id': os.environ.get('APP_ID'),
-    'key': os.environ.get('KEY'),
-    'secret': os.environ.get('SECRET'),
-    'cluster': os.environ.get('CLUSTER')})
+pusher = pusher.Pusher(
+    app_id='1073314',
+    key='364cf11175365baa44b2',
+    secret='97e6db0447a9e6fe6832',
+    cluster='eu',
+    ssl=True)
 
 mongo = PyMongo(app)
 cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/')
 @app.route('/homepage')
 def homepage():
     return render_template('homepage.html')
+
+
+@app.route('/livechat')
+def livechat():
+    return render_template('livechat.html')
 
 
 @app.route('/admin')
@@ -247,15 +254,6 @@ def insert_category():
 @app.route('/add_category')
 def add_category():
     return render_template('addcategory.html')
-
-
-@app.route('/contact', methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        flash("Thanks {}, we have received your message".format(
-            request.form["name"]
-        ))
-    return render_template("contact.html", page_title="Contact")
 
 
 @app.route('/about')

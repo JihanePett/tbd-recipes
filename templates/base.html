@@ -15,7 +15,6 @@
       href="{{url_for('static', filename='css/style.css')}}"
       type="text/css"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
 
     <title>Recipes</title>
   </head>
@@ -28,8 +27,9 @@
         <ul id="login_out" class="dropdown-content">
           <li><a href="{{url_for('login')}}">Login</a></li>
           <li><a href="{{url_for('logout')}}">Logout</a></li>
+          <li><a href="{{url_for('admin')}}">Admin Chat</a></li>
         </ul>
-        
+
         <nav>
           <div class="nav-wrapper">
             <a href="{{url_for('homepage')}}" class="brand-logo"
@@ -42,7 +42,8 @@
               <li><a href="{{url_for('homepage')}}">Home</a></li>
               <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
               <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
-              <li><a href="{{url_for('about')}}">About me</a></li> 
+              <li><a href="{{url_for('about')}}">About me</a></li>
+              <li><a href="{{url_for('livechat')}}">Live Chat</a></li>
               <li>
                 <a class="dropdown-trigger" href="#!" data-target="login_out"
                   >Login/Logout<i class="material-icons right"
@@ -56,15 +57,17 @@
       </div>
 
       <!-- Navigation on mobile view -->
-        <ul id="loginnout" class="dropdown-content">
-          <li><a href="{{url_for('login')}}">Login</a></li>
-          <li><a href="{{url_for('logout')}}">Logout</a></li>
-        </ul>      
+      <ul id="loginnout" class="dropdown-content">
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        <li><a href="{{url_for('logout')}}">Logout</a></li>
+        <li><a href="{{url_for('admin')}}">Admin Chat</a></li>        
+      </ul>
       <ul id="slide-out" class="sidenav">
         <li><a href="{{url_for('homepage')}}">Home</a></li>
         <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
-        <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>        
+        <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
         <li><a href="{{url_for('about')}}">About me</a></li>
+        <li><a href="{{url_for('livechat')}}">Live Chat</a></li>
         <li>
           <a class="dropdown-trigger" href="#!" data-target="loginnout"
             >Login/Logout<i class="material-icons right">arrow_drop_down</i></a
@@ -78,58 +81,21 @@
       {% with messages = get_flashed_messages() %} {% if messages %} {% for
       message in messages %}
       <div class="row flashes">
-        <h3  class="all-h3">{{ message }}</h3>
+        <h3 class="all-h3">{{ message }}</h3>
       </div>
       {% endfor %} {% endif %} {% endwith %}
     </section>
 
     {% block content %} {% endblock %}
- <footer>
- </footer>
- 	<div class="chatbubble">
-		<div class="unexpanded">
-			<div class="title">Chat with Me</div>
-		</div>
-		<div class="expanded chat-window">
-			<div class="login-screen container">
-				<form id="loginScreenForm">
-					<div class="form-group">
-						<input type="text" class="form-control" id="fullname" placeholder="Name*" required>
-                  </div>
-						<div class="form-group">
-							<input type="email" class="form-control" id="email" placeholder="Email Address*" required>
-                  </div>
-							<button type="submit" class="btn btn-block btn-primary">Start Chat</button>
-				</form>
-			</div>
-			<div class="chats">
-				<div class="loader-wrapper">
-					<div class="loader">
-						<span>{</span><span>}</span>
-					</div>
-				</div>
-				<ul class="messages clearfix">
-				</ul>
-				<div class="input">
-					<form class="form-inline" id="messageSupport">
-						<div class="form-group">
-							<input type="text" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
-                    </div>
-							<button type="submit" class="btn btn-primary">Send</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>   
+    <footer></footer>
 
-<script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+    <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
-	<script src="{{ url_for('static', filename='js/app.js') }}"></script>   
 
     <!-- Javascript for materialize -->
     <script type="text/javascript">
@@ -140,10 +106,8 @@
         $("select").formSelect();
         $(".slider").slider();
         $(".dropdown-trigger").dropdown();
-        $('.carousel').carousel();
+        $(".carousel").carousel();
       });
-
     </script>
-
   </body>
 </html>

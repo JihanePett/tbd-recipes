@@ -17,7 +17,7 @@ ul:not(.browser-default) {
 /* Material icons */
 
 a.i.material-icons .menu {
-    color: #fafafa;
+  color: #fafafa;
 }
 
 i.material-icons {
@@ -26,26 +26,26 @@ i.material-icons {
 
 /* Homepage*/
 .slider .indicators .indicator-item {
-    color: pink;
+  color: pink;
 }
 
 h3.caption1 {
-    margin-top: 160px;
-    margin-right: 110px;
+  margin-top: 160px;
+  margin-right: 110px;
 }
 
 /* My recipes */
 form.col.s8.search-box {
-    margin-left: 200px;
+  margin-left: 200px;
 }
 
 a.btn-floating.btn-small.waves-effect.waves-light.pink {
-    float: right;
+  float: right;
 }
 
 a.waves-effect.waves-light.btn.reset-btn {
-    background-color: lightblue;
-    margin-left: 10px;
+  background-color: lightblue;
+  margin-left: 10px;
 }
 
 /* recipe cards */
@@ -54,11 +54,14 @@ a.waves-effect.waves-light.btn.reset-btn {
   margin-top: 50px;
 }
 
-.btn, .btn-large, input.btn.btn-default {
+.btn,
+.btn-large,
+input.btn.btn-default {
   display: inline-block;
 }
 
-#edit-button, #del-button {
+#edit-button,
+#del-button {
   background-color: pink;
   letter-spacing: 2px;
   margin-right: 20px;
@@ -70,17 +73,17 @@ a.waves-effect.waves-light.btn.reset-btn {
 }
 
 .row.back-btn {
-    margin-top: 50px;
-    float: right;
+  margin-top: 50px;
+  float: right;
 }
 
 a.back-btn {
-    background-color: lightblue;
+  background-color: lightblue;
 }
 
 /* Add category */
 .col.m6.offset-m2.addcat-btn {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 /* contact form */
@@ -97,7 +100,7 @@ input.btn.btn-default {
 }
 
 /* login page */
-.all-h3{
+.all-h3 {
   text-align: center;
   color: pink;
   margin-top: 50px;
@@ -112,24 +115,24 @@ input.btn.btn-default {
 
 /* About */
 .lighten-3 {
-    background-color: #ead15542;
+  background-color: #ead15542;
 }
 
 .col.s6.contact-form {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 li.flashes-msg {
-    font-weight: 700;
-    letter-spacing: 2px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 /* Parallax */
 .parallax-container .parallax img {
-    display: inline-block;
+  display: inline-block;
 }
 
 /* Login */
 .card-panel.login {
-    margin-top: 50px;
+  margin-top: 50px;
 }
