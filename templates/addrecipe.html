@@ -39,7 +39,7 @@
 			</div>
 
 			<!--name-->
-			<div class="input-field col s12">
+			<div class="input-field col m8 s4">
 				<i class="material-icons prefix">assignment</i>
 				<input id="recipe_name" name="recipe_name" type="text" required />
 				<label for="icon_prefix">Recipe Name</label>
@@ -47,7 +47,7 @@
 
 			<!--Description-->
 			<div class="row">
-				<div class="input-field col s12">
+				<div class="input-field col m10 s8">
 					<i class="material-icons prefix">subject</i>
 					<textarea
               class="materialize-textarea"
@@ -62,7 +62,7 @@
 
 			<!--Method-->
 			<div class="row">
-				<div class="input-field col s12">
+				<div class="input-field col m10 s8">
 					<i class="material-icons prefix">restaurant_menu</i>
 					<textarea
             class="materialize-textarea"
@@ -77,7 +77,7 @@
 
 			<!--Ingredients-->
 			<div class="row">
-				<div class="input-field col s12">
+				<div class="input-field col m10 s8">
 					<i class="material-icons prefix">format_list_bulleted</i>
 					<textarea
             class="materialize-textarea"
@@ -92,7 +92,7 @@
 
 			<!--Number of people-->
 			<div class="row">
-				<div class="input-field col m2 s2">
+				<div class="input-field col m4 s2">
 					<i class="material-icons prefix">people</i>
 					<select id="number_people" name="number_people">
               <option value="" disabled selected>Choose an option</option>
@@ -107,7 +107,7 @@
 
 			<!--Prep time-->
 			<div class="row">
-				<div class="input-field col m2 s2">
+				<div class="input-field col m4 s2">
 					<i class="material-icons prefix">access_time</i>
 					<select id="preptime" name="preparation_time">
               <option value="" disabled selected>Select a time</option>
@@ -140,6 +140,7 @@
 
 			<!--Add recipe button-->
 			<div class="row">
+            <div class="col m10 offset-4">
 				<button
             class="btn waves-effect waves-light btn-large"
             type="submit"
@@ -147,6 +148,7 @@
           >
             Add recipe
           </button>
+			</div>
 			</div>
 		</form>
 	</div>
