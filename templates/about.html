@@ -7,73 +7,74 @@
   <body>
     {% extends 'base.html' %} {% block content%}
 
-    <h3 class="all-h3">
-      Let me tell you my story...
+    <h3 class="header all-h3">
+      My story...
     </h3>
-    <div class="col s12 m8 offset-m2 l6 offset-l3">
-      <div class="card-panel blue lighten-3 z-depth-1">
-        <div class="row valign-wrapper">
-          <div class="col s2">
-            <img
-              src="{{url_for('static', filename='images/cathy.jpg')}}"
-              alt="cathy profile pix"
-              class="circle responsive-img"
-            />
-          </div>
-          <div class="col s10">
-            <span class="black-text">
-              My name is Catherine, traveling is one of my passion and it has
-              made me realize I am passionate about people. <br />
-              I travel and I continue to travel not only to discover unknown
-              places and amazing landscapes, to live experiences of a lifetime
-              but also and especially to get to know a culture, to talk with the
-              people and to discover their culture and their way of living.
-              <br />
-              This has always put me in a position to remember my smallness, to
-              respect people, whoever they are and wherever they come from.
-              <br />To a certain extent, it always pushes me to look myself in
-              the face, to re-evaluate and readjust myself with who I really am
-              because sometimes you get lost in the complexity of things and
-              events in life, don't you? There is no trip or country I didn’t
-              like; but most of the time, the relationship you get with people
-              of a country makes the difference. By their history and culture,
-              by their kindness, their character, their charisma... people and
-              food is the main reason why I would go back again to a country.
-              <br />
-              Of course, my choice goes first for countries where the human
-              contact was rich and these countries are part of the list of
-              countries where I have to go back because I remained with a taste
-              of not enough. I still have so much to learn from these human
-              contacts and exchanges. A lifetime will not be enough.
-              <br />Probably, everything around cooking and kitchen provides me
-              with similarities and differences with what I have already
-              experienced and already known. It seems that this is what brings
-              me back to my origins, getting to know myself and what allows me
-              to appreciate what I am. <br />I still have so much to learn from
-              these culinary exchanges. <br /><br />
-              "I've met many people in Europe. I've even met myself there."
-              James Baldwin “J’ai rencontré de nombreuses personnes en Europe.
-              J’y ai même rencontré moi même.”
-              <br />
-              With hindsight, I have noticed that with another culture, another
-              country, other people, gastronomy is my point of reference or
-              comparison.
-              <br />Through food, I can feel a sense of home and sense of
-              community. Driven by a culinary curiosity, an interest in new
-              tastes and original shapes my favourite go to place are the local
-              markets and places, where i can discover special spices, local
-              vegetables and fruits. <br />Whenever I have the opportunity, I
-              sneak in local kitchens to furtively check on and learn cooking
-              techniques. You understand, I love people, travels and food. Like
-              many of us! <br /><strong
-                >So I am happy to invite you to browse my pages, my recipes and
-                I wait for your feedbacks, feel free to ask questions and
-                exchange.</strong
-              >
-            </span>
-          </div>
-        </div>
-            <div class="row">
+
+    <div class="row">
+      <div class="col m2 s4">
+        <img
+          class="materialboxed"
+          data-caption="I love to travel and meet people from all over the world but above all I love cooking"
+          width="200"
+          src="{{url_for('static', filename='images/cathy.jpg')}}"
+          alt="cathy profile pix"
+        />
+      </div>
+      <div class="col m10 s8 left-align">
+        <span class="black-text">
+          My name is Catherine, traveling is one of my passion and it has made
+          me realize I am passionate about people. <br />
+          I travel and I continue to travel not only to discover unknown places
+          and amazing landscapes, to live experiences of a lifetime but also and
+          especially to get to know a culture, to talk with the people and to
+          discover their culture and their way of living.
+          <br />
+          This has always put me in a position to remember my smallness, to
+          respect people, whoever they are and wherever they come from.
+          <br />To a certain extent, it always pushes me to look myself in the
+          face, to re-evaluate and readjust myself with who I really am because
+          sometimes you get lost in the complexity of things and events in life,
+          don't you? There is no trip or country I didn’t like; but most of the
+          time, the relationship you get with people of a country makes the
+          difference. By their history and culture, by their kindness, their
+          character, their charisma... people and food is the main reason why I
+          would go back again to a country.
+          <br />
+          Of course, my choice goes first for countries where the human contact
+          was rich and these countries are part of the list of countries where I
+          have to go back because I remained with a taste of not enough. I still
+          have so much to learn from these human contacts and exchanges. A
+          lifetime will not be enough.
+          <br />Probably, everything around cooking and kitchen provides me with
+          similarities and differences with what I have already experienced and
+          already known. It seems that this is what brings me back to my
+          origins, getting to know myself and what allows me to appreciate what
+          I am. <br />I still have so much to learn from these culinary
+          exchanges. <br /><br />
+          "I've met many people in Europe. I've even met myself there." James
+          Baldwin “J’ai rencontré de nombreuses personnes en Europe. J’y ai même
+          rencontré moi même.”
+          <br />
+          With hindsight, I have noticed that with another culture, another
+          country, other people, gastronomy is my point of reference or
+          comparison.
+          <br />Through food, I can feel a sense of home and sense of community.
+          Driven by a culinary curiosity, an interest in new tastes and original
+          shapes my favourite go to place are the local markets and places,
+          where i can discover special spices, local vegetables and fruits.
+          <br />Whenever I have the opportunity, I sneak in local kitchens to
+          furtively check on and learn cooking techniques. You understand, I
+          love people, travels and food. Like many of us! <br /><strong
+            >So I am happy to invite you to browse my pages, my recipes and I
+            wait for your feedbacks, feel free to ask questions and
+            exchange.</strong
+          >
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col s6 offset-m4">
         {% with messages = get_flashed_messages() %} {% if messages %}
         <ul class="flashes">
@@ -160,9 +161,7 @@
         </form>
       </div>
     </div>
-      </div>
 
-      {% endblock%}
-    </div>
+    {% endblock%}
   </body>
 </html>
