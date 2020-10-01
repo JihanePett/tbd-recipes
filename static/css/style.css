@@ -1,7 +1,4 @@
 /* Navigation */
-nav .nav-wrapper {
-  background-color: #fbc3c3;
-}
 
 nav .brand-logo {
   letter-spacing: 4px;
@@ -26,7 +23,7 @@ i.material-icons {
 
 /* Homepage*/
 .slider .indicators .indicator-item {
-  color: pink;
+  color: #c2185b;
 }
 
 h3.caption1 {
@@ -60,9 +57,13 @@ input.btn.btn-default {
   display: inline-block;
 }
 
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: lightblue;
+}
+
 #edit-button,
 #del-button {
-  background-color: pink;
+  background-color: #c2185b;
   letter-spacing: 2px;
   margin-right: 20px;
   display: inline-block;
@@ -94,7 +95,7 @@ div#contact-form {
 .btn,
 .btn-large,
 input.btn.btn-default {
-  background-color: pink;
+  background-color: #c2185b;
   display: inherit;
   margin: 0 auto;
 }
@@ -102,7 +103,7 @@ input.btn.btn-default {
 /* login page */
 .all-h3 {
   text-align: center;
-  color: pink;
+  color: #c2185b;
   margin-top: 50px;
   margin-bottom: 30px;
 }
