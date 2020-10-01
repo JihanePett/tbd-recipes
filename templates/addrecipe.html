@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Add your recipe</title>
+  </head>
 
-<head>
-	<title>Add your recipe</title>
-</head>
-
-<body>
-	{% extends 'base.html' %} {% block content%}
-	<h3 class="header all-h3">Fill the form to add a new recipe card</h3>
-	<div class="row">
-		<form action="{{url_for('insert_recipe')}}" method="POST" class="col s8 offset-m2">
-			<!--Select type-->
-			<div class="row">
-				<div class="input-field col s4">
-					<i class="material-icons prefix">filter_list</i>
-					<select id="type" name="type_select">
+  <body>
+    {% extends 'base.html' %} {% block content%}
+    <h3 class="header all-h3">Fill the form to add a new recipe card</h3>
+    <div class="row">
+      <form
+        action="{{url_for('insert_recipe')}}"
+        method="POST"
+        class="col s8 offset-m2"
+      >
+        <!--Select type-->
+        <div class="row">
+          <div class="input-field col s4">
+            <i class="material-icons prefix">filter_list</i>
+            <select id="type" name="type_select">
               <option value="" disabled selected>Select a type</option>
               {% for type in types %}
               <option value="{{type.type_select}}">{{type.type_select}}</option>
               {% endfor %}
             </select>
-				</div>
-			</div>
+          </div>
+        </div>
 
-			<!--Select category-->
-			<div class="row">
-				<div class="input-field col s4">
-					<i class="material-icons prefix">poll</i>
-					<select id="category" name="category_name">
+        <!--Select category-->
+        <div class="row">
+          <div class="input-field col s4">
+            <i class="material-icons prefix">poll</i>
+            <select id="category" name="category_name">
               <option value="" disabled selected>Choose Category</option>
               {% for cat in categories %}
               <option value="{{cat.category_name}}"
@@ -35,66 +38,68 @@
               >
               {% endfor %}
             </select>
-				</div>
-			</div>
+          </div>
+        </div>
 
-			<!--name-->
-			<div class="input-field col m8 s4">
-				<i class="material-icons prefix">assignment</i>
-				<input id="recipe_name" name="recipe_name" type="text" required />
-				<label for="icon_prefix">Recipe Name</label>
-			</div>
+        <!--name-->
+        <div class="row">
+        <div class="input-field col m8 s4">
+          <i class="material-icons prefix">assignment</i>
+          <input id="recipe_name" name="recipe_name" type="text" required />
+          <label for="icon_prefix">Recipe Name</label>
+        </div>
+        </div>
 
-			<!--Description-->
-			<div class="row">
-				<div class="input-field col m10 s8">
-					<i class="material-icons prefix">subject</i>
-					<textarea
+        <!--Description-->
+        <div class="row">
+          <div class="input-field col m10 s8">
+            <i class="material-icons prefix">subject</i>
+            <textarea
               class="materialize-textarea"
               id="recipe_desciption"
               name="recipe_description"
               type="text"
               required
             ></textarea>
-					<label for="icon_prefix">Recipe Description</label>
-				</div>
-			</div>
+            <label for="icon_prefix">Recipe Description</label>
+          </div>
+        </div>
 
-			<!--Method-->
-			<div class="row">
-				<div class="input-field col m10 s8">
-					<i class="material-icons prefix">restaurant_menu</i>
-					<textarea
-            class="materialize-textarea"
+        <!--Method-->
+        <div class="row">
+          <div class="input-field col m10 s8">
+            <i class="material-icons prefix">restaurant_menu</i>
+            <textarea
+              class="materialize-textarea"
               id="recipe_method"
               name="recipe_method"
               type="text"
               required
             ></textarea>
-					<label for="icon_prefix">Recipe Method</label>
-				</div>
-			</div>
+            <label for="icon_prefix">Recipe Method</label>
+          </div>
+        </div>
 
-			<!--Ingredients-->
-			<div class="row">
-				<div class="input-field col m10 s8">
-					<i class="material-icons prefix">format_list_bulleted</i>
-					<textarea
-            class="materialize-textarea"
+        <!--Ingredients-->
+        <div class="row">
+          <div class="input-field col m10 s8">
+            <i class="material-icons prefix">format_list_bulleted</i>
+            <textarea
+              class="materialize-textarea"
               id="recipe_ingredients"
               name="recipe_ingredients"
               type="text"
               required
             ></textarea>
-					<label for="icon_prefix">Recipe Ingredients</label>
-				</div>
-			</div>
+            <label for="icon_prefix">Recipe Ingredients</label>
+          </div>
+        </div>
 
-			<!--Number of people-->
-			<div class="row">
-				<div class="input-field col m4 s2">
-					<i class="material-icons prefix">people</i>
-					<select id="number_people" name="number_people">
+        <!--Number of people-->
+        <div class="row">
+          <div class="input-field col m4 s2">
+            <i class="material-icons prefix">people</i>
+            <select id="number_people" name="number_people">
               <option value="" disabled selected>Choose an option</option>
               {% for peop in people %}
               <option value="{{peop.number_people}}"
@@ -102,57 +107,72 @@
               >
               {% endfor %}
             </select>
-				</div>
-			</div>
+          </div>
+        </div>
 
-			<!--Prep time-->
-			<div class="row">
-				<div class="input-field col m4 s2">
-					<i class="material-icons prefix">access_time</i>
-					<select id="preptime" name="preparation_time">
+        <!--Prep time-->
+        <div class="row">
+          <div class="input-field col m4 s2">
+            <i class="material-icons prefix">access_time</i>
+            <select id="preptime" name="preparation_time">
               <option value="" disabled selected>Select a time</option>
               {% for preptime in preptimes %}
-              <option value="{{preptime.preparation_time}}">{{preptime.preparation_time}}</option>
+              <option value="{{preptime.preparation_time}}"
+                >{{preptime.preparation_time}}</option
+              >
               {% endfor %}
             </select>
-				</div>
-			</div>
+          </div>
+        </div>
 
-			<!--Add image url-->
-			<div class="input-field col m10 s8">
-				<i class="material-icons prefix">local_see</i>
-				<input
+        <!--Add image url-->
+        <div class="row">
+        <div class="input-field col m10 s8">
+          <i class="material-icons prefix">local_see</i>
+          <input
             id="image_url"
             name="image_url"
             type="text"
             class="validate"
             required
           />
-				<label for="icon_prefix"> Enter the image url </label>
-			</div>
+          <label for="icon_prefix"> Enter the image url </label>
+        </div>
+        </div>
 
-			<!--Add pdf-->
-			<div class="input-field col m10 s8">
-				<i class="material-icons prefix">attach_file</i>
-				<input id="pdf" name="pdf" type="text" class="validate" required />
-				<label for="icon_prefix"> Enter the pdf url </label>
-			</div>
+        <!--Add pdf-->
+        <div class="row">
+        <div class="input-field col m10 s8">
+          <i class="material-icons prefix">attach_file</i>
+          <input id="pdf" name="pdf" type="text" class="validate" required />
+          <label for="icon_prefix"> Enter the pdf url </label>
+        </div>
+        </div>
 
-			<!--Add recipe button-->
-			<div class="row">
-            <div class="col m10 offset-4">
-				<button
-            class="btn waves-effect waves-light btn-large"
-            type="submit"
-            name="action"
-          >
-            Add recipe
-          </button>
-			</div>
-			</div>
-		</form>
-	</div>
-	{% endblock %}
-</body>
-
+        <!--Add recipe button-->
+        <div class="row">
+          <div class="col m8 offset-4">
+            <button
+              class="btn waves-effect waves-light btn-large"
+              type="submit"
+              name="action"
+            >
+              Add recipe
+            </button>
+          </div>
+            <div class="row">
+          <div class="col m8 offset-4">
+            <a
+              href="{{url_for('get_recipes')}}"
+              class="waves-effect waves-light btn grey"
+            >
+              <i class="material-icons right">cancel</i>Cancel</a
+            >
+          </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    {% endblock %}
+  </body>
 </html>
