@@ -18,18 +18,23 @@ a.i.material-icons .menu {
 }
 
 i.material-icons {
-  color: pink;
+  color: #c2185b;
 }
 
-/* Homepage*/
-.slider .indicators .indicator-item {
+/* General*/
+.all-h3 .all-h5 {
   color: #c2185b;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 h3.caption1 {
   margin-top: 160px;
-  margin-right: 110px;
+  margin-right: 100px;
 }
+
+/* Homepage*/
 
 /* My recipes */
 form.col.s8.search-box {
@@ -101,12 +106,6 @@ input.btn.btn-default {
 }
 
 /* login page */
-.all-h3 {
-  text-align: center;
-  color: #c2185b;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
 
 /* Editrecipe */
 .row.editrecipe {
