@@ -58,7 +58,7 @@
               <a
                 href="{{ url_for('my_recipes') }}"
                 class="waves-effect waves-light btn reset-btn"
-                >Go back</a
+                >Reset</a
               >
             </div>
 
@@ -70,7 +70,7 @@
     <!--Recipe cards-->
     <div class="row cards">
       {% for recipe in recipes %}
-      <div class="col m4">
+      <div class="col l4 m6 s6">
         <div class="card">
           <div class="card-content">
             <div class="card-image">
@@ -97,7 +97,7 @@
                   <a
                     href="{{recipe.pdf}}"
                     target="_blank"
-                    class="btn-floating btn-small waves-effect waves-light pink"
+                    class="btn-floating btn-small waves-effect waves-light pink darken-2"
                   >
                     <i class="material-icons">cloud_download</i></a
                   >

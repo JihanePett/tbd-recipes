@@ -22,7 +22,7 @@ i.material-icons {
 }
 
 /* General*/
-.all-h3 .all-h5 {
+h3.header.all-h3 {
   color: #c2185b;
   text-align: center;
   margin-top: 50px;
@@ -41,7 +41,7 @@ form.col.s8.search-box {
   margin-left: 200px;
 }
 
-a.btn-floating.btn-small.waves-effect.waves-light.pink {
+a.btn-floating.btn-small.waves-effect.waves-light pink darken-2 {
   float: right;
 }
 
