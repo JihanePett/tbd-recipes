@@ -2,22 +2,15 @@
 <html lang="en">
   <head>
     <title>Live chat</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.0/cerulean/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-    <link
+        <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/app.css') }}"
     />
   </head>
-
+  
   <body>
     {% extends 'base.html' %} {% block content%}
+      
     <div class="chatbubble">
       <div class="unexpanded">
         <div class="title">Chat with Me</div>

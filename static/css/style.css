@@ -34,8 +34,6 @@ h3.caption1 {
   margin-right: 100px;
 }
 
-/* Homepage*/
-
 /* My recipes */
 form.col.s8.search-box {
   margin-left: 200px;
@@ -105,8 +103,6 @@ input.btn.btn-default {
   margin: 0 auto;
 }
 
-/* login page */
-
 /* Editrecipe */
 .row.editrecipe {
   margin-right: 150px;
@@ -114,10 +110,6 @@ input.btn.btn-default {
 }
 
 /* About */
-.lighten-3 {
-  background-color: #ead15542;
-}
-
 .col.s6.contact-form {
   margin-top: 40px;
 }
