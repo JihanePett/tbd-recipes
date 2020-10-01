@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Edit recipe</title>
+    <title>Edit your recipe</title>
   </head>
 
   <body>
     {% extends 'base.html' %} {% block content%}
 
-    <h3 class="all-h3">
+    <h3 class="header all-h3">
       Your {{recipe.recipe_name}} recipe is ready for editing
     </h3>
 
@@ -33,8 +33,8 @@
               {% endif %} {% endfor %}
             </select>
           </div>
-          
-        <!--Category select-->          
+
+          <!--Category select-->
           <div class="input-field col s4">
             <i class="material-icons prefix">filter_list</i>
             <select id="category" name="category_name">
@@ -85,13 +85,13 @@
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">restaurant_menu</i>
-            <input
+            <textarea
+              class="materialize-textarea validate"
               id="recipe_method"
               name="recipe_method"
               type="text"
-              class="validate"
               value="{{recipe.recipe_method}}"
-            />
+            ></textarea>
             <label for="icon_prefix">Recipe Method</label>
           </div>
         </div>
@@ -99,58 +99,68 @@
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">format_list_bulleted</i>
-            <input
+            <textarea
+              class="materialize-textarea validate"
               id="recipe_ingredients"
               name="recipe_ingredients"
               type="text"
-              class="validate"
               value="{{recipe.recipe_ingredients}}"
-            />
+            ></textarea>
             <label for="icon_prefix">Recipe Ingredients</label>
           </div>
         </div>
 
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col m2 s2">
             <i class="material-icons prefix">people</i>
-            <input
-              id="number_people"
-              name="number_people"
-              type="text"
-              class="validate"
-              value="{{recipe.number_people}}"
-            />
-            <label for="icon_prefix">Number of people</label>
+            <select id="number_people" name="number_people">
+              <option value="" disabled selected>Choose a Number</option>
+              {% for peop in people %} {% if peop.number_people ==
+              recipe.number_people %}
+              <option value="{{peop.number_people}}" selected
+                >{{peop.number_people}}</option
+              >
+              {% else %}
+              <option value="{{peop.number_people}}"
+                >{{peop.number_people}}</option
+              >
+              {% endif %} {% endfor %}
+            </select>
           </div>
         </div>
 
         <div class="row">
-          <div class="input-field col s2">
+          <div class="input-field col m2 s2">
             <i class="material-icons prefix">access_time</i>
-            <input
-              id="preparation_time"
-              name="preparation_time"
-              type="text"
-              class="validate"
-              value="{{recipe.preparation_time}}"
-            />
-            <label for="icon_prefix">Preparation Time</label>
+            <select id="preptime" name="preparation_time">
+              <option value="" disabled selected>Choose a Number</option>
+              {% for prep in preptimes %} {% if prep.preparation_time ==
+              recipe.preparation_time %}
+              <option value="{{prep.preparation_time}}" selected
+                >{{prep.preparation_time}}</option
+              >
+              {% else %}
+              <option value="{{prep.preparation_time}}"
+                >{{prep.preparation_time}}</option
+              >
+              {% endif %} {% endfor %}
+            </select>
           </div>
         </div>
 
         <!--Add image url-->
-        <div class="input-field col s12">
+        <div class="input-field col m10 s8">
           <i class="material-icons prefix">local_see</i>
-          <input id="image_url" name="image_url" type="text" class="validate">
+          <input id="image_url" name="image_url" type="text" class="validate" />
           <label for="icon_prefix"> paste the image url </label>
-        </div>   
+        </div>
 
         <!--Add pdf-->
-        <div class="input-field col s12">
+        <div class="input-field col m10 s8">
           <i class="material-icons prefix">attach_file</i>
-          <input id="pdf" name="pdf" type="text" class="validate">
+          <input id="pdf" name="pdf" type="text" class="validate" />
           <label for="icon_prefix"> Paste the pdf url </label>
-        </div>  
+        </div>
 
         <!--Update button-->
         <div class="row">

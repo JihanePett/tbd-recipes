@@ -12,7 +12,6 @@ ul:not(.browser-default) {
 }
 
 /* Material icons */
-
 a.i.material-icons .menu {
   color: #fafafa;
 }
@@ -25,7 +24,7 @@ i.material-icons {
 h3.header.all-h3 {
   color: #c2185b;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 70px;
   margin-bottom: 30px;
 }
 

@@ -7,7 +7,7 @@
 
 <body>
 	{% extends 'base.html' %} {% block content%}
-	<h3 class="all-h3">Fill the form to add a new recipe card</h3>
+	<h3 class="header all-h3">Fill the form to add a new recipe card</h3>
 	<div class="row">
 		<form action="{{url_for('insert_recipe')}}" method="POST" class="col s8 offset-m2">
 			<!--Select type-->
@@ -92,7 +92,7 @@
 
 			<!--Number of people-->
 			<div class="row">
-				<div class="input-field col s4">
+				<div class="input-field col m2 s2">
 					<i class="material-icons prefix">people</i>
 					<select id="number_people" name="number_people">
               <option value="" disabled selected>Choose an option</option>
@@ -107,7 +107,7 @@
 
 			<!--Prep time-->
 			<div class="row">
-				<div class="input-field col s4">
+				<div class="input-field col m2 s2">
 					<i class="material-icons prefix">access_time</i>
 					<select id="preptime" name="preparation_time">
               <option value="" disabled selected>Select a time</option>
@@ -119,7 +119,7 @@
 			</div>
 
 			<!--Add image url-->
-			<div class="input-field col s12">
+			<div class="input-field col m10 s8">
 				<i class="material-icons prefix">local_see</i>
 				<input
             id="image_url"
@@ -132,7 +132,7 @@
 			</div>
 
 			<!--Add pdf-->
-			<div class="input-field col s12">
+			<div class="input-field col m10 s8">
 				<i class="material-icons prefix">attach_file</i>
 				<input id="pdf" name="pdf" type="text" class="validate" required />
 				<label for="icon_prefix"> Enter the pdf url </label>
