@@ -33,10 +33,10 @@
       <form
         action="{{url_for('search_recipes')}}"
         method="POST"
-        class="col s8 search-box"
+        class="col m10 s8 search-box"
       >
         <div class="row valign-wrapper center-align">
-          <div class="input-field col s4 m8">
+          <div class="input-field col m8 s4">
             <input
               type="text"
               name="query"
@@ -48,13 +48,13 @@
             <label for="query">Search recipes</label>
           </div>
 
-          <div class="col s12 m4">
-            <div class="col s4 m4">
+          <div class="col m4 s12">
+            <div class="col m4 s4">
               <button type="submit" class="waves-effect waves-light btn">
                 <i class="fas fa-search left"></i> Search
               </button>
             </div>          
-            <div class="col s8 m6">
+            <div class="col m6 s8">
               <a
                 href="{{ url_for('my_recipes') }}"
                 class="waves-effect waves-light btn reset-btn"
