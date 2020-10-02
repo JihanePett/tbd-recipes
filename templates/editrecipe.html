@@ -19,7 +19,7 @@
       >
         <!--Type input-->
         <div class="row">
-          <div class="input-field col s4">
+          <div class="input-field col m4 s2">
             <i class="material-icons prefix">poll</i>
             <select id="type" name="type_select">
               <option value="" disabled selected>Select a type</option>
@@ -35,7 +35,7 @@
           </div>
 
           <!--Category select-->
-          <div class="input-field col s4">
+          <div class="input-field col m4 s2">
             <i class="material-icons prefix">filter_list</i>
             <select id="category" name="category_name">
               <option value="" disabled selected>Choose a Category</option>
@@ -55,7 +55,7 @@
 
         <!--Recipe input-->
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col m4 s2">
             <i class="material-icons prefix">assignment</i>
             <input
               id="recipe_name"
@@ -69,7 +69,7 @@
         </div>
 
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col m6 s4">
             <i class="material-icons prefix">subject</i>
             <input
               id="recipe_desciption"
@@ -83,7 +83,7 @@
         </div>
 
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col m6 s4">
             <i class="material-icons prefix">restaurant_menu</i>
             <textarea
               class="materialize-textarea validate"
@@ -97,7 +97,7 @@
         </div>
 
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col m6 s4">
             <i class="material-icons prefix">format_list_bulleted</i>
             <textarea
               class="materialize-textarea validate"
@@ -149,22 +149,26 @@
         </div>
 
         <!--Add image url-->
-        <div class="input-field col m10 s8">
+        <div class="row">
+        <div class="input-field col m8 s6">
           <i class="material-icons prefix">local_see</i>
           <input id="image_url" name="image_url" type="text" class="validate" />
           <label for="icon_prefix"> paste the image url </label>
         </div>
+        </div>
 
         <!--Add pdf-->
-        <div class="input-field col m10 s8">
+        <div class="row">
+        <div class="input-field col m8 s6">
           <i class="material-icons prefix">attach_file</i>
           <input id="pdf" name="pdf" type="text" class="validate" />
           <label for="icon_prefix"> Paste the pdf url </label>
         </div>
+        </div>
 
         <!--Update button-->
         <div class="row">
-          <div class="col offset m6">
+          <div class="col m4 offset-m2">
             <button
               class="btn waves-effect waves-light btn-large"
               type="submit"
@@ -174,6 +178,17 @@
             </button>
           </div>
         </div>
+
+        <!--Cancel button-->
+        <div class="row">
+          <div class="col m4 offset-m2">
+            <a
+              href="{{url_for('get_recipes')}}"
+              class="waves-effect waves-light btn grey"
+              >Cancel</a
+            >
+          </div>
+        </div>        
       </form>
     </div>
 
