@@ -10,6 +10,25 @@
   
   <body>
     {% extends 'base.html' %} {% block content%}
+    <!--Parallax-->
+    <div class="parallax-container">
+      <div class="parallax parallax img">
+        <img
+          src="https://www.anandgroupindia.com/wp-content/uploads/2019/05/contactus.jpg"
+        />
+      </div>
+    </div>
+    <div class="section white">
+      <div class="row container">
+        <h3 class="header all-h3">Get in Touch</h3>
+        <p class="grey-text center-align">
+          Please reach out if you have any questions, no really anything related to cooking of course :)
+        </p>
+        <p class="grey-text center-align">
+          If you are thinking of getting the thermomix, hit my thermomix page for more info, you can also book a demo online
+        </p>
+      </div>
+    </div>
       
     <div class="chatbubble">
       <div class="unexpanded">
@@ -65,7 +84,7 @@
     </div>
 
     <div class="row">
-      <div class="col s6 offset-m4">
+      <div class="col m4 offset-m2">
         {% with messages = get_flashed_messages() %} {% if messages %}
         <ul class="flashes">
           {% for message in messages %}
