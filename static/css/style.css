@@ -11,6 +11,10 @@ ul:not(.browser-default) {
   padding-right: 5px;
 }
 
+ul#login_out.dropdown-content{
+    color: #880e4f;
+}
+
 /* Material icons */
 i.material-icons {
   color: #f8bbd0;
@@ -44,7 +48,7 @@ a.btn-floating.btn-small.waves-effect.waves-light pink darken-2 {
 }
 
 a.waves-effect.waves-light.btn.reset-btn {
-  background-color: lightblue;
+  background-color: #90caf9;
   margin-left: 10px;
 }
 
@@ -82,7 +86,7 @@ input.btn.btn-default {
 }
 
 a.back-btn {
-  background-color: lightblue;
+  background-color: #90caf9;
 }
 
 /* Add category */
@@ -127,4 +131,8 @@ li.flashes-msg {
 /* Login */
 .card-panel.login {
   margin-top: 50px;
+}
+
+.btn-login:hover{
+    background-color: #e3f2fd;
 }

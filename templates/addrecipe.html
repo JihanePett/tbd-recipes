@@ -43,11 +43,11 @@
 
         <!--name-->
         <div class="row">
-        <div class="input-field col m8 s4">
-          <i class="material-icons prefix">assignment</i>
-          <input id="recipe_name" name="recipe_name" type="text" required />
-          <label for="icon_prefix">Recipe Name</label>
-        </div>
+          <div class="input-field col m8 s4">
+            <i class="material-icons prefix">assignment</i>
+            <input id="recipe_name" name="recipe_name" type="text" required />
+            <label for="icon_prefix">Recipe Name</label>
+          </div>
         </div>
 
         <!--Description-->
@@ -127,31 +127,31 @@
 
         <!--Add image url-->
         <div class="row">
-        <div class="input-field col m10 s8">
-          <i class="material-icons prefix">local_see</i>
-          <input
-            id="image_url"
-            name="image_url"
-            type="text"
-            class="validate"
-            required
-          />
-          <label for="icon_prefix"> Enter the image url </label>
-        </div>
+          <div class="input-field col m10 s8">
+            <i class="material-icons prefix">local_see</i>
+            <input
+              id="image_url"
+              name="image_url"
+              type="text"
+              class="validate"
+              required
+            />
+            <label for="icon_prefix"> Enter the image url </label>
+          </div>
         </div>
 
         <!--Add pdf-->
         <div class="row">
-        <div class="input-field col m10 s8">
-          <i class="material-icons prefix">attach_file</i>
-          <input id="pdf" name="pdf" type="text" class="validate" required />
-          <label for="icon_prefix"> Enter the pdf url </label>
-        </div>
+          <div class="input-field col m10 s8">
+            <i class="material-icons prefix">attach_file</i>
+            <input id="pdf" name="pdf" type="text" class="validate" required />
+            <label for="icon_prefix"> Enter the pdf url </label>
+          </div>
         </div>
 
         <!--Add recipe button-->
         <div class="row">
-          <div class="col m8 offset-4">
+          <div class="col m8 offset-m2">
             <button
               class="btn waves-effect waves-light btn-large"
               type="submit"
@@ -160,15 +160,16 @@
               Add recipe
             </button>
           </div>
-            <div class="row">
-          <div class="col m8 offset-4">
+        </div>
+
+        <!--Cancel button-->
+        <div class="row">
+          <div class="col m4 offset-m4">
             <a
               href="{{url_for('get_recipes')}}"
               class="waves-effect waves-light btn grey"
+              >Cancel</a
             >
-              <i class="material-icons right">cancel</i>Cancel</a
-            >
-          </div>
           </div>
         </div>
       </form>
