@@ -26,7 +26,6 @@
         <ul id="login_out" class="dropdown-content">
           <li><a href="{{url_for('login')}}">Login</a></li>
           <li><a href="{{url_for('logout')}}">Logout</a></li>
-          <li><a href="{{url_for('admin')}}">Admin Chat</a></li>
         </ul>
 
         <nav>
@@ -58,8 +57,7 @@
       <!-- Navigation on mobile view -->
       <ul id="loginnout" class="dropdown-content">
         <li><a href="{{url_for('login')}}">Login</a></li>
-        <li><a href="{{url_for('logout')}}">Logout</a></li>
-        <li><a href="{{url_for('admin')}}">Admin Chat</a></li>        
+        <li><a href="{{url_for('logout')}}">Logout</a></li>     
       </ul>
       <ul id="slide-out" class="sidenav">
         <li><a href="{{url_for('homepage')}}">Home</a></li>
@@ -75,16 +73,7 @@
       </ul>
     </header>
 
-    <!-- flash messages for login out -->
-    <section>
-      {% with messages = get_flashed_messages() %} {% if messages %} {% for
-      message in messages %}
-      <div class="row flashes">
-        <h3 class="all-h3">{{ message }}</h3>
-      </div>
-      {% endfor %} {% endif %} {% endwith %}
-    </section>
-
+    
     {% block content %} {% endblock %}
     <footer></footer>
 

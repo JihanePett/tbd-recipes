@@ -33,6 +33,11 @@ h3.caption1 {
   margin-right: 100px;
 }
 
+.flash_msg{
+    margin-left: 50px;
+    color: #0d47a1;
+}
+
 /* My recipes */
 form.col.s8.search-box {
   margin-left: 200px;

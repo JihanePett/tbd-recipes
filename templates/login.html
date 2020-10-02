@@ -4,6 +4,16 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- flash messages for login out -->
+    <section>
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <div class="row flashes">
+        <h4 class="flash_msg">{{ message }}</h4>
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+    </section> 
+    
     <h3 class="header all-h3">Enter your login credentials below</h3>
 
     <div class="row">
