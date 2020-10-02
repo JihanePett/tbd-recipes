@@ -12,12 +12,8 @@ ul:not(.browser-default) {
 }
 
 /* Material icons */
-a.i.material-icons .menu {
-  color: #fafafa;
-}
-
 i.material-icons {
-  color: #c2185b;
+  color: #f8bbd0;
 }
 
 /* General*/
@@ -65,19 +61,19 @@ input.btn.btn-default {
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover {
-    background-color: lightblue;
+    background-color: #f06292;
 }
 
 #edit-button,
 #del-button {
-  background-color: #c2185b;
+  background-color: #f06292 ;
   letter-spacing: 2px;
   margin-right: 20px;
   display: inline-block;
 }
 
 #del-button {
-  background-color: orangered;
+  background-color: #880e4f;
 }
 
 .row.back-btn {

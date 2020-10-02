@@ -84,7 +84,8 @@ def my_recipes():
 def search_recipes():
     query = request.form.get("query")
     recipes = mongo.db.recipes.find({"$text": {"$search": query}})
-    return render_template('myrecipes.html', recipes=recipes)
+    types = mongo.db.types.find({"$text": {"$search": query}})
+    return render_template('myrecipes.html', recipes=recipes, types=types)
 
 
 @app.route('/add_recipe')
