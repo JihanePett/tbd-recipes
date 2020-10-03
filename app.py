@@ -41,12 +41,13 @@ def homepage():
     return render_template('homepage.html')
 
 
+# Contact page
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
 # chatbubble
-@app.route('/livechat')
-def livechat():
-    return render_template('livechat.html')
-
-
 @app.route('/admin')
 def admin():
     return render_template('admin.html')
