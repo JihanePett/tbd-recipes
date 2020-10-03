@@ -24,10 +24,10 @@ Cloud.config.update = ({
     'api_secret': os.environ.get('CLOUDINARY_API_SECRET')
 })
 pusher = pusher.Pusher(
-    app_id='1073314',
-    key='364cf11175365baa44b2',
-    secret='97e6db0447a9e6fe6832',
-    cluster='eu',
+    app_id=os.environ.get('APP_ID'),
+    key=os.environ.get('KEY'),
+    secret=os.environ.get('SECRET'),
+    cluster=os.environ.get('CLUSTER'),
     ssl=True)
 
 mongo = PyMongo(app)
@@ -84,8 +84,7 @@ def my_recipes():
 def search_recipes():
     query = request.form.get("query")
     recipes = mongo.db.recipes.find({"$text": {"$search": query}})
-    types = mongo.db.types.find({"$text": {"$search": query}})
-    return render_template('myrecipes.html', recipes=recipes, types=types)
+    return render_template('myrecipes.html', recipes=recipes)
 
 
 @app.route('/add_recipe')

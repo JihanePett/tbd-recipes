@@ -20,6 +20,11 @@ i.material-icons {
   color: #f8bbd0;
 }
 
+/* Slider Fullscreen */
+.slider.fullscreen{
+    z-index: 0;
+}
+
 /* General*/
 h3.header.all-h3 {
   color: #c2185b;
