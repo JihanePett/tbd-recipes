@@ -53,7 +53,7 @@
               <button type="submit" class="waves-effect waves-light btn">
                 <i class="fas fa-search left"></i> Search
               </button>
-            </div>          
+            </div>
             <div class="col m6 s8">
               <a
                 href="{{ url_for('my_recipes') }}"
@@ -61,7 +61,6 @@
                 >Reset</a
               >
             </div>
-
           </div>
         </div>
       </form>
@@ -77,27 +76,20 @@
               <a href="{{url_for('my_recipes', recipe_id=recipe._id)}}"
                 ><img class="card-image-img" src="{{recipe.image_url}}"
               /></a>
-              <span class="card-title"
-                ><h3>{{recipe.recipe_name}}</h3>
-                <h4>{{recipe.category_name}}</h4>
-                <h6>{{recipe.type_select}}</h6>
-              </span>
+              <span class="card-title name_recipe">{{recipe.recipe_name}} -- {{recipe.type_select}}</span>
             </div>
 
             <!--Collapsible-->
             <ul class="collapsible">
               <li class="active">
                 <div class="collapsible-header">
-                  <i class="material-icons">info</i>For {{recipe.number_people}}
-                  person - Preparation time: {{recipe.preparation_time}}
+                  <i class="material-icons">info</i>I am {{recipe.category_name}} <br> For {{recipe.number_people}}
+                  person <br> Ready in {{recipe.preparation_time}}
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_description}}</span>
                   <!--Download button-->
-                  <a
-                    href="{{recipe.pdf}}"
-                    target="_blank"
-                  >
+                  <a href="{{recipe.pdf}}" target="_blank">
                     <i class="material-icons cloud">cloud_download</i></a
                   >
                 </div>
@@ -112,7 +104,7 @@
               </li>
               <li>
                 <div class="collapsible-header">
-                  <i class="material-icons ">format_list_bulleted</i>Ingredients
+                  <i class="material-icons">format_list_bulleted</i>Ingredients
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_ingredients}}.</span>
@@ -126,6 +118,5 @@
     </div>
 
     {% endblock %}
-    
   </body>
 </html>

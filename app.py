@@ -41,6 +41,7 @@ def homepage():
     return render_template('homepage.html')
 
 
+# chatbubble
 @app.route('/livechat')
 def livechat():
     return render_template('livechat.html')
@@ -68,18 +69,14 @@ def pusher_authentication():
     return json.dumps(auth)
 
 
-@app.route('/get_recipes')
-def get_recipes():
-    return render_template('recipes.html',
-                           recipes=mongo.db.recipes.find())
-
-
+# Recipes visitors view
 @app.route('/my_recipes')
 def my_recipes():
     return render_template('myrecipes.html',
                            recipes=mongo.db.recipes.find())
 
 
+# Search recipe
 @app.route('/search_recipes', methods=["GET", "POST"])
 def search_recipes():
     query = request.form.get("query")
@@ -87,6 +84,14 @@ def search_recipes():
     return render_template('myrecipes.html', recipes=recipes)
 
 
+# Recipes edit, update, delete
+@app.route('/get_recipes')
+def get_recipes():
+    return render_template('recipes.html',
+                           recipes=mongo.db.recipes.find())
+
+
+# Add new recipe
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
@@ -103,6 +108,7 @@ def insert_recipe():
     return redirect(url_for('get_recipes'))
 
 
+# Edit and update pre-existing recipes
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -139,12 +145,58 @@ def update_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
 
 
+# Delete recipes
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
 
+# Categories section
+@app.route('/get_categories')
+def get_categories():
+    return render_template('categories.html',
+                           categories=mongo.db.categories.find())
+
+
+# Delete category
+@app.route('/delete_category/<category_id>')
+def delete_category(category_id):
+    mongo.db.categories.remove({'_id': ObjectId(category_id)})
+    return redirect(url_for('get_categories'))
+
+
+# Edit and update category
+@app.route('/edit_category/<category_id>')
+def edit_category(category_id):
+    return render_template('editcategory.html',
+                           category=mongo.db.categories.find_one(
+                                    {'_id': ObjectId(category_id)}))
+
+
+@app.route('/update_category/<category_id>', methods=['GET', 'POST'])
+def update_category(category_id):
+    mongo.db.categories.update(
+        {'_id': ObjectId(category_id)},
+        {'category_name': request.form.get('category_name')})
+    return redirect(url_for('get_categories'))
+
+
+# Add category
+@app.route('/add_category')
+def add_category():
+    return render_template('addcategory.html')
+
+
+@app.route('/insert_category', methods=['GET', 'POST'])
+def insert_category():
+    category_doc = {'category_name': request.form.get('category_name')}
+    mongo.db.categories.insert_one(category_doc)
+    return redirect(url_for('get_categories'))
+
+
+# Register new user: will be deleted after site is
+# marked as this is a one user only app
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -170,6 +222,7 @@ def register():
     return render_template("register.html")
 
 
+# Login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -197,6 +250,7 @@ def login():
     return render_template("login.html")
 
 
+# Logout
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -205,50 +259,13 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route('/get_categories')
-def get_categories():
-    return render_template('categories.html',
-                           categories=mongo.db.categories.find())
-
-
-@app.route('/delete_category/<category_id>')
-def delete_category(category_id):
-    mongo.db.categories.remove({'_id': ObjectId(category_id)})
-    return redirect(url_for('get_categories'))
-
-
-@app.route('/edit_category/<category_id>')
-def edit_category(category_id):
-    return render_template('editcategory.html',
-                           category=mongo.db.categories.find_one(
-                                    {'_id': ObjectId(category_id)}))
-
-
-@app.route('/update_category/<category_id>', methods=['GET', 'POST'])
-def update_category(category_id):
-    mongo.db.categories.update(
-        {'_id': ObjectId(category_id)},
-        {'category_name': request.form.get('category_name')})
-    return redirect(url_for('get_categories'))
-
-
-@app.route('/insert_category', methods=['GET', 'POST'])
-def insert_category():
-    category_doc = {'category_name': request.form.get('category_name')}
-    mongo.db.categories.insert_one(category_doc)
-    return redirect(url_for('get_categories'))
-
-
-@app.route('/add_category')
-def add_category():
-    return render_template('addcategory.html')
-
-
+# About page
 @app.route('/about')
 def about():
     return render_template('about.html')
 
 
+# Thermomix page
 @app.route('/thermomix')
 def thermomix():
     return render_template('thermomix.html')

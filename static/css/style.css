@@ -63,6 +63,13 @@ a.waves-effect.waves-light.btn.reset-btn {
   margin-top: 50px;
 }
 
+.card .card-content .card-title .name_recipe {
+    line-height: 10px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
 .btn,
 .btn-large,
 input.btn.btn-default {

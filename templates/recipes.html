@@ -51,28 +51,22 @@
 					<div class="card-content">
 						<div class="card-image">
 							<a href="{{url_for('my_recipes', recipe_id=recipe._id)}}"><img class="card-image-img" src="{{recipe.image_url}}"></a>
-								<span class="card-title">
-              <h3>{{recipe.recipe_name}}</h3>
-              <h4>{{recipe.category_name}}</h4>
-              <h6>{{recipe.type_select}}</h6>
-              </span>
+								<span class="card-title name_recipe">{{recipe.recipe_name}} -- {{recipe.type_select}}</span>
 						</div>
 
 						<!--Collapsible-->
 						<ul class="collapsible">
 							<li class="active">
 								<div class="collapsible-header">
-									<i class="material-icons">info</i>{{recipe.category_name}}
-									recipe <br />
-                For {{recipe.number_people}} person - Preparation time:
-                  {{recipe.preparation_time}}
-                </div>
+									<i class="material-icons">info</i>I am {{recipe.category_name}} <br> For {{recipe.number_people}}
+                  person <br> Ready in {{recipe.preparation_time}}</div>
 								<div class="collapsible-body">
-										<span>{{recipe.recipe_description}}</span>
-										<!--Download button-->
-										<a href="{{recipe.pdf}}" target="_blank">
-											<i class="material-icons">cloud_download</i></a>
-									</div>
+                  <span>{{recipe.recipe_description}}</span>
+                  <!--Download button-->
+                  <a href="{{recipe.pdf}}" target="_blank">
+                    <i class="material-icons cloud">cloud_download</i></a
+                  >
+                </div>
 							</li>
 							<!--Description-->
 							<li>
