@@ -27,10 +27,6 @@
       <!-- Navigation -->
       <div class="navbar-fixed">
         <!-- Dropdown Structure -->
-        <ul id="login_out" class="dropdown-content">
-          <li><a href="{{url_for('login')}}">Login</a></li>
-          <li><a href="{{url_for('logout')}}">Logout</a></li>
-        </ul>
 
         <nav>
           <div class="nav-wrapper pink darken-4">
@@ -46,38 +42,33 @@
               <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
               <li><a href="{{url_for('about')}}">About me</a></li>
               <li><a href="{{url_for('contact')}}">Get in touch</a></li>
-              <li>
-                <a class="dropdown-trigger" href="#!" data-target="login_out"
-                  >Login/Logout<i class="material-icons right"
-                    >arrow_drop_down</i
-                  ></a
-                >
-              </li>
+
+              {%if session['user']%}
+              <li><a href="{{url_for('logout')}}">Logout</a></li>
+              {%else%}
+              <li><a href="{{url_for('login')}}">Login</a></li>
+              {% endif %}
             </ul>
           </div>
         </nav>
       </div>
 
       <!-- Navigation on mobile view -->
-      <ul id="loginnout" class="dropdown-content">
-        <li><a href="{{url_for('login')}}">Login</a></li>
-        <li><a href="{{url_for('logout')}}">Logout</a></li>     
-      </ul>
+
       <ul id="slide-out" class="sidenav">
         <li><a href="{{url_for('homepage')}}">Home</a></li>
         <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
         <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
         <li><a href="{{url_for('about')}}">About me</a></li>
         <li><a href="{{url_for('contact')}}">Get in touch</a></li>
-        <li>
-          <a class="dropdown-trigger" href="#!" data-target="loginnout"
-            >Login/Logout<i class="material-icons right">arrow_drop_down</i></a
-          >
-        </li>
+        {%if session['user']%}
+        <li><a href="{{url_for('logout')}}">Logout</a></li>
+        {%else%}
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        {% endif %}
       </ul>
     </header>
 
-    
     {% block content %} {% endblock %}
     <footer></footer>
     <div class="chatbubble">
@@ -151,7 +142,7 @@
         $(".slider").slider();
         $(".dropdown-trigger").dropdown();
         $(".carousel").carousel();
-        $('.materialboxed').materialbox();
+        $(".materialboxed").materialbox();
       });
     </script>
   </body>
