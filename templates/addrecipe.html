@@ -151,7 +151,7 @@
 
         <!--Add recipe button-->
         <div class="row">
-          <div class="col m8 offset-m2">
+          <div class="col m6 offset-m2">
             <button
               class="btn waves-effect waves-light btn-large"
               type="submit"
@@ -159,17 +159,26 @@
             >
               Add recipe
             </button>
-          </div>
-        </div>
+            <!--Reset/cancel links-->
+            <div class="row reset-cancel">
+              <!--Reset link-->
+              <div class="col m6">
+                <a
+                  href="{{ url_for('add_recipe') }}"
+                  class="waves-effect waves-light btn reset-btn amber darken-1"
+                  >Reset Form</a
+                >
+              </div>
 
-        <!--Cancel button-->
-        <div class="row">
-          <div class="col m4 offset-m4">
-            <a
-              href="{{url_for('get_recipes')}}"
-              class="waves-effect waves-light btn grey"
-              >Cancel</a
-            >
+              <!--Cancel link-->
+              <div class="col m6">
+                <a
+                  href="{{url_for('get_recipes')}}"
+                  class="waves-effect waves-light btn grey"
+                  >Go back</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </form>

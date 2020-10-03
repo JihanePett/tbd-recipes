@@ -12,7 +12,7 @@
 
 .chatbubble .unexpanded {
   display: block;
-  background-color: #c2185b;
+  background-color: #039be5;
   padding: 10px 15px 10px;
   position: relative;
   cursor: pointer;
@@ -53,7 +53,7 @@
   padding: 10px;
   border-radius: 5px 5px 5px 0;
   font-size: 14px;
-  background: lightblue;
+  background: #039be5;
   margin-bottom: 10px;
 }
 
@@ -65,7 +65,7 @@
   float: right;
   text-align: right;
   color: #fff;
-  background-color: #c2185b;
+  background-color: #f8bbd0;
   border-radius: 5px 5px 0 5px;
 }
 
@@ -112,7 +112,7 @@
 
 /* Loader Credit: https://codepen.io/ashmind/pen/zqaqpB */
 .chatbubble .loader {
-  color: #c2185b ;
+  color: #039be5;
   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;
   font-size: 10vh;

@@ -43,6 +43,10 @@ h3.caption1 {
     color: #0d47a1;
 }
 
+.row.reset-cancel {
+    margin-top: 20px;
+}
+
 /* My recipes */
 form.col.s8.search-box {
   margin-left: 200px;
@@ -53,7 +57,7 @@ a.btn-floating.btn-small.waves-effect.waves-light pink darken-2 {
 }
 
 a.waves-effect.waves-light.btn.reset-btn {
-  background-color: #90caf9;
+  background-color: #039be5;
   margin-left: 10px;
 }
 
@@ -98,7 +102,7 @@ input.btn.btn-default {
 }
 
 a.back-btn {
-  background-color: #90caf9;
+  background-color: #039be5;
 }
 
 /* Add category */
@@ -106,7 +110,7 @@ a.back-btn {
   margin-top: 10px;
 }
 
-/* contact form */
+/* Contact form */
 div#contact-form {
   margin-top: 50px;
 }
