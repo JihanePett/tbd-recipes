@@ -197,7 +197,7 @@ def insert_category():
 
 
 # Register new user: will be deleted after site is
-# marked as this is a one user only app
+# reviewed as this is a one user only app
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
