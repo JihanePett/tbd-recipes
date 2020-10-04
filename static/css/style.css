@@ -152,3 +152,8 @@ li.flashes-msg {
 .btn-login:hover{
     background-color: #e3f2fd;
 }
+
+/* Footer */
+i.fontawesome.fab.fa-facebook-f, i.fontawesome.fab.fa-instagram, i.fontawesome.fab.fa-linkedin {
+    font-size: 30px;
+}

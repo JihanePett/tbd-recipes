@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <!-- Compiled and minified CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -26,8 +30,6 @@
     <header>
       <!-- Navigation -->
       <div class="navbar-fixed">
-        <!-- Dropdown Structure -->
-
         <nav>
           <div class="nav-wrapper pink darken-4">
             <a href="{{url_for('homepage')}}" class="brand-logo"
@@ -43,6 +45,7 @@
               <li><a href="{{url_for('about')}}">About me</a></li>
               <li><a href="{{url_for('contact')}}">Get in touch</a></li>
 
+              <!-- Login/logout set-up -->
               {%if session['user']%}
               <li><a href="{{url_for('logout')}}">Logout</a></li>
               {%else%}
@@ -54,13 +57,14 @@
       </div>
 
       <!-- Navigation on mobile view -->
-
       <ul id="slide-out" class="sidenav">
         <li><a href="{{url_for('homepage')}}">Home</a></li>
         <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
         <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
         <li><a href="{{url_for('about')}}">About me</a></li>
         <li><a href="{{url_for('contact')}}">Get in touch</a></li>
+
+        <!-- Login/logout set-up -->
         {%if session['user']%}
         <li><a href="{{url_for('logout')}}">Logout</a></li>
         {%else%}
@@ -70,7 +74,7 @@
     </header>
 
     {% block content %} {% endblock %}
-    <footer></footer>
+    <!-- Chat Bubble -->
     <div class="chatbubble">
       <div class="unexpanded">
         <div class="title">Chat with Me</div>
@@ -123,9 +127,69 @@
         </div>
       </div>
     </div>
+    <!-- Footer -->
+    <footer class="page-footer pink darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Thank you for visiting my site</h5>
+            <p class="grey-text text-lighten-4">
+              Don't forget to follow me on my social media
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <ul>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="https://www.facebook.com/tastebudsdream/"
+                  target="_blank"
+                  ><i class="fontawesome fab fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="https://www.instagram.com/taste_buds_dream/"
+                  target="_blank"
+                  ><i class="fontawesome fab fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="www.linkedin.com/in/catherine-sagot-456b908"
+                  target="_blank"
+                  ><i class="fontawesome fab fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="{{url_for('contact')}}"
+                  ><i class="fontawesome far fa-envelope"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright center-align">
+        <div class="container">
+          © 2020 Copyright
+          <a
+            class="grey-text text-lighten-4 right"
+            href="{{url_for('contact')}}"
+            >Contact me</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Pusher minified Javascript -->
     <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -143,7 +207,7 @@
         $(".dropdown-trigger").dropdown();
         $(".carousel").carousel();
         $(".materialboxed").materialbox();
-        $('.modal').modal();
+        $(".modal").modal();
       });
     </script>
   </body>
