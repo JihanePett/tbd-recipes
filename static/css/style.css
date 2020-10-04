@@ -154,6 +154,11 @@ li.flashes-msg {
 }
 
 /* Footer */
-i.fontawesome.fab.fa-facebook-f, i.fontawesome.fab.fa-instagram, i.fontawesome.fab.fa-linkedin {
-    font-size: 30px;
+i.fontawesome.fab.fa-facebook-f, i.fontawesome.fab.fa-instagram, i.fontawesome.fab.fa-linkedin-in, i.fontawesome far fa-envelope {
+    font-size: 50px;
+}
+
+li .horizontal{
+    display: inline;
+    margin-right: 10px;
 }
