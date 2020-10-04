@@ -25,6 +25,7 @@
             />
             <label for="category_name">Category Name</label>
           </div>
+
           <!--Add Category button-->
           <div class="row">
             <div class="col m4 offset-m4 addcat-btn">
@@ -43,7 +44,8 @@
           <div class="col m2 offset-m4">
               <a
                 href="{{url_for('get_categories')}}"
-                class="waves-effect waves-light btn amber darken-1"
+                class="waves-effect waves-light btn"
+                id="edit-button"
                 >Edit categories</a
               >
             </div>
