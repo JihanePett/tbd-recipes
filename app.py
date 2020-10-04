@@ -273,9 +273,9 @@ def thermomix():
 
 
 # Calendar
-@app.route('/calendar')
-def calendar():
-    return render_template('thermomix.html')
+@app.route('/admincal')
+def admincal():
+    return render_template('admincal.html')
 
 
 if __name__ == "__main__":

@@ -154,17 +154,17 @@ li.flashes-msg {
 }
 
 /* Footer */
-i.fontawesome.fab.fa-facebook-f, i.fontawesome.fab.fa-instagram, i.fontawesome.fab.fa-linkedin-in, i.fontawesome.far.fa-envelope {
+i.fontawesome.fab.fa-facebook-f, i.fontawesome.fab.fa-instagram, i.fontawesome.fab.fa-linkedin-in {
     font-size: 50px;
+}
+
+i.fontawesome.far.fa-envelope{
+    font-size: 20px;
 }
 
 li.horizontal{
     display: inline;
     margin-right: 40px;
-}
-
-li.envelope{
-    margin-top: 20px;
 }
 
 #calendar {
