@@ -167,6 +167,7 @@ li.horizontal{
     margin-right: 40px;
 }
 
+/* Calendar */
 #external-events {
   position: fixed;
   z-index: 2;
@@ -178,15 +179,28 @@ li.horizontal{
   background: #eee;
 }
 
+div#external-events {
+    visibility: hidden;
+}
+
 #external-events .fc-event {
   cursor: move;
   margin: 3px 0;
 }
 
+button.fc-prev-button.fc-button.fc-button-primary, button.fc-next-button.fc-button.fc-button-primary,
+button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active,
+button.fc-today-button.fc-button.fc-button-primary {
+    background-color: #c2185b;
+    border: #c2185b;
+}
+
+
 #calendar-container {
   position: relative;
   z-index: 1;
   margin-left: 200px;
+  margin-top: 20px;
 }
 
 #calendar {
