@@ -2,17 +2,18 @@
 <html lang="en">
   <head>
     <title>Thermomix</title>
-    
   </head>
 
   <body>
     {% extends 'base.html' %} {% block content%}
-  	<!--Parallax-->
-	<div class="parallax-container">
-		<div class="parallax parallax img">
-			<img src="https://www.origenonline.es/wp-content/uploads/2020/06/thermomix.jpg"/>
-        </div>
-		</div>   
+    <!--Parallax-->
+    <div class="parallax-container">
+      <div class="parallax parallax img">
+        <img
+          src="https://www.origenonline.es/wp-content/uploads/2020/06/thermomix.jpg"
+        />
+      </div>
+    </div>
     <h3 class="header all-h3">
       Me and my Thermomix...
     </h3>
@@ -66,7 +67,14 @@
       <br />
 
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/zPJYDcxFBzI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/zPJYDcxFBzI"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
 
       <h3 class="header all-h3">
@@ -105,9 +113,34 @@
           </div>
         </div>
       </div>
+
+      <div id="external-events">
+        <p>
+          <strong>Draggable Events</strong>
+        </p>
+
+        <div
+          class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event"
+        >
+          <div class="fc-event-main">Live Demo</div>
+        </div>
+        <div
+          class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event"
+        >
+          <div class="fc-event-main">Live Demo</div>
+        </div>
+        <div
+          class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event"
+        >
+          <div class="fc-event-main">Live Demo</div>
+        </div>
+
+      </div>
+
+      <div id="calendar-container">
+        <div id="calendar"></div>
+      </div>
       {% endblock%}
-      
     </div>
- 
   </body>
 </html>
