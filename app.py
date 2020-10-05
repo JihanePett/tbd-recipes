@@ -47,12 +47,13 @@ def contact():
     return render_template('contact.html')
 
 
-# chatbubble
+# chatbubble admin page
 @app.route('/admin')
 def admin():
     return render_template('admin.html')
 
 
+# Chatbubble
 @app.route('/new/guest', methods=['POST'])
 def guestUser():
     data = request.json
@@ -82,6 +83,13 @@ def my_recipes():
 def search_recipes():
     query = request.form.get("query")
     recipes = mongo.db.recipes.find({"$text": {"$search": query}})
+    return render_template('myrecipes.html', recipes=recipes)
+
+
+@app.route('/search_types', methods=["GET", "POST"])
+def search_types():
+    queries = request.form.get("queries")
+    recipes = mongo.db.recipes.find({"$text": {"$search": queries}})
     return render_template('myrecipes.html', recipes=recipes)
 
 

@@ -76,15 +76,19 @@
               <a href="{{url_for('my_recipes', recipe_id=recipe._id)}}"
                 ><img class="card-image-img" src="{{recipe.image_url}}"
               /></a>
-              <span class="card-title name_recipe">{{recipe.recipe_name}} -- {{recipe.type_select}}</span>
+              <span class="card-title name_recipe"
+                >{{recipe.recipe_name}} -- {{recipe.type_select}}</span
+              >
             </div>
 
             <!--Collapsible-->
             <ul class="collapsible">
               <li class="active">
                 <div class="collapsible-header">
-                  <i class="material-icons">info</i>I am {{recipe.category_name}} <br> For {{recipe.number_people}}
-                  person <br> Ready in {{recipe.preparation_time}}
+                  <i class="material-icons">info</i>I am
+                  {{recipe.category_name}} <br />
+                  For {{recipe.number_people}} person <br />
+                  Ready in {{recipe.preparation_time}}
                 </div>
                 <div class="collapsible-body">
                   <span>{{recipe.recipe_description}}</span>
