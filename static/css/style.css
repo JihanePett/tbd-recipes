@@ -190,9 +190,14 @@ div#external-events {
 
 button.fc-prev-button.fc-button.fc-button-primary, button.fc-next-button.fc-button.fc-button-primary,
 button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active,
-button.fc-today-button.fc-button.fc-button-primary {
+button.fc-today-button.fc-button.fc-button-primary, fc-timeGridWeek-button fc-button fc-button-primary,
+fc-timeGridDay-button fc-button fc-button-primary {
     background-color: #c2185b;
     border: #c2185b;
+}
+
+h2.fc-toolbar-title {
+    color: #c2185b;
 }
 
 
