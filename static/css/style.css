@@ -116,6 +116,10 @@ i.material-icons.about {
     margin-left: 50px;
 }
 
+i.material-icons.about:hover{
+    color: #4caf50;
+}
+
 /* Contact form */
 div#contact-form {
   margin-top: 50px;
