@@ -1,93 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/style.css')}}"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/app.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.css"
-    />
-    <title>TBD</title>
-  </head>
 
-  <body>
-    <header>
-      <!-- Navigation -->
-      <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper green lighten-2">
-            <a href="{{url_for('homepage')}}" class="brand-logo"
-              >TasteBudsDream</a
-            >
-            <a href="#" data-target="slide-out" class="sidenav-trigger"
-              ><i class="material-icons menu">menu</i></a
-            >
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="{{url_for('homepage')}}">Home</a></li>
-              <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
-              <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
-              <li><a href="{{url_for('about')}}">About me</a></li>
-              <li><a href="{{url_for('contact')}}">Get in touch</a></li>
+<head>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.css" />
+	<title>TBD</title>
+</head>
 
-              <!-- Login/logout set-up -->
-              {%if session['user']%}
-              <li><a href="{{url_for('logout')}}">Logout</a></li>
-              {%else%}
-              <li><a href="{{url_for('login')}}">Login</a></li>
-              {% endif %}
-            </ul>
-          </div>
-        </nav>
-      </div>
+<body>
+	<header>
+		<!-- Navigation -->
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper green lighten-2">
+					<a href="{{url_for('homepage')}}" class="brand-logo">TasteBudsDream</a>
+					<a href="#" data-target="slide-out"
+						class="sidenav-trigger"><i class="material-icons menu">menu</i></a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="{{url_for('homepage')}}">Home</a></li>
+						<li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
+						<li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
+						<li><a href="{{url_for('about')}}">About me</a></li>
+						<li><a href="{{url_for('contact')}}">Get in touch</a></li>
 
-      <!-- Navigation on mobile view -->
-      <ul id="slide-out" class="sidenav">
-        <li><a href="{{url_for('homepage')}}">Home</a></li>
-        <li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
-        <li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
-        <li><a href="{{url_for('about')}}">About me</a></li>
-        <li><a href="{{url_for('contact')}}">Get in touch</a></li>
+						<!-- Login/logout set-up -->
+						{%if session['user']%}
+						<li><a href="{{url_for('logout')}}">Logout</a></li>
+						{%else%}
+						<li><a href="{{url_for('login')}}">Login</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</nav>
+		</div>
 
-        <!-- Login/logout set-up -->
-        {%if session['user']%}
-        <li><a href="{{url_for('logout')}}">Logout</a></li>
-        {%else%}
-        <li><a href="{{url_for('login')}}">Login</a></li>
-        {% endif %}
-      </ul>
-    </header>
+		<!-- Navigation on mobile view -->
+		<ul id="slide-out" class="sidenav">
+			<li><a href="{{url_for('homepage')}}">Home</a></li>
+			<li><a href="{{url_for('my_recipes')}}">My recipes</a></li>
+			<li><a href="{{url_for('thermomix')}}">Thermomix</a></li>
+			<li><a href="{{url_for('about')}}">About me</a></li>
+			<li><a href="{{url_for('contact')}}">Get in touch</a></li>
 
-    {% block content %} {% endblock %}
-    <!-- Chat Bubble -->
-    <div class="chatbubble">
-      <div class="unexpanded">
-        <div class="title">Chat with Me</div>
-      </div>
-      <div class="expanded chat-window">
-        <div class="login-screen container">
-          <form id="loginScreenForm">
-            <div class="form-group">
-              <input
+			<!-- Login/logout set-up -->
+			{%if session['user']%}
+			<li><a href="{{url_for('logout')}}">Logout</a></li>
+			{%else%}
+			<li><a href="{{url_for('login')}}">Login</a></li>
+			{% endif %}
+		</ul>
+	</header>
+
+	{% block content %} {% endblock %}
+	<!-- Chat Bubble -->
+	<div class="chatbubble">
+		<div class="unexpanded">
+			<div class="title">Chat with Me</div>
+		</div>
+		<div class="expanded chat-window">
+			<div class="login-screen container">
+				<form id="loginScreenForm">
+					<div class="form-group">
+						<input
                 type="text"
                 class="form-control"
                 id="fullname"
@@ -95,8 +74,8 @@
                 required
               />
             </div>
-            <div class="form-group">
-              <input
+						<div class="form-group">
+							<input
                 type="email"
                 class="form-control"
                 id="email"
@@ -104,20 +83,20 @@
                 required
               />
             </div>
-            <button type="submit" class="btn btn-block btn-primary">
+							<button type="submit" class="btn btn-block btn-primary">
               Start Chat
             </button>
-          </form>
-        </div>
-        <div class="chats">
-          <div class="loader-wrapper">
-            <div class="loader"><span>{</span><span>}</span></div>
-          </div>
-          <ul class="messages clearfix"></ul>
-          <div class="input">
-            <form class="form-inline" id="messageSupport">
-              <div class="form-group">
-                <input
+				</form>
+			</div>
+			<div class="chats">
+				<div class="loader-wrapper">
+					<div class="loader"><span>{</span><span>}</span></div>
+				</div>
+				<ul class="messages clearfix"></ul>
+				<div class="input">
+					<form class="form-inline" id="messageSupport">
+						<div class="form-group">
+							<input
                   type="text"
                   autocomplete="off"
                   class="form-control"
@@ -125,87 +104,70 @@
                   placeholder="Enter Message"
                 />
               </div>
-              <button type="submit" class="btn btn-primary">Send</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Footer -->
-    <footer class="page-footer green lighten-2">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Thank you for visiting my site</h5>
-            <p class="grey-text text-lighten-4">
-              Don't forget to follow me on my social media
-            </p>
-            <p class="envelope"> Alternatively, you can contact me on: <br>
-              <a class="grey-text text-lighten-3" href="{{url_for('contact')}}"
-                ><i class="fontawesome far fa-envelope"></i
-              ></a>
-            </p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <ul>
-              <li class="horizontal">
-                <a
-                  class="grey-text text-lighten-3"
-                  href="https://www.facebook.com/tastebudsdream/"
-                  target="_blank"
-                  ><i class="fontawesome fab fa-facebook-f"></i
-                ></a>
-              </li>
-              <li class="horizontal">
-                <a
-                  class="grey-text text-lighten-3"
-                  href="https://www.instagram.com/taste_buds_dream/"
-                  target="_blank"
-                  ><i class="fontawesome fab fa-instagram"></i
-                ></a>
-              </li>
-              <li class="horizontal">
-                <a
-                  class="grey-text text-lighten-3"
-                  href="www.linkedin.com/in/catherine-sagot-456b908"
-                  target="_blank"
-                  ><i class="fontawesome fab fa-linkedin-in"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright center-align">
-        <div class="container">
-          © 2020 Copyright
-          <a
-            class="grey-text text-lighten-4 right"
-            href="{{url_for('contact')}}"
-            >Contact me</a
-          >
-        </div>
-      </div>
-    </footer>
+							<button type="submit" class="btn btn-primary">Send</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<footer class="page-footer green lighten-2">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Thank you for visiting my site</h5>
+					<p class="grey-text text-lighten-4">
+						Don't forget to follow me on my social media
+					</p>
+					<p class="envelope"> Alternatively, you can contact me on: <br>
+						<a class="grey-text text-lighten-3"
+							href="{{url_for('contact')}}"><i class="fontawesome far fa-envelope"></i></a>
+					</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<ul>
+						<li class="horizontal">
+							<a class="grey-text text-lighten-3" href="https://www.facebook.com/tastebudsdream/"
+								target="_blank"><i class="fontawesome fab fa-facebook-f"></i></a>
+						</li>
+						<li class="horizontal">
+							<a class="grey-text text-lighten-3" href="https://www.instagram.com/taste_buds_dream/"
+								target="_blank"><i class="fontawesome fab fa-instagram"></i></a>
+						</li>
+						<li class="horizontal">
+							<a class="grey-text text-lighten-3" href="www.linkedin.com/in/catherine-sagot-456b908"
+								target="_blank"><i class="fontawesome fab fa-linkedin-in"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright center-align">
+			<div class="container">
+				© 2020 Copyright
+				<a class="grey-text text-lighten-4 right" href="{{url_for('contact')}}">Contact me</a>
+			</div>
+		</div>
+	</footer>
 
-    <!-- Pusher minified Javascript -->
-    <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+	<!-- Pusher minified Javascript -->
+	<script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+	<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
-    <!-- Javascript for calendar -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.js"></script>
-    <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+	<!-- Javascript for calendar -->
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.js"></script>
+	<script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
 
-    <!-- Javascript for materialize -->
-    <script type="text/javascript">
-      $(document).ready(function () {
+	<!-- Javascript for materialize -->
+	<script type="text/javascript">
+		$(document).ready(function () {
         $(".sidenav").sidenav();
         $(".collapsible").collapsible();
         $(".parallax").parallax();
@@ -213,8 +175,12 @@
         $(".slider").slider();
         $(".dropdown-trigger").dropdown();
         $(".modal").modal();
-        $(".materialboxed").materialbox();
+        $('.smooth-goto').on('click', function() {  
+            $('html, body').animate({scrollTop: $(this.hash).offset().top - 50}, 1000);
+            return false;
+});
       });
-    </script>
-  </body>
+	</script>
+</body>
+
 </html>

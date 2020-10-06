@@ -26,7 +26,7 @@ h3.header.all-h3 {
 
 h3.caption1 {
   margin-top: 160px;
-  margin-right: 70px;
+  margin-right: 90px;
 }
 
 .flash_msg{
@@ -107,6 +107,14 @@ a#editcat-button {
     background-color: #fb8c00;
 }
 
+/* About */
+i.material-icons.about {
+    color: black;
+    font-size: 50px;
+    margin-top: 70px;
+    margin-right: 60px;
+    margin-left: 50px;
+}
 
 /* Contact form */
 div#contact-form {
