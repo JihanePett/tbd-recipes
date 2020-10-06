@@ -4,7 +4,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- flash messages for login out -->
+    <!-- Flash messages for login out -->
     <section>
       {% with messages = get_flashed_messages() %} {% if messages %} {% for
       message in messages %}
@@ -16,6 +16,7 @@
     
     <h3 class="header all-h3">Enter your login credentials below</h3>
 
+    <!-- Login credentials -->
     <div class="row">
         <form class="col s12 m4 offset-m4" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel login">
@@ -40,7 +41,7 @@
 
                 <!-- login -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large blue darken-1 btn-login">
+                    <button type="submit" class="col s12 btn-large green lighten-2 btn-login">
                         Log In
                     </button>
                 </div>
@@ -48,6 +49,7 @@
         </form>
     </div>
 
+<!-- Register option that will be removed when site is up and running -->
     <div class="row">
         <div class="col s12">
             <p class="center-align">

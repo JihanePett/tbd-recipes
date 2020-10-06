@@ -93,10 +93,20 @@ a.back-btn {
   background-color: #039be5;
 }
 
+a.material-icon-cloud {
+    color: #4caf50;
+    float: right;
+}
+
 /* Add category */
 .col.m6.offset-m2.addcat-btn {
   margin-top: 10px;
 }
+
+a#editcat-button {
+    background-color: #fb8c00;
+}
+
 
 /* Contact form */
 div#contact-form {
