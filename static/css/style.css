@@ -3,21 +3,13 @@
 nav .brand-logo {
   letter-spacing: 4px;
   margin-left: 10px;
+  color: black;
 }
 
 ul:not(.browser-default) {
   font-weight: 500;
   letter-spacing: 2px;
   padding-right: 5px;
-}
-
-ul#login_out.dropdown-content{
-    color: #880e4f;
-}
-
-/* Material icons */
-i.material-icons {
-  color: #f8bbd0;
 }
 
 /* Slider Fullscreen */
@@ -27,7 +19,6 @@ i.material-icons {
 
 /* General*/
 h3.header.all-h3 {
-  color: #c2185b;
   text-align: center;
   margin-top: 70px;
   margin-bottom: 30px;
@@ -81,20 +72,17 @@ input.btn.btn-default {
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover {
-    background-color: #f06292;
+    background-color: #81c784;
 }
 
 #edit-button,
 #del-button {
-  background-color: #f06292 ;
+  background-color: #81c784 ;
   letter-spacing: 2px;
   margin-right: 20px;
   display: inline-block;
 }
 
-#del-button {
-  background-color: #880e4f;
-}
 
 .row.back-btn {
   margin-top: 50px;
@@ -118,7 +106,7 @@ div#contact-form {
 .btn,
 .btn-large,
 input.btn.btn-default {
-  background-color: #c2185b;
+  background-color: #e8f5e9;
   display: inherit;
   margin: 0 auto;
 }
@@ -150,7 +138,7 @@ li.flashes-msg {
 }
 
 .btn-login:hover{
-    background-color: #e3f2fd;
+    background-color: #81c784;
 }
 
 /* Footer */
@@ -192,12 +180,12 @@ button.fc-prev-button.fc-button.fc-button-primary, button.fc-next-button.fc-butt
 button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active,
 button.fc-today-button.fc-button.fc-button-primary, fc-timeGridWeek-button fc-button fc-button-primary,
 fc-timeGridDay-button fc-button fc-button-primary {
-    background-color: #c2185b;
-    border: #c2185b;
+    background-color: #a5d6a7;
+    border: #a5d6a7;
 }
 
 h2.fc-toolbar-title {
-    color: #c2185b;
+    color: #a5d6a7;
 }
 
 
