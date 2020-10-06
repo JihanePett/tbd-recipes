@@ -72,7 +72,7 @@ input.btn.btn-default {
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover {
-    background-color: #81c784;
+    background-color: #c8e6c9;
 }
 
 #edit-button,
@@ -106,7 +106,7 @@ div#contact-form {
 .btn,
 .btn-large,
 input.btn.btn-default {
-  background-color: #e8f5e9;
+  background-color: #81c784;
   display: inherit;
   margin: 0 auto;
 }
@@ -138,21 +138,22 @@ li.flashes-msg {
 }
 
 .btn-login:hover{
-    background-color: #81c784;
+    background-color: #c8e6c9;
 }
 
 /* Footer */
-i.fontawesome.fab.fa-facebook-f, i.fontawesome.fab.fa-instagram, i.fontawesome.fab.fa-linkedin-in {
+li.horizontal{
+    display: inline;
+    margin-right: 40px;
+}
+
+i.fontawesome.fab.fa-facebook-f, i.fontawesome.fab.fa-instagram, 
+i.fontawesome.fab.fa-linkedin-in, i.fontawesome.far.fa-envelope {
     font-size: 50px;
 }
 
 i.fontawesome.far.fa-envelope{
-    font-size: 20px;
-}
-
-li.horizontal{
-    display: inline;
-    margin-right: 40px;
+    text-align: center;
 }
 
 /* Calendar */
