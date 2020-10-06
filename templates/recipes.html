@@ -27,6 +27,7 @@
           each recipe cards. To add a new recipe or category follow the below
           links.<br />
         </p>
+
         <!--Add recipe and category buttons-->
         <div class="row">
           <div class="col s4">
@@ -68,11 +69,11 @@
               <a href="{{url_for('my_recipes', recipe_id=recipe._id)}}"
                 ><img class="card-image-img" src="{{recipe.image_url}}"
               /></a>
+            </div>
               <span class="card-title name_recipe"
                 >{{recipe.recipe_name}} -- {{recipe.type_select}}</span
               >
-            </div>
-
+              
             <!--Collapsible-->
             <ul class="collapsible">
               <li class="active">
