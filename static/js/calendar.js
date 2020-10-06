@@ -18,20 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-  let draggableEl = document.getElementById('mydraggable');
-  let calendarEl = document.getElementById('mycalendar');
-
-  let calendar = new Calendar(calendarEl, {
-    plugins: [ interactionPlugin ],
-    droppable: true
-  });
-
-  calendar.render();
-
-  new Draggable(draggableEl);
-});
-
   // initialize the calendar
   // -----------------------------------------------------------------
 

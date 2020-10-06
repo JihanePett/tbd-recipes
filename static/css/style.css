@@ -25,8 +25,8 @@ h3.header.all-h3 {
 }
 
 h3.caption1 {
-  margin-top: 260px;
-  margin-right: 100px;
+  margin-top: 160px;
+  margin-right: 70px;
 }
 
 .flash_msg{
@@ -209,7 +209,7 @@ h2.fc-toolbar-title {
 #calendar-container {
   position: relative;
   z-index: 1;
-  margin-left: 200px;
+  margin-left: 100px;
   margin-top: 20px;
 }
 
