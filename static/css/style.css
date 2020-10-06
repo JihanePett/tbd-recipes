@@ -25,7 +25,7 @@ h3.header.all-h3 {
 }
 
 h3.caption1 {
-  margin-top: 160px;
+  margin-top: 260px;
   margin-right: 100px;
 }
 
@@ -162,12 +162,14 @@ li.horizontal{
 }
 
 i.fontawesome.fab.fa-facebook-f, i.fontawesome.fab.fa-instagram, 
-i.fontawesome.fab.fa-linkedin-in, i.fontawesome.far.fa-envelope {
+i.fontawesome.fab.fa-linkedin-in {
     font-size: 50px;
 }
 
-i.fontawesome.far.fa-envelope{
-    text-align: center;
+i.fontawesome.far.fa-envelope {
+    margin-left: 100px;
+    margin-top: 5px;
+    font-size: 40px;
 }
 
 /* Calendar */
@@ -193,8 +195,8 @@ div#external-events {
 
 button.fc-prev-button.fc-button.fc-button-primary, button.fc-next-button.fc-button.fc-button-primary,
 button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active,
-button.fc-today-button.fc-button.fc-button-primary, fc-timeGridWeek-button fc-button fc-button-primary,
-fc-timeGridDay-button fc-button fc-button-primary {
+button.fc-today-button.fc-button.fc-button-primary, button.fc-timeGridWeek-button.fc-button.fc-button-primary, 
+button.fc-timeGridDay-button.fc-button.fc-button-primary {
     background-color: #a5d6a7;
     border: #a5d6a7;
 }
