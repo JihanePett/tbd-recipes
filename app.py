@@ -42,9 +42,11 @@ def homepage():
 
 
 # Contact page
-@app.route('/contact')
+@app.route('/contact', methods=["GET", "POST"])
 def contact():
-    return render_template('contact.html')
+    if request.method == "POST":
+        flash("Thank you {}, I have received your message". format(request.form["name"]))
+    return render_template('contact.html', page_title="Contact me")
 
 
 # chatbubble admin page

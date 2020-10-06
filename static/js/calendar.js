@@ -1,22 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
   var Calendar = FullCalendar.Calendar;
-  var Draggable = FullCalendar.Draggable;
+//  var Draggable = FullCalendar.Draggable;
 
-  var containerEl = document.getElementById('external-events');
-  var calendarEl = document.getElementById('calendar');
-  var checkbox = document.getElementById('drop-remove');
+//  var containerEl = document.getElementById('external-events');
+    var calendarEl = document.getElementById('calendar');
+//  var checkbox = document.getElementById('drop-remove');
 
   // initialize the external events
   // -----------------------------------------------------------------
 
-  new Draggable(containerEl, {
-    itemSelector: '.fc-event',
-    eventData: function(eventEl) {
-      return {
-        title: eventEl.innerText
-      };
-    }
-  });
+  //new Draggable(containerEl, {
+  //  itemSelector: '.fc-event',
+  //  eventData: function(eventEl) {
+  //    return {
+  //      title: eventEl.innerText
+  //    };
+  //  }
+  //});
 
   // initialize the calendar
   // -----------------------------------------------------------------
