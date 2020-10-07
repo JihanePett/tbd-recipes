@@ -45,7 +45,8 @@ def homepage():
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        flash("Thank you {}, I have received your message". format(request.form["name"]))
+        flash("Thank you {}, \
+            I have received your message". format(request.form["name"]))
     return render_template('contact.html', page_title="Contact me")
 
 
@@ -60,9 +61,9 @@ def admin():
 def guestUser():
     data = request.json
     pusher.trigger(u'general-channel', u'new-guest-details', {
-            'name': data['name'],
-            'email': data['email']
-        })
+        'name': data['name'],
+        'email': data['email']
+    })
     return json.dumps(data)
 
 
@@ -175,7 +176,7 @@ def delete_category(category_id):
 def edit_category(category_id):
     return render_template('editcategory.html',
                            category=mongo.db.categories.find_one(
-                                    {'_id': ObjectId(category_id)}))
+                               {'_id': ObjectId(category_id)}))
 
 
 @app.route('/update_category/<category_id>', methods=['GET', 'POST'])
@@ -240,7 +241,7 @@ def login():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 return redirect(url_for(
-                            "get_recipes", username=session["user"]))
+                    "get_recipes", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")

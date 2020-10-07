@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>Add your recipe</title>
   </head>
@@ -58,7 +58,6 @@
               class="materialize-textarea"
               id="recipe_desciption"
               name="recipe_description"
-              type="text"
               required
             ></textarea>
             <label for="icon_prefix">Recipe Description</label>
@@ -73,7 +72,6 @@
               class="materialize-textarea"
               id="recipe_method"
               name="recipe_method"
-              type="text"
               required
             ></textarea>
             <label for="icon_prefix">Recipe Method</label>
@@ -88,7 +86,6 @@
               class="materialize-textarea"
               id="recipe_ingredients"
               name="recipe_ingredients"
-              type="text"
               required
             ></textarea>
             <label for="icon_prefix">Recipe Ingredients</label>
@@ -134,7 +131,6 @@
               name="image_url"
               type="text"
               class="validate"
-              required
             />
             <label for="icon_prefix"> Enter the image url </label>
           </div>
@@ -144,7 +140,7 @@
         <div class="row">
           <div class="input-field col m10 s8">
             <i class="material-icons prefix">attach_file</i>
-            <input id="pdf" name="pdf" type="text" class="validate" required />
+            <input id="pdf" name="pdf" type="text" class="validate" />
             <label for="icon_prefix"> Enter the pdf url </label>
           </div>
         </div>
