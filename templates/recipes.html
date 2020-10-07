@@ -62,7 +62,7 @@
     <!--Recipes cards-->
     <div class="row">
       {% for recipe in recipes %}
-      <div class="col m4 s2">
+      <div class="col l4 m6 s6">
         <div class="card">
           <div class="card-content">
             <div class="card-image">
@@ -114,7 +114,7 @@
 
             <!--Edit and Delete Recipes Buttons-->
             <div class="row">
-              <div class="col s3">
+              <div class="col l2 m4 s4">
                 <a
                   href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
                   class="waves-effect waves-light btn btn-small"
@@ -122,7 +122,7 @@
                   >Edit</a
                 >
               </div>
-              <div class="col m2">
+              <div class="col l2 m2 s2">
                 <a
                   href="#modal1"
                   class="waves-effect waves-light btn btn-small modal-trigger deep-orange darken-4"
