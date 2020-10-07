@@ -1,5 +1,4 @@
 /* Navigation */
-
 nav .brand-logo {
   letter-spacing: 4px;
   margin-left: 10px;
@@ -105,6 +104,12 @@ i.material-icons.cloud {
 
 a#editcat-button {
     background-color: #fb8c00;
+}
+
+/* Thermomix video frame */
+iframe{
+    width: 410px;
+    height: 411px;
 }
 
 /* About */

@@ -6,17 +6,23 @@
 
   <body>
     {% extends 'base.html' %} {% block content%}
+    <!-- Slider -->
     <div class="slider fullscreen">
       <ul class="slides">
-        <li style="opacity: 1">
-          <img src="https://wallpaperaccess.com/full/767277.jpg" />
+
+      <!-- Slide1-->
+        <li style="opacity: 1;">
+          <img src="https://wallpaperaccess.com/full/767277.jpg" alt="pizza" />
           <div class="caption left-align">
             <h3 class="caption1">Welcome to my kitchen</h3>
           </div>
         </li>
+
+        <!-- Slide2 -->
         <li>
           <img
             src="https://cdn.lifestyleasia.com/wp-content/uploads/2018/12/10182903/memasak-e1544437920419.jpg"
+            alt="pizza"
           />
           <div class="caption right-align">
             <h3 class="caption2">Let's get cooking</h3>
@@ -24,19 +30,22 @@
               Browse some of my delicious recipes
             </h5>
             <div class="row">
-            <div class="input-field col m4 offset-m8">
-              <a
-                href="{{url_for('my_recipes')}}"
-                class="waves-effect waves-light btn"
-                >Check out my recipes</a
-              >
-            </div>
+              <div class="input-field col m4 offset-m8">
+                <a
+                  href="{{url_for('my_recipes')}}"
+                  class="waves-effect waves-light btn"
+                  >Check out my recipes</a
+                >
+              </div>
             </div>
           </div>
         </li>
+
+        <!-- Slide3 -->
         <li>
           <img
             src="https://thermomix.vorwerk.com/fileadmin/data/com-en/img/rebrush-2018/homepage/tm_100_img_teaserfunctions_tm6_en_01.jpg"
+            alt="cutting board"
           />
           <div class="caption right-align">
             <h3>THERMOMIX !</h3>
@@ -44,14 +53,14 @@
               An amazing addition to your cooking
             </h5>
             <div class="row">
-            <div class="input-field col m4 offset-m8">
-              <a
-                href="{{url_for('thermomix')}}"
-                class="waves-effect waves-light btn"
-                >My thermomix</a
-              >
+              <div class="input-field col m4 offset-m8">
+                <a
+                  href="{{url_for('thermomix')}}"
+                  class="waves-effect waves-light btn"
+                  >My thermomix</a
+                >
+              </div>
             </div>
-            </div>            
           </div>
         </li>
       </ul>
