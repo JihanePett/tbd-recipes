@@ -1,155 +1,149 @@
 (function () {
-        'use strict';
+  "use strict";
 
-        // ----------------------------------------------------
-        // Configure Pusher instance
-        // ----------------------------------------------------
+  // ----------------------------------------------------
+  // Configure Pusher instance
+  // ----------------------------------------------------
 
-        var pusher = new Pusher('364cf11175365baa44b2', {
-            authEndpoint: '/pusher/auth',
-            cluster: 'eu',
-            encrypted: true
-          });
+  var pusher = new Pusher(key=os.environ.get('KEY'), {
+    authEndpoint: "/pusher/auth",
+    cluster=os.environ.get('CLUSTER'),
+    encrypted: true,
+  });
 
-        // ----------------------------------------------------
-        // Chat Details
-        // ----------------------------------------------------
+  // ----------------------------------------------------
+  // Chat Details
+  // ----------------------------------------------------
 
-        let chat = {
-            messages: [],
-            currentRoom: '',
-            currentChannel: '',
-            subscribedChannels: [],
-            subscribedUsers: []
-        }
+  let chat = {
+    messages: [],
+    currentRoom: "",
+    currentChannel: "",
+    subscribedChannels: [],
+    subscribedUsers: [],
+  };
 
-        // ----------------------------------------------------
-        // Subscribe to the generalChannel
-        // ----------------------------------------------------
+  // ----------------------------------------------------
+  // Subscribe to the generalChannel
+  // ----------------------------------------------------
 
-        var generalChannel = pusher.subscribe('general-channel');
+  var generalChannel = pusher.subscribe("general-channel");
 
-        // ----------------------------------------------------
-        // Targeted Elements
-        // ----------------------------------------------------
+  // ----------------------------------------------------
+  // Targeted Elements
+  // ----------------------------------------------------
 
-        const chatBody = $(document)
-        const chatRoomsList = $('#rooms')
-        const chatReplyMessage = $('#replyMessage')
+  const chatBody = $(document);
+  const chatRoomsList = $("#rooms");
+  const chatReplyMessage = $("#replyMessage");
 
-        // ----------------------------------------------------
-        // Register helpers
-        // ----------------------------------------------------
+  // ----------------------------------------------------
+  // Register helpers
+  // ----------------------------------------------------
 
-        const helpers = {
+  const helpers = {
+    // ------------------------------------------------------------------
+    // Clear the chat messages UI
+    // ------------------------------------------------------------------
 
-            // ------------------------------------------------------------------
-            // Clear the chat messages UI
-            // ------------------------------------------------------------------
+    clearChatMessages: () => $("#chat-msgs").html(""),
 
-            clearChatMessages: () => $('#chat-msgs').html(''),
+    // ------------------------------------------------------------------
+    // Add a new chat message to the chat window.
+    // ------------------------------------------------------------------
 
-            // ------------------------------------------------------------------
-            // Add a new chat message to the chat window.
-            // ------------------------------------------------------------------
-
-            displayChatMessage: (message) => {
-                if (message.email === chat.currentRoom) {
-
-                    $('#chat-msgs').prepend(
-                        `<tr>
+    displayChatMessage: (message) => {
+      if (message.email === chat.currentRoom) {
+        $("#chat-msgs").prepend(
+          `<tr>
                             <td>
                                 <div class="sender">${message.sender} @ <span class="date">${message.createdAt}</span></div>
                                 <div class="message">${message.text}</div>
                             </td>
                         </tr>`
-                    )
-                }
-            },
+        );
+      }
+    },
 
-            // ------------------------------------------------------------------
-            // Select a new guest chatroom
-            // ------------------------------------------------------------------
+    // ------------------------------------------------------------------
+    // Select a new guest chatroom
+    // ------------------------------------------------------------------
 
-            loadChatRoom: evt => {
-                chat.currentRoom = evt.target.dataset.roomId
-                chat.currentChannel = evt.target.dataset.channelId
+    loadChatRoom: (evt) => {
+      chat.currentRoom = evt.target.dataset.roomId;
+      chat.currentChannel = evt.target.dataset.channelId;
 
-                if (chat.currentRoom !== undefined) {
-                    $('.response').show()
-                    $('#room-title').text(evt.target.dataset.roomId)
-                }
+      if (chat.currentRoom !== undefined) {
+        $(".response").show();
+        $("#room-title").text(evt.target.dataset.roomId);
+      }
 
-                evt.preventDefault()
-                helpers.clearChatMessages()
-            },
+      evt.preventDefault();
+      helpers.clearChatMessages();
+    },
 
-            // ------------------------------------------------------------------
-            // Reply a message
-            // ------------------------------------------------------------------
-            replyMessage: evt => {
-                evt.preventDefault()
+    // ------------------------------------------------------------------
+    // Reply a message
+    // ------------------------------------------------------------------
+    replyMessage: (evt) => {
+      evt.preventDefault();
 
-                let createdAt = new Date()
-                createdAt = createdAt.toLocaleString()
+      let createdAt = new Date();
+      createdAt = createdAt.toLocaleString();
 
-                const message = $('#replyMessage input').val().trim()
+      const message = $("#replyMessage input").val().trim();
 
-                chat.subscribedChannels[chat.currentChannel].trigger('client-support-new-message', {
-                    'name': 'Admin',
-                    'email': chat.currentRoom,
-                    'text': message, 
-                    'createdAt': createdAt 
-                });
-
-                helpers.displayChatMessage({
-                    'email': chat.currentRoom,
-                    'sender': 'Support',
-                    'text': message, 
-                    'createdAt': createdAt
-                })
-
-
-                $('#replyMessage input').val('')
-            },
+      chat.subscribedChannels[chat.currentChannel].trigger(
+        "client-support-new-message",
+        {
+          name: "Admin",
+          email: chat.currentRoom,
+          text: message,
+          createdAt: createdAt,
         }
+      );
 
+      helpers.displayChatMessage({
+        email: chat.currentRoom,
+        sender: "Support",
+        text: message,
+        createdAt: createdAt,
+      });
 
-          // ------------------------------------------------------------------
-          // Listen to the event that returns the details of a new guest user
-          // ------------------------------------------------------------------
+      $("#replyMessage input").val("");
+    },
+  };
 
-          generalChannel.bind('new-guest-details', function(data) {
+  // ------------------------------------------------------------------
+  // Listen to the event that returns the details of a new guest user
+  // ------------------------------------------------------------------
 
-            chat.subscribedChannels.push(pusher.subscribe('private-' + data.email));
+  generalChannel.bind("new-guest-details", function (data) {
+    chat.subscribedChannels.push(pusher.subscribe("private-" + data.email));
 
-            chat.subscribedUsers.push(data);
+    chat.subscribedUsers.push(data);
 
-            // render the new list of subscribed users and clear the former
-            $('#rooms').html("");
-            chat.subscribedUsers.forEach(function (user, index) {
+    // render the new list of subscribed users and clear the former
+    $("#rooms").html("");
+    chat.subscribedUsers.forEach(function (user, index) {
+      $("#rooms").append(
+        `<li class="nav-item"><a data-room-id="${user.email}" data-channel-id="${index}" class="nav-link" href="#">${user.name}</a></li>`
+      );
+    });
+  });
 
-                    $('#rooms').append(
-                        `<li class="nav-item"><a data-room-id="${user.email}" data-channel-id="${index}" class="nav-link" href="#">${user.name}</a></li>`
-                    )
-            })
+  // ------------------------------------------------------------------
+  // Listen for a new message event from a guest
+  // ------------------------------------------------------------------
 
-          })
+  pusher.bind("client-guest-new-message", function (data) {
+    helpers.displayChatMessage(data);
+  });
 
+  // ----------------------------------------------------
+  // Register page event listeners
+  // ----------------------------------------------------
 
-          // ------------------------------------------------------------------
-          // Listen for a new message event from a guest
-          // ------------------------------------------------------------------
-
-          pusher.bind('client-guest-new-message', function(data){
-              helpers.displayChatMessage(data)
-          })
-
-
-        // ----------------------------------------------------
-        // Register page event listeners
-        // ----------------------------------------------------
-
-        chatReplyMessage.on('submit', helpers.replyMessage)
-        chatRoomsList.on('click', 'li', helpers.loadChatRoom)
-    }())
+  chatReplyMessage.on("submit", helpers.replyMessage);
+  chatRoomsList.on("click", "li", helpers.loadChatRoom);
+})();
