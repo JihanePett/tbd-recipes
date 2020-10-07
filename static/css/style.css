@@ -125,6 +125,13 @@ i.material-icons.about:hover{
     color: #4caf50;
 }
 
+i.material-icons.top-arrow {
+    display: block;
+    float: right;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
 /* Contact form */
 div#contact-form {
   margin-top: 50px;
