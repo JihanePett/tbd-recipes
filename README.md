@@ -15,7 +15,8 @@ As opposed to other recipe site, where anyone can log in, edit, create, delete t
 the owner, and is made for the public to enjoy looking at food, recipes and how they are made.
 To sum up, anyone looking to spice up and level up their cooking style with or without the Thermomix should be interested in this site. 
 
-UX
+**UX**
+
 As a user, anyone whom enjoy cooking will first have the ability to search through a large range of recipes, those recipes are made for a certain number
 of persons and have a preparation time displayed so to get better organised.
 The search can either result in a thermomix or other type of recipe. Not restricting the user by selecting either/or will allow him/her to get inspired 
@@ -101,6 +102,7 @@ CSS, or Cascading Style Sheets
 Materialize
 Javascript
 Python
+Werkzeug
 Flask
 Pusher
 Pymongo
@@ -110,20 +112,56 @@ Fullcalendar.io
 Gitpod
 Git
 GitHub
-Chrome DevTools:
+Chrome DevTools
 W3C Markup Validation Service
 Heroku for deplyoment
 
 ## Testing
 
-http://ami.responsivedesign.is/ has been used to see how the site performs on different Apple devices and their viewports, all pages, links, icons performed as expected on all devices.
-Desktop
+**http://ami.responsivedesign.is/** has been used to see how the site performs on different Apple devices and their viewports, all pages, links, icons performed as expected on all devices.
+**Desktop**
 Google Chrome, Internet Edge & Mozilla Firefox browsers; all pages, links on those pages, and footer icon links perform well on all viewport sizes. Developer tools were also used on 
 all browsers for the various viewport sizes.
-Mobile
+**Mobile**
 used Huawei CLT-L09, Samsung Note 9, Iphone 4 and 5 to check every pages and links, all performs well on all devices.
+**App testing**
+First step taken was to set up the Mongodb database and decide on the collections and interactions of all.
+Making my route to the database was the first test completed successfully as soon as flask was installed.
+The second test was making sure all the secret keys were encoded in the environmental variable and also added into Heroku for deployment
+The CRUD testing was run first through the terminal then after taking the select forms from materialize and setting up 2 new collections within Mongodb
+I was able to test the ability to complete all of the CRUD capabilities with success.
+For the search box, I had to create an index on my db through Python, once created and a quick look at mongodb to see if it showed, I created the search route and linked it to 
+that index on my_recipes.
 
-Issues:
+Prior to creating the pusher chat widget, I had created a separated gitpod workplace to test it out as it requires a lot of 'new knowledge'
+As soon as in place and tested successfully I managed to install it again in this app just to find out it didnt work straight away which I explain further in issues.
+
+Conducting test on registering a new user, by first creating a user collection on Mongodb and creating its route on flask and an html materialize form.
+The user straight away appeared on mongodb which was a success and I could work on the login.
+
+
+## Issues:
+
+My main 'issue' was with github as everytime I started writing a Flask code, it would instantly disappear the next day if I started working pressing the green gitpod button.
+A quick chat with the amazing tutors led me to understand that I should have gone to my workplace instead.
+
+Some of the materialize col grid weren't working especiallyin the Iphone and Chrome, it was very hard to find the right combination for the parallax image
+in my_recipes page as well as the video-card in the thermomix page. Couple of trials resulted in the current view.
+The unstableness of flexbox in internet explorer has led me not to use a sticky footer but a fixed one. On the login page on mobile view we can 
+clearly see the footer coming up more than it should.
+
+I had a main issue with the chat widget as it didnt want to work at first, although my test was conducted on one page only. The issue lead within the secret keys and the scripts order:
+pusher.min first followed by jquery and moment.js. But as soon as it worked I couldnt deploy the app with Heroku. A simple look at the variables made me realise that I hadn't properly
+copy/pasted the pusher keys. As soon as done, the chat widget successfully worked.
+The Chat bubble doesn't render well still on the Iphone only. It is responsive in every other display and align correctly. The next step will be contacting Pusher and asking for help.
+
+The fullcalendar offers a drop and stick event to the calendar that I have currently hidden as the demos are not fixed yet.
+Once the Demos are available, the calendar will reveal them in the different chosen dates.
+I had a few issues with the fullcalendar, first regarding the version of the cdn, although clear, the documentation is a bit difficult to get when it came to choosing which cdn
+and once the link pasted on my js, the devtool showed an error as: 'there is no _k attribute in main.min.js' which resulted in many online searches especially through stackoverflow,
+at the end, I have had to change the order of my scripts many times to come up with the below: 
+jquery first then main.js then calendar.js
+The second issue occured when hidding the drag and drop in html, it triggered a calendar.js error which I resolved by commenting any code related to the drag and drop in the js file
 
 
 ## Deployment
@@ -137,6 +175,8 @@ codepens were visited to get inspired for the js code.
 Full credit to the Pusher chat widget https://pusher.com/tutorials/chat-widget-python#prerequisites
 
 w3schools for some hints on smoth scrolling top with href and id
+
+Materialize vast components choice
 
 ## media
 Am I Responsive web site for checking responsiveness on all Apple devices screen sizes; http://ami.responsivedesign.is/
@@ -154,39 +194,3 @@ All of the Code institute members whom have provided great opinions, insights on
 My super mentor Adeye Adegbenga for his time, great advices and all the support provided to achieve this project.
 My family for giving me the precious time to study, work on the projects and keep it up
 
-
-
-
-
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
