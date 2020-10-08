@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content%}
-
+<!--Recipes page for admin use only-->
 <!--Parallax-->
 <div class="parallax-container">
   <div class="parallax parallax img">
-    <img src="https://wallpaperaccess.com/full/372975.jpg" />
+    <img src="https://wallpaperaccess.com/full/372975.jpg" alt="macaroons" />
   </div>
 </div>
 <div class="section white">
@@ -59,7 +59,10 @@
       <div class="card-content">
         <div class="card-image">
           <a href="{{url_for('my_recipes', recipe_id=recipe._id)}}"
-            ><img class="card-image-img" src="{{recipe.image_url}}"
+            ><img
+              class="card-image-img"
+              src="{{recipe.image_url}}"
+              alt="{{recipe.recipe_name}}"
           /></a>
         </div>
         <span class="card-title name_recipe center-align"
