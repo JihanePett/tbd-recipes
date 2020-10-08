@@ -1,13 +1,13 @@
 ## Taste Buds Dream or TBD
 
-<img src="{{url_for('static', filename='images/homepage.png')}}">
-<img src="{{url_for('static', filename='images/my_recipes.png')}}">
-<img src="{{url_for('static', filename='images/thermomix.png')}}">
-<img src="{{url_for('static', filename='images/about.png')}}">
-<img src="{{url_for('static', filename='images/contact.png')}}">
-<img src="{{url_for('static', filename='images/login.png')}}">
+<img src="static/images/homepage.png" alt="homepage">
+<img src="static/images/my_recipes.png" alt="my_recipes">
+<img src="static/images/images/thermomix.png" alt="thermomix">
+<img src="static/images/about.png" alt="about">
+<img src="static/images/contact.png" alt="contact">
+<img src="static/images/login.png" alt="login">
 
-What is TBD?
+-- What is TBD? --
 TBD is for anyone who likes cooking: 
 there is a large range a recipes, the public can read through and try themselves with.
 The recipes are not only for regular home chef but also those who count the Thermomix appliance as part of their cooking appliance.
@@ -64,6 +64,8 @@ through the login. The chat admin will open in a new window, and it gives the op
 Once all required changes are made, the owner can log out, a message will appear confirming that action.
 
 ## Wireframes
+original wireframes:
+https://wireframe.cc/pro/pp/44b628f31372825
 
 ## Features
 
@@ -119,17 +121,24 @@ Heroku for deplyoment
 ## Testing
 
 **http://ami.responsivedesign.is/** has been used to see how the site performs on different Apple devices and their viewports, all pages, links, icons performed as expected on all devices.
+
 **Desktop**
 Google Chrome, Internet Edge & Mozilla Firefox browsers; all pages, links on those pages, and footer icon links perform well on all viewport sizes. Developer tools were also used on 
 all browsers for the various viewport sizes.
+
 **Mobile**
 used Huawei CLT-L09, Samsung Note 9, Iphone 4 and 5 to check every pages and links, all performs well on all devices.
+
 **App testing**
+Prior to the main testing, I had to test the app on heroku and constently have the debug on True in my app.py
+
 First step taken was to set up the Mongodb database and decide on the collections and interactions of all.
 Making my route to the database was the first test completed successfully as soon as flask was installed.
+
 The second test was making sure all the secret keys were encoded in the environmental variable and also added into Heroku for deployment
 The CRUD testing was run first through the terminal then after taking the select forms from materialize and setting up 2 new collections within Mongodb
 I was able to test the ability to complete all of the CRUD capabilities with success.
+
 For the search box, I had to create an index on my db through Python, once created and a quick look at mongodb to see if it showed, I created the search route and linked it to 
 that index on my_recipes.
 
@@ -138,7 +147,6 @@ As soon as in place and tested successfully I managed to install it again in thi
 
 Conducting test on registering a new user, by first creating a user collection on Mongodb and creating its route on flask and an html materialize form.
 The user straight away appeared on mongodb which was a success and I could work on the login.
-
 
 ## Issues:
 
@@ -165,8 +173,23 @@ The second issue occured when hidding the drag and drop in html, it triggered a 
 
 
 ## Deployment
-Deployment was made with Heroku:
 Working with Github, the workplace is created and all files worked on gitpod.
+Deployment was made with Heroku
+
+create a heroku account, create an app and add all variables there.
+First create a requirements.txt: pip3 freeze --local>requirements.txt
+Then create Procfile: echo web: pyton app.py>Procfile
+Followed by heroku ps:scale web=1 to scale the dynos
+
+Login to heroku on gitpod
+git add .
+git commit -m "initial commit"
+git: remote -a tbd-recipes
+
+in heroku I connected my github tbd-recipes so to be able to deploy everytime I commit.
+
+git push heroku master
+
 
 ## Credits
 Credit to the API fullcalendar.io which was very easy to use and the walkthrough as well as demos easy to understand. Couple of 
@@ -187,10 +210,9 @@ JSHint to check my javascripts codes
 
 W3 validator to check html and css codes
 
-
 ## Acknowledgements
 
-All of the Code institute members whom have provided great opinions, insights on my project and especially Kevin for the great tutoring session.
+All of the Code institute members, Tutors, Student support!
 My super mentor Adeye Adegbenga for his time, great advices and all the support provided to achieve this project.
 My family for giving me the precious time to study, work on the projects and keep it up
 
