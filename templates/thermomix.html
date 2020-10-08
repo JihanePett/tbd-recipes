@@ -1,91 +1,82 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Thermomix</title>
-  </head>
+{% extends 'base.html' %} {% block content%}
+<!--Parallax-->
+<div class="parallax-container">
+  <div class="parallax parallax img">
+    <img
+      src="https://www.origenonline.es/wp-content/uploads/2020/06/thermomix.jpg"
+      alt="thermomix"
+    />
+  </div>
+</div>
 
-  <body>
-    {% extends 'base.html' %} {% block content%}  
-    <!--Parallax-->
-    <div class="parallax-container">
-      <div class="parallax parallax img">
-        <img
-          src="https://www.origenonline.es/wp-content/uploads/2020/06/thermomix.jpg"
-          alt="thermomix"
-        />
+<!--Thermomix card 1-->
+<div class="row">
+  <div class="col l8 offset-l2">
+    <h2 class="header center-align">Live demos!</h2>
+    <div class="card horizontal">
+      <div class="card-video">
+        <iframe
+          src="https://www.youtube.com/embed/zPJYDcxFBzI"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
-    </div>
-
-    <!--Thermomix card 1-->
-    <div class="row">
-      <div class="col l8 offset-l2">
-        <h2 class="header center-align">Live demos!</h2>
-        <div class="card horizontal">
-          <div class="card-video">
-            <iframe
-              src="https://www.youtube.com/embed/zPJYDcxFBzI"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p class="card-about">
-                Becoming a Thermomix advisor and being able to earn it or have
-                it discounted was sorting out my doubt in putting that much
-                money for a “simple blender”.
-                <br />Not that we couldn’t afford it, it is the feeling that you
-                don’t want to believe it really will help you. You are afraid to
-                be disappointed. <br />
-                The truth is that the minute an advisor came to my home for a
-                demonstration, I knew for sure I had to have one.
-                <br />The truth is that the minute I placed Thermomix in my
-                kitchen and prepared my first bread and soup in my new kitchen
-                assistant, I knew it was the best investment for my time, for
-                our mind and body health. <br />The truth is that Thermomix is
-                not a “simple blender”. <br />
-                Thermomix is one fabulous and versatile cooking machine that can
-                replace at least 12 separate other kitchen appliances. So it
-                brought me to de -clutter my kitchen and make some space.
-              </p>
-            </div>
-          </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p class="card-about">
+            Becoming a Thermomix advisor and being able to earn it or have it
+            discounted was sorting out my doubt in putting that much money for a
+            “simple blender”.
+            <br />Not that we couldn’t afford it, it is the feeling that you
+            don’t want to believe it really will help you. You are afraid to be
+            disappointed. <br />
+            The truth is that the minute an advisor came to my home for a
+            demonstration, I knew for sure I had to have one.
+            <br />The truth is that the minute I placed Thermomix in my kitchen
+            and prepared my first bread and soup in my new kitchen assistant, I
+            knew it was the best investment for my time, for our mind and body
+            health. <br />The truth is that Thermomix is not a “simple blender”.
+            <br />
+            Thermomix is one fabulous and versatile cooking machine that can
+            replace at least 12 separate other kitchen appliances. So it brought
+            me to de -clutter my kitchen and make some space.
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!--Calendar-->
-    <h3 class="header all-h3">
-      Keep an eye on this calendar as I will be updating it with my Zoom Live
-      Demos dates soon!
-    </h3>
+<!--Calendar-->
+<h3 class="header all-h3">
+  Keep an eye on this calendar as I will be updating it with my Zoom Live Demos
+  dates soon!
+</h3>
 
-    <!--Hidden draggable events-->
-    <div id="external-events" class="hidden">
-      <p>
-        <strong>Draggable Events</strong>
-      </p>
-      <div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
-        <div class="fc-event-main">Live Demos 10-11am</div>
-      </div>
-      <div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
-        <div class="fc-event-main">Live Demos 1-2pm</div>
-      </div>
-      <div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
-        <div class="fc-event-main">Live Demos 3-4pm</div>
-      </div>
-      <p>
-        <input type="checkbox" id="drop-remove" />
-        <label for="drop-remove">remove after drop</label>
-      </p>
-    </div>
+<!--Hidden draggable events-->
+<div id="external-events" class="hidden">
+  <p>
+    <strong>Draggable Events</strong>
+  </p>
+  <div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
+    <div class="fc-event-main">Live Demos 10-11am</div>
+  </div>
+  <div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
+    <div class="fc-event-main">Live Demos 1-2pm</div>
+  </div>
+  <div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
+    <div class="fc-event-main">Live Demos 3-4pm</div>
+  </div>
+  <p>
+    <input type="checkbox" id="drop-remove" />
+    <label for="drop-remove">remove after drop</label>
+  </p>
+</div>
 
-    <!--Calendar placeholder-->
-    <div class="row">
-      <div id="calendar-container" class="col m10">
-        <div id="calendar"></div>
-      </div>
-    </div>
-    {% endblock%}
-  </body>
-</html>
+<!--Calendar placeholder-->
+<div class="row">
+  <div id="calendar-container" class="col m10">
+    <div id="calendar"></div>
+  </div>
+</div>
+{% endblock%}

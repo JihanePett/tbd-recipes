@@ -1,226 +1,221 @@
- {% extends 'base.html' %} {% block content%}
-  
-    <!--Parallax-->
-    <div class="parallax-container">
-      <div class="parallax parallax img">
+{% extends 'base.html' %} {% block content%}
+
+<!--Parallax-->
+<div class="parallax-container">
+  <div class="parallax parallax img">
+    <img
+      src="https://biancazapatka.com/wp-content/uploads/2020/05/lemon-tart-pie-vegan-glutenfree-no-bake.jpg"
+      alt="lemon tart"
+    />
+  </div>
+</div>
+
+<!--About card 1-->
+<div class="row">
+  <div class="col l7 s10 offset-m1 offset-l2" id="top">
+    <h2 class="header center-align">My story</h2>
+    <div class="card horizontal">
+      <div class="card-image">
         <img
-          src="https://biancazapatka.com/wp-content/uploads/2020/05/lemon-tart-pie-vegan-glutenfree-no-bake.jpg"
-          alt="lemon tart"
+          src="{{url_for('static', filename='images/cathy.jpg')}}"
+          alt="cathy"
         />
       </div>
-    </div>
-
-    <!--About card 1-->
-    <div class="row">
-      <div class="col l7 s10 offset-m1 offset-l2" id="top">
-        <h2 class="header center-align">My story</h2>
-        <div class="card horizontal">
-          <div class="card-image">
-            <img
-              src="{{url_for('static', filename='images/cathy.jpg')}}"
-              alt="cathy"
-            />
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p class="card-about">
-                My name is <strong>Catherine</strong>, traveling is one of my
-                passion and it has made me realize I am passionate about people.
-                <br />
-                I travel and I will keep on traveling not only to discover
-                unknown places and amazing landscapes but to live experiences of
-                a lifetime and above all to get to know a culture, to talk with
-                the people and to discover their way of living.
-                "I've met many people in Europe. I've even met myself there."
-                James Baldwin “J’ai rencontré de nombreuses personnes en Europe.
-                J’y ai même rencontré moi même.”
-              </p>
-              <div class="row">
-                <div class="col">
-                  <a href="#flight" class="smooth-goto"
-                    ><i class="material-icons about">flight_takeoff</i></a
-                  >
-                  <a href="#culture" class="smooth-goto"
-                    ><i class="material-icons about">import_contacts</i></a
-                  >
-                  <a href="#foodie" class="smooth-goto"
-                    ><i class="material-icons about">restaurant</i></a
-                  >
-                  <a href="#thermomix" class="smooth-goto">
-                    <img
-                      src="https://seeklogo.com/images/V/vorwerk-thermomix-logo-4B111D9BD4-seeklogo.com.png"
-                      width="60"
-                      alt="thermomix logo"
-                  /></a>
-                </div>
-              </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p class="card-about">
+            My name is <strong>Catherine</strong>, traveling is one of my
+            passion and it has made me realize I am passionate about people.
+            <br />
+            I travel and I will keep on traveling not only to discover unknown
+            places and amazing landscapes but to live experiences of a lifetime
+            and above all to get to know a culture, to talk with the people and
+            to discover their way of living. "I've met many people in Europe.
+            I've even met myself there." James Baldwin “J’ai rencontré de
+            nombreuses personnes en Europe. J’y ai même rencontré moi même.”
+          </p>
+          <div class="row">
+            <div class="col">
+              <a href="#flight" class="smooth-goto"
+                ><i class="material-icons about">flight_takeoff</i></a
+              >
+              <a href="#culture" class="smooth-goto"
+                ><i class="material-icons about">import_contacts</i></a
+              >
+              <a href="#foodie" class="smooth-goto"
+                ><i class="material-icons about">restaurant</i></a
+              >
+              <a href="#thermomix" class="smooth-goto">
+                <img
+                  src="https://seeklogo.com/images/V/vorwerk-thermomix-logo-4B111D9BD4-seeklogo.com.png"
+                  width="60"
+                  alt="thermomix logo"
+              /></a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!--About card 2-->
-    <div class="row">
-      <div class="col l7 s10 offset-m1 offset-l2" id="flight">
-        <h2 class="header center-align">Love for travels</h2>
-        <div class="card horizontal">
-          <div class="card-image">
-            <img
-              src="https://www.venuereport.com/media/cache/resolve/venue_roundup_single_image/uploads/+0Regular_Roundup/2018/4-April/HotAirBalloons/COVER-IanDooley-01.jpg"
-              alt="hotballoons"
-            />
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p class="card-about">
-                This has always put me in a position to remember my smallness,
-                to respect people, whoever they are and wherever they come from.
-                <br />To a certain extent, it always pushes me to look myself in
-                the face, to re-evaluate and readjust myself with who I really
-                am because sometimes you get lost in the complexity of things
-                and events in life, don't you? There is no trip or country I
-                didn’t like; but most of the time, the relationship you get with
-                people of a country makes the difference. By their history and
-                culture, by their kindness, their character, their charisma...
-                people and food is the main reason why I would go back again to
-                a country.<br /> Of course, my choice goes first for countries where the human
-                contact was rich and these countries are part of the list of
-                countries where I have to go back because I remained with a
-                taste of not enough. I still have so much to learn from these
-                human contacts and exchanges. A lifetime will not be enough.
-                <a href="#top" class="smooth-goto"
-                  ><i class="material-icons top-arrow">arrow_upward</i></a
-                >
-              </p>
-            </div>
-          </div>
+<!--About card 2-->
+<div class="row">
+  <div class="col l7 s10 offset-m1 offset-l2" id="flight">
+    <h2 class="header center-align">Love for travels</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img
+          src="https://www.venuereport.com/media/cache/resolve/venue_roundup_single_image/uploads/+0Regular_Roundup/2018/4-April/HotAirBalloons/COVER-IanDooley-01.jpg"
+          alt="hotballoons"
+        />
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p class="card-about">
+            This has always put me in a position to remember my smallness, to
+            respect people, whoever they are and wherever they come from.
+            <br />To a certain extent, it always pushes me to look myself in the
+            face, to re-evaluate and readjust myself with who I really am
+            because sometimes you get lost in the complexity of things and
+            events in life, don't you? There is no trip or country I didn’t
+            like; but most of the time, the relationship you get with people of
+            a country makes the difference. By their history and culture, by
+            their kindness, their character, their charisma... people and food
+            is the main reason why I would go back again to a country.<br />
+            Of course, my choice goes first for countries where the human
+            contact was rich and these countries are part of the list of
+            countries where I have to go back because I remained with a taste of
+            not enough. I still have so much to learn from these human contacts
+            and exchanges. A lifetime will not be enough.
+            <a href="#top" class="smooth-goto"
+              ><i class="material-icons top-arrow">arrow_upward</i></a
+            >
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!--About card 3-->
-    <div class="row">
-      <div class="col l7 s10 offset-m1 offset-l2">
-        <h2 class="header center-align">Culinary exchanges</h2>
-        <div class="card horizontal">
-          <div class="card-image">
-            <img
-              src="https://img.pixers.pics/pho_wat(s3:700/FO/57/66/30/95/700_FO57663095_d9e9af05a358206ffea1f48f86cf6b1b.jpg,467,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,247,650,jpg)/stickers-traditional-spices-market-in-india.jpg.jpg"
-              alt="spices"
-            />
-          </div>
-          <div class="card-stacked">
-            <div class="card-content" id="culture">
-              <p class="card-about">
-                Probably, everything around cooking and kitchen provides me with
-                similarities and differences with what I have already
-                experienced and already known. It seems that this is what brings
-                me back to my origins, getting to know myself and what allows me
-                to appreciate what I am. <br />I still have so much to learn
-                from these culinary exchanges. With hindsight, I have noticed
-                that with another culture, another country, other people,
-                gastronomy is my point of reference or comparison. <br />Through
-                food, I can feel a sense of home and sense of community. Driven
-                by a culinary curiosity, an interest in new tastes and original
-                shapes my favourite go to place are the local markets and
-                places, where i can discover special spices, local vegetables
-                and fruits. <br />Whenever I have the opportunity, I sneak in
-                local kitchens to furtively check on and learn cooking
-                techniques. You understand, I love people, travels and food.
-                Like many of us!
-                <a href="#top" class="smooth-goto"
-                  ><i class="material-icons top-arrow">arrow_upward</i></a
-                >
-              </p>
-            </div>
-          </div>
+<!--About card 3-->
+<div class="row">
+  <div class="col l7 s10 offset-m1 offset-l2">
+    <h2 class="header center-align">Culinary exchanges</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img
+          src="https://img.pixers.pics/pho_wat(s3:700/FO/57/66/30/95/700_FO57663095_d9e9af05a358206ffea1f48f86cf6b1b.jpg,467,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,247,650,jpg)/stickers-traditional-spices-market-in-india.jpg.jpg"
+          alt="spices"
+        />
+      </div>
+      <div class="card-stacked">
+        <div class="card-content" id="culture">
+          <p class="card-about">
+            Probably, everything around cooking and kitchen provides me with
+            similarities and differences with what I have already experienced
+            and already known. It seems that this is what brings me back to my
+            origins, getting to know myself and what allows me to appreciate
+            what I am. <br />I still have so much to learn from these culinary
+            exchanges. With hindsight, I have noticed that with another culture,
+            another country, other people, gastronomy is my point of reference
+            or comparison. <br />Through food, I can feel a sense of home and
+            sense of community. Driven by a culinary curiosity, an interest in
+            new tastes and original shapes my favourite go to place are the
+            local markets and places, where i can discover special spices, local
+            vegetables and fruits. <br />Whenever I have the opportunity, I
+            sneak in local kitchens to furtively check on and learn cooking
+            techniques. You understand, I love people, travels and food. Like
+            many of us!
+            <a href="#top" class="smooth-goto"
+              ><i class="material-icons top-arrow">arrow_upward</i></a
+            >
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!--About card 4-->
-    <div class="row">
-      <div class="col l7 s10 offset-m1 offset-l2" id="foodie">
-        <h2 class="header center-align">James Baldwin</h2>
-        <div class="card horizontal">
-          <div class="card-image">
-            <img
-              src="https://i.pinimg.com/236x/b0/32/71/b03271b426146e848ab36e1e6fc86d82--travel-nepal-tibet.jpg"
-              alt="foodmarket"
-            />
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p class="card-about">
-                <strong
-                  >So I am happy to invite you to browse my pages, my recipes
-                  and I wait for your feedbacks, feel free to ask questions and
-                  exchange.</strong
-                >
-                My mother in law actually has the TM21 that was released in
-                1996. She always sang the praises of the kitchen appliance. She
-                is the one and I thank her for that, who suggested me to have a
-                Thermomix.
-                <br />Six months after I got my little one, I felt just
-                overwhelmed by our new life with a baby, not finding the time to
-                cook as before. While I was trying to get on a new routine
-                as a new mum, my passion for cooking just faded away, I had no
-                interest anymore in cooking or in sharing meals with friends.
-                I had no inspiration anymore and if we were not ordering
-                ready meals, the basic food I would prepare back then was not
-                appealing and flat.
-                <br />
-                My priorities had changed and I needed to adjust myself to our
-                new life. I needed help to save time for myself, get to
-                know my little baby, eat properly, make real healthy meals for
-                the family, and get ready for when I will be back to my full
-                time job!
-                <a href="#top" class="smooth-goto"
-                  ><i class="material-icons top-arrow">arrow_upward</i></a
-                >
-              </p>
-            </div>
-          </div>
+<!--About card 4-->
+<div class="row">
+  <div class="col l7 s10 offset-m1 offset-l2" id="foodie">
+    <h2 class="header center-align">James Baldwin</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img
+          src="https://i.pinimg.com/236x/b0/32/71/b03271b426146e848ab36e1e6fc86d82--travel-nepal-tibet.jpg"
+          alt="foodmarket"
+        />
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p class="card-about">
+            <strong
+              >So I am happy to invite you to browse my pages, my recipes and I
+              wait for your feedbacks, feel free to ask questions and
+              exchange.</strong
+            >
+            My mother in law actually has the TM21 that was released in 1996.
+            She always sang the praises of the kitchen appliance. She is the one
+            and I thank her for that, who suggested me to have a Thermomix.
+            <br />Six months after I got my little one, I felt just overwhelmed
+            by our new life with a baby, not finding the time to cook as before.
+            While I was trying to get on a new routine as a new mum, my passion
+            for cooking just faded away, I had no interest anymore in cooking or
+            in sharing meals with friends. I had no inspiration anymore and if
+            we were not ordering ready meals, the basic food I would prepare
+            back then was not appealing and flat.
+            <br />
+            My priorities had changed and I needed to adjust myself to our new
+            life. I needed help to save time for myself, get to know my little
+            baby, eat properly, make real healthy meals for the family, and get
+            ready for when I will be back to my full time job!
+            <a href="#top" class="smooth-goto"
+              ><i class="material-icons top-arrow">arrow_upward</i></a
+            >
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!--About card 5-->
-    <div class="row">
-      <div class="col l7 s10 offset-m1 offset-l2" id="thermomix">
-        <h2 class="header center-align">My Thermomix</h2>
-        <div class="card horizontal">
-          <div class="card-image">
-            <img
-              src="https://www.kook-plezier.nl/data/ab/artikelen/artikel-details/Thermomix_-_De_kleinste_keuken_ter_wereld(3).png"
-              alt="thermomix machine"
-            />
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p class="card-about">
-                It was enough to rely on the ready meals; it was time more than
-                ever to take care of our bodies and mind. <br />I found excuses
-                to jump as it is an investment and it took a while to decide
-                myself buying Thermomix. Initially it “was too much money for a
-                simple blender!!!” <br />
-                Then “it will take away the joy of food prep and the love of my
-                pots and pans”, it will take me away from the kitchen, which is
-                my “escape” from the daily worries!
-                <br />Out of the three reasons, the last two points were not
-                valid anymore as the pots and pans I was praising used to stay
-                in the cupboards and trying to organize our healthy and weekly
-                meal was stressful and time consuming.
-                <br />
-                <a href="#top" class="smooth-goto"
-                  ><i class="material-icons top-arrow">arrow_upward</i></a
-                >
-              </p>
-            </div>
-          </div>
+<!--About card 5-->
+<div class="row">
+  <div class="col l7 s10 offset-m1 offset-l2" id="thermomix">
+    <h2 class="header center-align">My Thermomix</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img
+          src="https://www.kook-plezier.nl/data/ab/artikelen/artikel-details/Thermomix_-_De_kleinste_keuken_ter_wereld(3).png"
+          alt="thermomix machine"
+        />
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p class="card-about">
+            It was enough to rely on the ready meals; it was time more than ever
+            to take care of our bodies and mind. <br />I found excuses to jump
+            as it is an investment and it took a while to decide myself buying
+            Thermomix. Initially it “was too much money for a simple blender!!!”
+            <br />
+            Then “it will take away the joy of food prep and the love of my pots
+            and pans”, it will take me away from the kitchen, which is my
+            “escape” from the daily worries!
+            <br />Out of the three reasons, the last two points were not valid
+            anymore as the pots and pans I was praising used to stay in the
+            cupboards and trying to organize our healthy and weekly meal was
+            stressful and time consuming.
+            <br />
+            <a href="#top" class="smooth-goto"
+              ><i class="material-icons top-arrow">arrow_upward</i></a
+            >
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    {% endblock%}
+{% endblock%}

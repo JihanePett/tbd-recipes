@@ -1,136 +1,128 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My recipes</title>
-  </head>
+{% extends 'base.html' %} {% block content%}
+<!--Parallax-->
+<div class="parallax-container">
+  <div class="parallax parallax img">
+    <img
+      src="https://lovelytab.com/wp-content/uploads/2018/12/Mexican-Food-Wallpapers-1024x640.jpg"
+      alt="mexicanfood"
+    />
+  </div>
+</div>
 
-  <body>
-    {% extends 'base.html' %} {% block content%}
-    <!--Parallax-->
-    <div class="parallax-container">
-      <div class="parallax parallax img">
-        <img
-          src="https://lovelytab.com/wp-content/uploads/2018/12/Mexican-Food-Wallpapers-1024x640.jpg"
-          alt="mexicanfood"
+<!--Section text-->
+<div class="section white">
+  <div class="row container">
+    <h3 class="header all-h3">Welcome to my kitchen</h3>
+    <p class="grey-text center-align">
+      Browse through the large range of recipe I have came up with over time
+    </p>
+    <p class="grey-text center-align">
+      If you already have it, you can search by including thermomix in your
+      search. Looking over all the recipes will give you ideas of what to cook
+    </p>
+  </div>
+</div>
+
+<!--Search recipe Box-->
+<div class="row">
+  <form
+    action="{{url_for('search_recipes')}}"
+    method="POST"
+    class="col l6 m10 s8 search-box"
+  >
+    <div class="row valign-wrapper center-align">
+      <div class="input-field col m8 s4">
+        <input
+          type="text"
+          name="query"
+          id="query"
+          minlength="3"
+          class="validate"
+          required
         />
+        <label for="query">Search recipes</label>
+      </div>
+
+      <!--Search and reset buttons-->
+      <div class="col m8 s12">
+        <div class="col m4 s4">
+          <button type="submit" class="waves-effect waves-light btn">
+            Search
+          </button>
+        </div>
+        <div class="col m6 s8">
+          <a
+            href="{{ url_for('my_recipes') }}"
+            class="waves-effect waves-light btn reset-btn amber darken-1"
+            >Reset</a
+          >
+        </div>
       </div>
     </div>
-    <div class="section white">
-      <div class="row container">
-        <h3 class="header all-h3">Welcome to my kitchen</h3>
-        <p class="grey-text center-align">
-          Browse through the large range of recipe I have came up with over time
-        </p>
-        <p class="grey-text center-align">
-          If you already have it, you can search by including thermomix in your
-          search. Looking over all the recipes will give you ideas of what to
-          cook
-        </p>
-      </div>
-    </div>
+  </form>
+</div>
 
-    <!--Search recipe Box-->
-    <div class="row">
-      <form
-        action="{{url_for('search_recipes')}}"
-        method="POST"
-        class="col l6 m10 s8 search-box"
-      >
-        <div class="row valign-wrapper center-align">
-          <div class="input-field col m8 s4">
-            <input
-              type="text"
-              name="query"
-              id="query"
-              minlength="3"
-              class="validate"
-              required
-            />
-            <label for="query">Search recipes</label>
-          </div>
+<!--Recipe cards-->
+<div class="row cards">
+  {% for recipe in recipes %}
+  <div class="col l4 m6 s6">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <a href="{{url_for('my_recipes', recipe_id=recipe.recipe_name)}}"
+            ><img
+              class="card-image-img"
+              src="{{recipe.image_url}}"
+              alt="{{recipe.recipe_name}}"
+          /></a>
+        </div>
+        <span class="card-title name_recipe center-align"
+          >{{recipe.recipe_name}} -- {{recipe.type_select}}</span
+        >
 
-          <!--Search and reset buttons-->
-          <div class="col m8 s12">
-            <div class="col m4 s4">
-              <button type="submit" class="waves-effect waves-light btn">
-                Search
-              </button>
+        <!--Collapsible-->
+        <ul class="collapsible">
+          <li class="active">
+            <div class="collapsible-header">
+              <i class="material-icons">info</i>I am {{recipe.category_name}}
+              <br />
+              For {{recipe.number_people}} person <br />
+              Ready in {{recipe.preparation_time}}
             </div>
-            <div class="col m6 s8">
-              <a
-                href="{{ url_for('my_recipes') }}"
-                class="waves-effect waves-light btn reset-btn amber darken-1"
-                >Reset</a
+            <!--Recipe Description-->
+            <div class="collapsible-body">
+              <span>{{recipe.recipe_description}}</span>
+              <!--Download button-->
+              <a href="{{recipe.pdf}}" target="_blank">
+                <i class="material-icons cloud">cloud_download</i></a
               >
             </div>
-          </div>
-        </div>
-      </form>
-    </div>
+          </li>
 
-    <!--Recipe cards-->
-    <div class="row cards">
-      {% for recipe in recipes %}
-      <div class="col l4 m6 s6">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-image">
-              <a href="{{url_for('my_recipes', recipe_id=recipe.recipe_name)}}"
-                ><img
-                  class="card-image-img"
-                  src="{{recipe.image_url}}"
-                  alt="{{recipe.recipe_name}}"
-              /></a>
+            <!--Recipe method-->
+          <li>
+            <div class="collapsible-header">
+              <i class="material-icons">description</i>Method
             </div>
-            <span class="card-title name_recipe center-align"
-              >{{recipe.recipe_name}} -- {{recipe.type_select}}</span
-            >
+            <div class="collapsible-body">
+              <span>{{recipe.recipe_method}}</span>
+            </div>
+          </li>
 
-            <!--Collapsible-->
-            <ul class="collapsible">
-              <li class="active">
-                <div class="collapsible-header">
-                  <i class="material-icons">info</i>I am
-                  {{recipe.category_name}} <br />
-                  For {{recipe.number_people}} person <br />
-                  Ready in {{recipe.preparation_time}}
-                </div>
-                <!--Recipe Description-->
-                <div class="collapsible-body">
-                  <span>{{recipe.recipe_description}}</span>
-                  <!--Download button-->
-                  <a href="{{recipe.pdf}}" target="_blank">
-                    <i class="material-icons cloud">cloud_download</i></a
-                  >
-                </div>
-              </li>
-
-              <!--Recipe method-->
-              <li>
-                <div class="collapsible-header">
-                  <i class="material-icons">description</i>Method
-                </div>
-                <div class="collapsible-body">
-                  <span>{{recipe.recipe_method}}</span>
-                </div>
-              </li>
-
-              <!--Recipe ingredients-->
-              <li>
-                <div class="collapsible-header">
-                  <i class="material-icons">format_list_bulleted</i>Ingredients
-                </div>
-                <div class="collapsible-body">
-                  <span>{{recipe.recipe_ingredients}}.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+            <!--Recipe ingredients-->
+          <li>
+            <div class="collapsible-header">
+              <i class="material-icons">format_list_bulleted</i>Ingredients
+            </div>
+            <div class="collapsible-body">
+              <span>{{recipe.recipe_ingredients}}.</span>
+            </div>
+          </li>
+        </ul>
       </div>
-      {% endfor%}
     </div>
+  </div>
+  {% endfor%}
+</div>
 
-    {% endblock %}
-  </body>
-</html>
+{% endblock %}
