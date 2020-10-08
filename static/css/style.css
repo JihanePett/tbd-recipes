@@ -172,8 +172,8 @@ li.flashes-msg {
 }
 
 /* Parallax */
-.parallax-container .parallax img {
-  display: inline-block;
+.parallax-container {
+  width: 1100px;
 }
 
 /* Login */
