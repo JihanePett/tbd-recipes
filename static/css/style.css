@@ -1,3 +1,13 @@
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
 /* Navigation */
 nav .brand-logo {
   letter-spacing: 4px;
@@ -108,7 +118,7 @@ iframe{
     height: 411px;
 }
 
-/* About */
+/* Icons */
 i.material-icons.about {
     color: black;
     font-size: 50px;
