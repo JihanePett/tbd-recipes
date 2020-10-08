@@ -1,9 +1,9 @@
 (function () {
   "use strict";
 
-  var pusher = new Pusher("364cf11175365baa44b2", {
+  var pusher = new Pusher(key=os.environ.get('KEY'), {
     authEndpoint: "/pusher/auth",
-    cluster: "eu",
+    cluster=os.environ.get('CLUSTER'),
     encrypted: true,
   });
 
