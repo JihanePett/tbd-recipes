@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 (function () {
   "use strict";
 
@@ -5,9 +7,9 @@
   // Configure Pusher instance
   // ----------------------------------------------------
 
-  var pusher = new Pusher(key=os.environ.get('KEY'), {
+  var pusher = new Pusher("364cf11175365baa44b2", {
     authEndpoint: "/pusher/auth",
-    cluster=os.environ.get('CLUSTER'),
+    cluster: "eu",
     encrypted: true,
   });
 

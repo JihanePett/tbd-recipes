@@ -1,8 +1,7 @@
 import os
-from flask import Flask, render_template, url_for, redirect, request, flash, session, jsonify, make_response, json
+from flask import Flask, render_template, url_for, redirect, request, flash, session, json
 from flask_cors import CORS
 from pusher import pusher
-import simplejson
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import cloudinary as Cloud
