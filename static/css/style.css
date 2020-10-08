@@ -60,8 +60,13 @@ a.waves-effect.waves-light.btn.reset-btn {
 .card .card-content .card-title .name_recipe {
     line-height: 10px;
     margin-bottom: 4px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 1px;
+}
+
+.card .card-title {
+    font-size: 24px;
+    color: #81c784;
 }
 
 .btn,
@@ -81,7 +86,6 @@ input.btn.btn-default {
   margin-right: 20px;
   display: inline-block;
 }
-
 
 .row.back-btn {
   margin-top: 50px;
