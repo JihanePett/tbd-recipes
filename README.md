@@ -48,6 +48,112 @@ The second part of the site is dedicated to the Creating, Editing, Deleting, Upd
 It is very important to note at this stage the login holds a 'register' option for the purpose of the MS3 project required by the Code 
 Institute, however this option will be delete as soon as the project is scored.
 
+After logging in, the user has the option to:
+--Edit an existing recipe which leads to updating it in the database or canceling the action which will bring her back to all the options view.
+--Creating new recipe and saving it or reseting the form or cancelling this action which will bring her back to all options
+--Deleting the existing recipe, a confirmation message will pop just to make sure it is the right action meant to be taken
+
+--Creating a new category (vegan...) which leads to creating a new category or chosing editing category option
+--Editing the existing categories will give her the option to delete them or edit if there is a typo. Upon deletion a confirmation message will pop up to make sure it 
+is the right action meant to be taken.
+
+--Opening the admin chat. As it is a one person owning the website, it is on her to control the admin chat. The only way to the admin chat is 
+through the login. The chat admin will open in a new window, and it gives the option to choose which conversation to answer first.
+
+Once all required changes are made, the owner can log out, a message will appear confirming that action.
+
+## Wireframes
+
+## Features
+
+Currently and as already discussed, TBD offers:
+
+1 -- Search form: for any visitors to search by recipe name, ingredients, type(vegan...), thermomix or other
+2 -- Recipe cards: offers a picture of the recipe in question, the recipe method, preparation time, number of people, type, category as well as a DOWNLOADABLE RECIPE CARD
+3 -- Video: Thermomix official youtube video
+4 -- Chat bubble and its admin chat: to interact directly with every user who wnats to discuss the site, a recipe, the thermomix
+5 -- Email form: for anyone to reach out by email
+6 -- login credentials to enter the CRUD capabilities
+7 -- Registering option: which will be deleted as discussed above
+8 -- CRUD capabilities:
+        -- Creating, Deleting, Updating and Editing any recipes
+        -- Creating, Deleting, Updating and Editing any categories (vegan..)
+10 -- Log out
+11 -- Live calendar
+12 -- linking with social media
+
+## Features Left to Implement
+
+Interactive Calendar -- Zoom live demo integration
+We will be looking in the near future to implement a Live Zoom Demo center in the site which will be linked to the calendar.
+In fact, the calendar will show the Demo events, and we will give the ability for 5 lucky user to join. The demos are mainly thermomix centered.
+
+Integrate with Facebook calendar as soon as it is completed to give more visibility to the site.
+
+A possibility to change the number of people per meal so that the recipes ingredients align.
+
+In a longer future: an eventual calorie counter will be added to the recipes
+
+## Technologies Used
+
+HTML, or Hyper Text Markup Language
+CSS, or Cascading Style Sheets
+Materialize
+Javascript
+Python
+Flask
+Pusher
+Pymongo
+MongoDB
+Cloudinary
+Fullcalendar.io
+Gitpod
+Git
+GitHub
+Chrome DevTools:
+W3C Markup Validation Service
+Heroku for deplyoment
+
+## Testing
+
+http://ami.responsivedesign.is/ has been used to see how the site performs on different Apple devices and their viewports, all pages, links, icons performed as expected on all devices.
+Desktop
+Google Chrome, Internet Edge & Mozilla Firefox browsers; all pages, links on those pages, and footer icon links perform well on all viewport sizes. Developer tools were also used on 
+all browsers for the various viewport sizes.
+Mobile
+used Huawei CLT-L09, Samsung Note 9, Iphone 4 and 5 to check every pages and links, all performs well on all devices.
+
+Issues:
+
+
+## Deployment
+Deployment was made with Heroku:
+Working with Github, the workplace is created and all files worked on gitpod.
+
+## Credits
+Credit to the API fullcalendar.io which was very easy to use and the walkthrough as well as demos easy to understand. Couple of 
+codepens were visited to get inspired for the js code.
+
+Full credit to the Pusher chat widget https://pusher.com/tutorials/chat-widget-python#prerequisites
+
+w3schools for some hints on smoth scrolling top with href and id
+
+## media
+Am I Responsive web site for checking responsiveness on all Apple devices screen sizes; http://ami.responsivedesign.is/
+
+https://stackoverflow.com/ w3schools Used as a resource for finding answers to all types of coding problems.
+
+JSHint to check my javascripts codes
+
+W3 validator to check html and css codes
+
+
+## Acknowledgements
+
+All of the Code institute members whom have provided great opinions, insights on my project and especially Kevin for the great tutoring session.
+My super mentor Adeye Adegbenga for his time, great advices and all the support provided to achieve this project.
+My family for giving me the precious time to study, work on the projects and keep it up
+
 
 
 
